@@ -15,10 +15,17 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-
+/**
+ * Class for World
+ * @author Jun Yuan
+ *
+ */
 public abstract class World extends Pane {
     private AnimationTimer timer;
     
+    /**
+     * Construct an instance of World
+     */
     public World() {
     	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
@@ -57,13 +64,16 @@ public abstract class World extends Pane {
 						}
 						
 					});
-				}
+				}		//end if
 				
 			}
     		
 		});
     }
 
+    /**
+     * Method to create a timer
+     */
     public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -79,32 +89,56 @@ public abstract class World extends Pane {
         };
     }
 
+    /**
+     * Method to start timer
+     */
     public void start() {
     	createTimer();
         timer.start();
     }
-
+    
+    /**
+     * Method to stop timer
+     */
     public void stop() {
         timer.stop();
     }
     
+    /**
+     * Method to add actor 
+     * @param actor is the animations added
+     */
     public void add(Actor actor) {
         getChildren().add(actor);
     }
 
+    /**
+     * Method to remove actor
+     * @param actor is the animations removed
+     */
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }
 
+    /**
+     * Method to get the animations
+     * @param cls is the array list of class which is type of A
+     * @return animation list 
+     */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
-        for (Node n: getChildren()) {
-            if (cls.isInstance(n)) {
-                someArray.add((A)n);
+        
+        for (Node node: getChildren()) {    //Gets the list of children of this Parent
+            if (cls.isInstance(node)) {		//cls is a type of node
+                someArray.add((A) node);	//node is type cast into A and added to arrayli
             }
         }
         return someArray;
     }
 
+    /**
+     * Method act (empty class)
+     * @param now
+     */
     public abstract void act(long now);
 }

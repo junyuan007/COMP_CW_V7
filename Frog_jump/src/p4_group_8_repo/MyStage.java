@@ -6,13 +6,25 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
+/**
+ * Class of MyStage
+ * @author JunYuan
+ * 
+ */
 public class MyStage extends World{
 	MediaPlayer mediaPlayer;
+	
+	/**
+	 * Empty body 
+	 */
 	@Override
 	public void act(long now) {
 		
 	}
 	
+	/**
+	 * Construct an instance of MyStage (empty body)
+	 */
 	public MyStage() {
 		
 //		mediaPlayer.play();
@@ -28,6 +40,9 @@ public class MyStage extends World{
 //		mediaPlayer.play();
 	}
 	
+	/**
+	 * Method to play music in loop
+	 */
 	public void playMusic() {
 		String musicFile = "src/p4_group_8_repo/Frogger Main Song Theme (loop).mp3";   
 		Media sound = new Media(new File(musicFile).toURI().toString());
@@ -36,6 +51,9 @@ public class MyStage extends World{
 	    mediaPlayer.play();
 	}
 	
+	/**
+	 * Method to stop background music 
+	 */
 	public void stopMusic() {
 		mediaPlayer.stop();
 	}
