@@ -122,6 +122,7 @@ public abstract class World extends Pane {
 
     /**
      * Method to get the animations
+     * @param <A>
      * @param cls is the array list of class which is type of A
      * @return animation list 
      */
@@ -138,7 +139,6 @@ public abstract class World extends Pane {
 
     /**
      * Method act (empty class)
-     * @param now
      */
     public abstract void act(long now);
 }

@@ -47,8 +47,8 @@ public class WetTurtle extends Actor{
 	
 	/**
 	 * Construct an instance of WetTurtle
-	 * @param xpos is the X-coordinate of WetTurtle
-	 * @param ypos is the Y-coordinate of WetTurtle
+	 * @param x_position is the X-coordinate of WetTurtle
+	 * @param y_position is the Y-coordinate of WetTurtle
 	 * @param speed_movement is the speed of WetTurtle
 	 * @param width of WetTurtle
 	 * @param height of WetTurtle
