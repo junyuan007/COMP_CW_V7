@@ -28,7 +28,7 @@ public class Main extends Application {
 		launch(args);
 	}
 	
-	//***********123
+	//testing
 	//IllegalStateException 
 	/**
 	 * start method to create the animations and initiate the JavaFx runtime
