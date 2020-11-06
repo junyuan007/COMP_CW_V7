@@ -128,7 +128,6 @@ public class Main extends Application {
 		start(); 
 	} 													// END start()
 	
-	////////////////////////////////////////////////
 	public void create_animations() {
 		
 		//Background
@@ -162,14 +161,6 @@ public class Main extends Application {
 		background.add(new WetTurtle(600, 217, -1, 130, 130));
 		background.add(new WetTurtle(400, 217, -1, 130, 130));
 		background.add(new WetTurtle(200, 217, -1, 130, 130));	
-		
-		/*
-		// before alignment
-		background.add(new End(13,96));
-		background.add(new End(141,96));
-		background.add(new End(269, 96));	
-		background.add(new End(398, 96));
-		background.add(new End(528, 96));*/
 		
 		//End goals
 		background.add(new End(11,95));
@@ -288,30 +279,4 @@ public class Main extends Application {
 }
 
 //////////////////////////////////////THE END/////////////////////////////////////////////////////////////
-
-//Obstacle obstacle = new Obstacle("file:src/p4_group_8_repo/truck1Right.png", 25, 25, 3);
-//Obstacle obstacle1 = new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 100, 100,2 );
-//Obstacle obstacle2 = new Obstacle("file:src/p4_group_8_repo/truck1Right.png",0,  150, 1);
-
-//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 0, 166, 0.75));
-
-//background.add(new Log("file:src/p4_group_8_repo/logs.png", 300, 800, 276, -2));
-
-//background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 570, 329, 0.75));
-
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 100, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 0, 100, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 120, -1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 120, -1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 140, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 140, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 160, -1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 300, 160, -1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 180, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 180, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 200, -1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 200, -1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 100, 220, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 200, 220, 1));
-//background.add(new Log("file:src/p4_group_8_repo/log2.png", 400, 220, 1));
 
