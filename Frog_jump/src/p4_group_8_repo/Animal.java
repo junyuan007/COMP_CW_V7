@@ -41,6 +41,8 @@ public class Animal extends Actor {
 	ArrayList<End> inter = new ArrayList<End>();			// array list of END goals
 	
 	int divide = 99;
+	double x_start = 300;
+	double y_start = 725;
 	
 	// Troll code
 	//double movement = 13.3333333*2;
@@ -54,8 +56,8 @@ public class Animal extends Actor {
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, image_Size, image_Size, true, true));
 		
-		setX(300);
-		setY(679.8+movement);
+		setX(x_start);
+		setY(y_start + movement);
 		W_direction = new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true);
 		A_direction = new Image("file:src/p4_group_8_repo/froggerLeft.png", image_Size, image_Size, true, true);
 		S_direction = new Image("file:src/p4_group_8_repo/froggerDown.png", image_Size, image_Size, true, true);
@@ -165,9 +167,10 @@ public class Animal extends Actor {
 	 */
 	public void act(long now) {
 		//int bounds = 0;
-		if (getY() < 0 || getY() > 734) {
-			setX(300);
-			setY(679.8+movement);
+		//if (getY() < 0 || getY() > 734) {
+		if (getY() < 0 || getY() > 800) {
+			setX(x_start);
+			setY(y_start + movement);
 		}
 		if (getX()<0) {
 			move(movement * 2, 0);
@@ -187,8 +190,8 @@ public class Animal extends Actor {
 				setImage(new Image("file:src/p4_group_8_repo/cardeath3.png", image_Size, image_Size, true, true));
 			}
 			if (carD == 4) {
-				setX(300);
-				setY(679.8+movement);
+				setX(x_start);
+				setY(y_start + movement);
 				car_die = false;
 				carD = 0;
 				setImage(new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true));
@@ -203,37 +206,36 @@ public class Animal extends Actor {
 		if (water_die) {
 			not_moving = true;
 			if ((now) % 11 == 0) {
-			//if ((now / divide) % 11 == 0) {
 				carD++;
 			}
-			if (carD==1) {
+			if (carD == 1) {
 				setImage(new Image("file:src/p4_group_8_repo/waterdeath1.png", image_Size,image_Size , true, true));
 			}
-			if (carD==2) {
+			if (carD == 2) {
 				setImage(new Image("file:src/p4_group_8_repo/waterdeath2.png", image_Size,image_Size , true, true));
 			}
-			if (carD==3) {
+			if (carD == 3) {
 				setImage(new Image("file:src/p4_group_8_repo/waterdeath3.png", image_Size,image_Size , true, true));
 			}
 			if (carD == 4) {
 				setImage(new Image("file:src/p4_group_8_repo/waterdeath4.png", image_Size,image_Size , true, true));
 			}
 			if (carD == 5) {
-				setX(300);
-				setY(679.8+movement);
+				setX(x_start);
+				setY(y_start + movement);
 				water_die = false;
 				carD = 0;
 				setImage(new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true));
 				not_moving = false;
-				if (player_points>50) {
-					player_points-=50;
+				if (player_points > 50) {
+					player_points -= 50;
 					changeScore = true;
 				}
 			}
 			
 		}
 		
-		if (getX()>600) {
+		if (getX() > 600) {
 			move(-movement * 2, 0);
 		}
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
@@ -267,17 +269,17 @@ public class Animal extends Actor {
 			}
 			player_points += 50;											//victory...main_frog landed on End goal 		
 			changeScore = true;
-			w=800;
+			w = 800;
 			getIntersectingObjects(End.class).get(0).setEnd();
 			end++;
 			
-			setX(300);
-			setY(679.8 + movement);
+			setX(x_start);
+			setY(y_start + movement);
 		}
 		else if (getY() < 413){
 			water_die = true;
-			//setX(300);
-			//setY(679.8+movement);
+			//setX(x_start);
+			//setY(y_start + movement);
 		}
 	}		//END act method
 	

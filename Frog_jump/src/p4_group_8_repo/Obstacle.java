@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
  *
  */
 public class Obstacle extends Actor {
-	private int speed;
+	private double speed;
 	@Override
 	public void act(long now) {
 		move(speed , 0);
@@ -28,7 +28,7 @@ public class Obstacle extends Actor {
 	 * @param width of obstacle
 	 * @param height of obstacle
 	 */
-	public Obstacle(String imageLink, int x_position, int y_position, int speed_movement, int width, int height) {
+	public Obstacle(String imageLink, int x_position, int y_position, double speed_movement, int width, int height) {
 		setImage(new Image(imageLink, width, height, true, true));
 		setX(x_position);
 		setY(y_position);
