@@ -21,7 +21,7 @@ import javafx.util.Duration;
 public class Main extends Application {
 	AnimationTimer timer;
 	MyStage background;
-	Animal animal; //main_frog
+	Animal animal; 							//main_frog
 	int size_digit = 30;
 
 	public static void main(String[] args) {
@@ -58,70 +58,64 @@ public class Main extends Application {
 	    BackgroundImage frogger_wallpaper = new BackgroundImage();
 	    background.add(frogger_wallpaper);
 	    
-		//top log
-		//String short_log = "file:src/p4_group_8_repo/log3.png";
-		//String long_log = "file:src/p4_group_8_repo/logs.png";
+	    //LOG
+		//top
 		String short_log = "/graphic_animation/log3.png";
 		String long_log = "/graphic_animation/logs.png";
 		background.add(new Log(short_log, 150, 0, 166, 0.75));	
 		background.add(new Log(short_log, 150, 220, 166, 0.75));	
 		background.add(new Log(short_log, 150, 440, 166, 0.75));	
-		//mid log
-		//negative for speed means opposite direction
+		//mid
 		background.add(new Log(long_log, 300, 0, 276, -2));		
 		background.add(new Log(long_log, 300, 400, 276, -2));	
-		//bottom log
+		//bottom
 		background.add(new Log(short_log, 150, 50, 329, 0.75));	
 		background.add(new Log(short_log, 150, 270, 329, 0.75));	
 		background.add(new Log(short_log, 150, 490, 329, 0.75));	
 		
-		//bottom turtles
+		//TURTLE
+		//top
+		background.add(new WetTurtle(600, 217, -1, 130, 130));
+		background.add(new WetTurtle(400, 217, -1, 130, 130));
+		background.add(new WetTurtle(200, 217, -1, 130, 130));	
+		//bottom
 		background.add(new Turtle(500, 376, -1, 130, 130));
 		background.add(new Turtle(300, 376, -1, 130, 130));
 		background.add(new WetTurtle(700, 376, -1, 130, 130));
 		
-		//top turtles
-		background.add(new WetTurtle(600, 217, -1, 130, 130));
-		background.add(new WetTurtle(400, 217, -1, 130, 130));
-		background.add(new WetTurtle(200, 217, -1, 130, 130));	
 		
-		//End goals
+		//END goals
 		background.add(new End(11,95));
 		background.add(new End(139,95));
-		background.add(new End(267, 95));	//removed adition operator
+		background.add(new End(267, 95));	//removed addition operator
 		background.add(new End(394, 95));
 		background.add(new End(523, 95));
 		
-		//vehicle
-		//CHANGE name of obstacle to vehicle
-		//bottom truck
-		//String truck_short_right = "file:src/p4_group_8_repo/truck1"+"Right.png";
-		//String truck_long_right = "file:src/p4_group_8_repo/truck2"+"Right.png";
+		//OBSTACLE
+		//truck
 		String truck_short_right = "/graphic_animation/truck1"+"Right.png";
 		String truck_long_right = "/graphic_animation/truck2"+"Right.png";
 		int short_truck_size = 120;
 		int long_truck_size = 200;
+		//top
+		background.add(new Obstacle(truck_long_right, 0, 540, 1, long_truck_size, long_truck_size));
+		background.add(new Obstacle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
+		//bottom
 		background.add(new Obstacle(truck_short_right, 0, 649, 1, short_truck_size, short_truck_size));
 		background.add(new Obstacle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));
 		background.add(new Obstacle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
-		//top_truck
-		background.add(new Obstacle(truck_long_right, 0, 540, 1, long_truck_size, long_truck_size));
-		background.add(new Obstacle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
 		
-		//String car_left = "file:src/p4_group_8_repo/car1Left.png";
-		//String car_left = "/graphic_image/car1Left.png";				//error DK why
+		//CAR
 		String car_left = "/graphic_animation/car1"+"Left.png";
 		int car_size = 50;
-		//bottom_car
+		//top
+		background.add(new Obstacle(car_left, 500, 490, -5, car_size, car_size));
+		//mid
 		background.add(new Obstacle(car_left, 100, 597, -1.1, car_size, car_size));
 		background.add(new Obstacle(car_left, 250, 597, -1.1, car_size, car_size));
 		background.add(new Obstacle(car_left, 400, 597, -1.1, car_size, car_size));
 		background.add(new Obstacle(car_left, 550, 597, -1.1, car_size, car_size));
-		//top_car
-		background.add(new Obstacle(car_left, 500, 490, -5, car_size, car_size));
-		
-		//*********************
-		//new_car
+		//bottom (new)
 		background.add(new Obstacle(car_left, 175, 694, -0.60, car_size, car_size));
 		background.add(new Obstacle(car_left, 475, 694, -0.60, car_size, car_size));
 		
@@ -198,9 +192,8 @@ public class Main extends Application {
     		System.out.println("k = "+ display);
     		System.out.println("d = "+ temp);
     		System.out.println();
-    		  // create new Digit & overlap initial score board
-    		  //background.add(new Digit(k, 30, x_coordinate, 25));
-    		  background.add(new Digit(display, size_digit, x_coordinate, 30));
+
+    		  background.add(new Digit(display, size_digit, x_coordinate, 30));		//overlap initial digit
     		  shift+=30;
     		}
     }

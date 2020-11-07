@@ -58,17 +58,6 @@ public class Animal extends Actor {
 		
 		setX(x_start);
 		setY(y_start + movement);
-		/*
-		W_direction = new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true);
-		A_direction = new Image("file:src/p4_group_8_repo/froggerLeft.png", image_Size, image_Size, true, true);
-		S_direction = new Image("file:src/p4_group_8_repo/froggerDown.png", image_Size, image_Size, true, true);
-		D_direction = new Image("file:src/p4_group_8_repo/froggerRight.png", image_Size, image_Size, true, true);
-		
-		W_move = new Image("file:src/p4_group_8_repo/froggerUpJump.png", image_Size, image_Size, true, true);
-		A_move = new Image("file:src/p4_group_8_repo/froggerLeftJump.png", image_Size, image_Size, true, true);
-		S_move = new Image("file:src/p4_group_8_repo/froggerDownJump.png", image_Size, image_Size, true, true);
-		D_move = new Image("file:src/p4_group_8_repo/froggerRightJump.png", image_Size, image_Size, true, true);
-		*/
 		W_direction = new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true);
 		A_direction = new Image("/graphic_animation/froggerLeft.png", image_Size, image_Size, true, true);
 		S_direction = new Image("/graphic_animation/froggerDown.png", image_Size, image_Size, true, true);
