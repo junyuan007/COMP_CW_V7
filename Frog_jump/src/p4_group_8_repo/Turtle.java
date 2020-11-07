@@ -54,9 +54,12 @@ public class Turtle extends Actor{
 	 * 
 	 */
 	public Turtle(int x_position, int y_position, int speed_movement, int width, int height) {
-		turtle_1 = new Image("file:src/p4_group_8_repo/TurtleAnimation1.png", width, height, true, true);
-		turtle_2 = new Image("file:src/p4_group_8_repo/TurtleAnimation2.png", width, height, true, true);
-		turtle_3 = new Image("file:src/p4_group_8_repo/TurtleAnimation3.png", width, height, true, true);
+		//turtle_1 = new Image("file:src/p4_group_8_repo/TurtleAnimation1.png", width, height, true, true);
+		//turtle_2 = new Image("file:src/p4_group_8_repo/TurtleAnimation2.png", width, height, true, true);
+		//turtle_3 = new Image("file:src/p4_group_8_repo/TurtleAnimation3.png", width, height, true, true);
+		turtle_1 = new Image("/graphic_animation/TurtleAnimation1.png", width, height, true, true);
+		turtle_2 = new Image("/graphic_animation/TurtleAnimation2.png", width, height, true, true);
+		turtle_3 = new Image("/graphic_animation/TurtleAnimation3.png", width, height, true, true);
 		setX(x_position);
 		setY(y_position);
 		speed = speed_movement;

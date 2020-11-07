@@ -27,7 +27,7 @@ public class Digit extends Actor{
 	 * @param y_position is the Y-coordinate of the score board
 	 */
 	public Digit(int current_score, int size, int x_position, int y_position) {
-		image_1 = new Image("file:src/p4_group_8_repo/"+ current_score +".png", size, size, true, true);
+		image_1 = new Image("/graphic_animation/"+ current_score +".png", size, size, true, true);
 		setImage(image_1);
 		setX(x_position);
 		setY(y_position);

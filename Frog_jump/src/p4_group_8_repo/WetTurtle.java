@@ -54,10 +54,14 @@ public class WetTurtle extends Actor{
 	 * @param height of WetTurtle
 	 */
 	public WetTurtle(int x_position, int y_position, int speed_movement, int width, int height) {
-		turtle_1 = new Image("file:src/p4_group_8_repo/TurtleAnimation1.png", width, height, true, true);
-		turtle_2 = new Image("file:src/p4_group_8_repo/TurtleAnimation2Wet.png", width, height, true, true);
-		turtle_3 = new Image("file:src/p4_group_8_repo/TurtleAnimation3Wet.png", width, height, true, true);
-		turtle_4 = new Image("file:src/p4_group_8_repo/TurtleAnimation4Wet.png", width, height, true, true);
+		//turtle_1 = new Image("file:src/p4_group_8_repo/TurtleAnimation1.png", width, height, true, true);
+		//turtle_2 = new Image("file:src/p4_group_8_repo/TurtleAnimation2Wet.png", width, height, true, true);
+		//turtle_3 = new Image("file:src/p4_group_8_repo/TurtleAnimation3Wet.png", width, height, true, true);
+		//turtle_4 = new Image("file:src/p4_group_8_repo/TurtleAnimation4Wet.png", width, height, true, true);
+		turtle_1 = new Image("/graphic_animation/TurtleAnimation1.png", width, height, true, true);
+		turtle_2 = new Image("/graphic_animation/TurtleAnimation2Wet.png", width, height, true, true);
+		turtle_3 = new Image("/graphic_animation/TurtleAnimation3Wet.png", width, height, true, true);
+		turtle_4 = new Image("/graphic_animation/TurtleAnimation4Wet.png", width, height, true, true);
 		setX(x_position);
 		setY(y_position);
 		speed = speed_movement;

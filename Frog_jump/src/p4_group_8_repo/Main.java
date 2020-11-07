@@ -28,10 +28,8 @@ public class Main extends Application {
 		launch(args);
 	}
 	
-	//testing
-	//IllegalStateException 
 	/**
-	 * start method to create the animations and initiate the JavaFx runtime
+	 * Start method is to initiate the JavaFx runtime
 	 * @param primaryStage is a type of stage is where all the visual parts of the JavaFX application are displayed
 	 * @throws IllegalStateException if cause is nonexistent or unknown
 	 */
@@ -39,107 +37,32 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IllegalStateException {
 		
 	    background = new MyStage();
-	    //Create frame of game
-	    Scene scene  = new Scene(background, 600, 800);
+	    Scene scene_game  = new Scene(background, 600, 800);
 	    create_animations();
-	    /*
-	    //Background
-	    //Shifted image link to BackgroundImage constructor
-	    BackgroundImage frogger_wallpaper = new BackgroundImage();
-	    background.add(frogger_wallpaper);
-	    //BackgroundImage frogger_wallpaper = new BackgroundImage("file:src/p4_group_8_repo/iKogsKW.png");
-		//BackgroundImage frogger_wallpaper = new BackgroundImage("file:src/p4_group_8_repo/Screen Shot 2017-05-29 at 10.02.14 PM.png");	//image source
-		
-		//top log
-		String short_log = "file:src/p4_group_8_repo/log3.png";
-		String long_log = "file:src/p4_group_8_repo/logs.png";
-		background.add(new Log(short_log, 150, 0, 166, 0.75));	
-		background.add(new Log(short_log, 150, 220, 166, 0.75));	
-		background.add(new Log(short_log, 150, 440, 166, 0.75));	
-		//mid log
-		//negative for speed means opposite direction
-		background.add(new Log(long_log, 300, 0, 276, -2));		
-		background.add(new Log(long_log, 300, 400, 276, -2));	
-		//bottom log
-		background.add(new Log(short_log, 150, 50, 329, 0.75));	
-		background.add(new Log(short_log, 150, 270, 329, 0.75));	
-		background.add(new Log(short_log, 150, 490, 329, 0.75));	
-		
-		//bottom turtles
-		background.add(new Turtle(500, 376, -1, 130, 130));
-		background.add(new Turtle(300, 376, -1, 130, 130));
-		background.add(new WetTurtle(700, 376, -1, 130, 130));
-		
-		//top turtles
-		background.add(new WetTurtle(600, 217, -1, 130, 130));
-		background.add(new WetTurtle(400, 217, -1, 130, 130));
-		background.add(new WetTurtle(200, 217, -1, 130, 130));	
-		
-		
-		//End goals
-		background.add(new End(11,95));
-		background.add(new End(139,95));
-		background.add(new End(267, 95));	//removed adition operator
-		background.add(new End(394, 95));
-		background.add(new End(523, 95));
-		
-		//vehicle
-		//CHANGE name of obstacle to vehicle
-		//bottom truck
-		String truck_short_right = "file:src/p4_group_8_repo/truck1"+"Right.png";
-		String truck_long_right = "file:src/p4_group_8_repo/truck2"+"Right.png";
-		int short_truck_size = 120;
-		int long_truck_size = 200;
-		background.add(new Obstacle(truck_short_right, 0, 649, 1, short_truck_size, short_truck_size));
-		background.add(new Obstacle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));
-		background.add(new Obstacle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
-		//top_truck
-		background.add(new Obstacle(truck_long_right, 0, 540, 1, long_truck_size, long_truck_size));
-		background.add(new Obstacle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
-		
-		String car_left = "file:src/p4_group_8_repo/car1Left.png";
-		int car_size = 50;
-		//bottom_car
-		background.add(new Obstacle(car_left, 100, 597, -1.1, car_size, car_size));
-		background.add(new Obstacle(car_left, 250, 597, -1.1, car_size, car_size));
-		background.add(new Obstacle(car_left, 400, 597, -1.1, car_size, car_size));
-		background.add(new Obstacle(car_left, 550, 597, -1.1, car_size, car_size));
-		//top_car
-		background.add(new Obstacle(car_left, 500, 490, -5, car_size, car_size));
-		
-		//*********************
-		//new_car
-		background.add(new Obstacle(car_left, 175, 694, -0.60, car_size, car_size));
-		background.add(new Obstacle(car_left, 475, 694, -0.60, car_size, car_size));
-		
-		//main_frog
-	    String main_frog = "file:src/p4_group_8_repo/froggerUp.png";
-		animal = new Animal(main_frog);
-		background.add(animal);
-		
-		//background.add(new Digit(0, 30, 360, 25));
-		background.add(new Digit(0, size_digit, 565, 30));		//initial score_board
-		*/
 		
 		background.start();
 		primaryStage.setTitle("Frogger by Jun Yuan");
-		primaryStage.setScene(scene);
+		primaryStage.setScene(scene_game);
 		primaryStage.show();
 		start(); 
+		
 	} 													// END start()
 	
+	/**
+	 * Create all animations(object) and background
+	 */
 	public void create_animations() {
 		
 		//Background
 	    //Shifted image link to BackgroundImage constructor
 	    BackgroundImage frogger_wallpaper = new BackgroundImage();
 	    background.add(frogger_wallpaper);
-	    //BackgroundImage frogger_wallpaper = new BackgroundImage("file:src/p4_group_8_repo/iKogsKW.png");
-		//BackgroundImage frogger_wallpaper = new BackgroundImage("file:src/p4_group_8_repo/Screen Shot 2017-05-29 at 10.02.14 PM.png");	//image source
-		
+	    
 		//top log
-		String short_log = "file:src/p4_group_8_repo/log3.png";
-		String long_log = "file:src/p4_group_8_repo/logs.png";
+		//String short_log = "file:src/p4_group_8_repo/log3.png";
+		//String long_log = "file:src/p4_group_8_repo/logs.png";
+		String short_log = "/graphic_animation/log3.png";
+		String long_log = "/graphic_animation/logs.png";
 		background.add(new Log(short_log, 150, 0, 166, 0.75));	
 		background.add(new Log(short_log, 150, 220, 166, 0.75));	
 		background.add(new Log(short_log, 150, 440, 166, 0.75));	
@@ -172,8 +95,10 @@ public class Main extends Application {
 		//vehicle
 		//CHANGE name of obstacle to vehicle
 		//bottom truck
-		String truck_short_right = "file:src/p4_group_8_repo/truck1"+"Right.png";
-		String truck_long_right = "file:src/p4_group_8_repo/truck2"+"Right.png";
+		//String truck_short_right = "file:src/p4_group_8_repo/truck1"+"Right.png";
+		//String truck_long_right = "file:src/p4_group_8_repo/truck2"+"Right.png";
+		String truck_short_right = "/graphic_animation/truck1"+"Right.png";
+		String truck_long_right = "/graphic_animation/truck2"+"Right.png";
 		int short_truck_size = 120;
 		int long_truck_size = 200;
 		background.add(new Obstacle(truck_short_right, 0, 649, 1, short_truck_size, short_truck_size));
@@ -183,7 +108,9 @@ public class Main extends Application {
 		background.add(new Obstacle(truck_long_right, 0, 540, 1, long_truck_size, long_truck_size));
 		background.add(new Obstacle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
 		
-		String car_left = "file:src/p4_group_8_repo/car1Left.png";
+		//String car_left = "file:src/p4_group_8_repo/car1Left.png";
+		//String car_left = "/graphic_image/car1Left.png";				//error DK why
+		String car_left = "/graphic_animation/car1"+"Left.png";
 		int car_size = 50;
 		//bottom_car
 		background.add(new Obstacle(car_left, 100, 597, -1.1, car_size, car_size));
@@ -199,7 +126,8 @@ public class Main extends Application {
 		background.add(new Obstacle(car_left, 475, 694, -0.60, car_size, car_size));
 		
 		//main_frog
-	    String main_frog = "file:src/p4_group_8_repo/froggerUp.png";
+	    //String main_frog = "file:src/p4_group_8_repo/froggerUp.png";
+	    String main_frog = "/graphic_animation/froggerUp.png";
 		animal = new Animal(main_frog);
 		background.add(animal);
 		
@@ -221,7 +149,7 @@ public class Main extends Application {
             	}
             	
             	if (animal.getStop()) {											//Victory 
-            		System.out.print("STOPP:");
+            		System.out.print("*** STOP ! ***");
             		background.stopMusic();
             		stop();
             		background.stop();

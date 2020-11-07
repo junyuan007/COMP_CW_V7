@@ -58,6 +58,7 @@ public class Animal extends Actor {
 		
 		setX(x_start);
 		setY(y_start + movement);
+		/*
 		W_direction = new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true);
 		A_direction = new Image("file:src/p4_group_8_repo/froggerLeft.png", image_Size, image_Size, true, true);
 		S_direction = new Image("file:src/p4_group_8_repo/froggerDown.png", image_Size, image_Size, true, true);
@@ -67,6 +68,16 @@ public class Animal extends Actor {
 		A_move = new Image("file:src/p4_group_8_repo/froggerLeftJump.png", image_Size, image_Size, true, true);
 		S_move = new Image("file:src/p4_group_8_repo/froggerDownJump.png", image_Size, image_Size, true, true);
 		D_move = new Image("file:src/p4_group_8_repo/froggerRightJump.png", image_Size, image_Size, true, true);
+		*/
+		W_direction = new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true);
+		A_direction = new Image("/graphic_animation/froggerLeft.png", image_Size, image_Size, true, true);
+		S_direction = new Image("/graphic_animation/froggerDown.png", image_Size, image_Size, true, true);
+		D_direction = new Image("/graphic_animation/froggerRight.png", image_Size, image_Size, true, true);
+		
+		W_move = new Image("/graphic_animation/froggerUpJump.png", image_Size, image_Size, true, true);
+		A_move = new Image("/graphic_animation/froggerLeftJump.png", image_Size, image_Size, true, true);
+		S_move = new Image("/graphic_animation/froggerDownJump.png", image_Size, image_Size, true, true);
+		D_move = new Image("/graphic_animation/froggerRightJump.png", image_Size, image_Size, true, true);
 		
 		//event: press WASD
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -181,20 +192,20 @@ public class Animal extends Actor {
 				carD++;
 			}
 			if (carD == 1) {
-				setImage(new Image("file:src/p4_group_8_repo/cardeath1.png", image_Size, image_Size, true, true));
+				setImage(new Image("/graphic_animation/cardeath1.png", image_Size, image_Size, true, true));
 			}
 			if (carD == 2) {
-				setImage(new Image("file:src/p4_group_8_repo/cardeath2.png", image_Size, image_Size, true, true));
+				setImage(new Image("/graphic_animation/cardeath2.png", image_Size, image_Size, true, true));
 			}
 			if (carD == 3) {
-				setImage(new Image("file:src/p4_group_8_repo/cardeath3.png", image_Size, image_Size, true, true));
+				setImage(new Image("/graphic_animation/cardeath3.png", image_Size, image_Size, true, true));
 			}
 			if (carD == 4) {
 				setX(x_start);
 				setY(y_start + movement);
 				car_die = false;
 				carD = 0;
-				setImage(new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true));
+				setImage(new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true));
 				not_moving = false;
 				if (player_points > 50) {
 					player_points -= 50;			// if points more than 50 and car accident then minus points
@@ -209,23 +220,23 @@ public class Animal extends Actor {
 				carD++;
 			}
 			if (carD == 1) {
-				setImage(new Image("file:src/p4_group_8_repo/waterdeath1.png", image_Size,image_Size , true, true));
+				setImage(new Image("/graphic_animation/waterdeath1.png", image_Size,image_Size , true, true));
 			}
 			if (carD == 2) {
-				setImage(new Image("file:src/p4_group_8_repo/waterdeath2.png", image_Size,image_Size , true, true));
+				setImage(new Image("/graphic_animation/waterdeath2.png", image_Size,image_Size , true, true));
 			}
 			if (carD == 3) {
-				setImage(new Image("file:src/p4_group_8_repo/waterdeath3.png", image_Size,image_Size , true, true));
+				setImage(new Image("/graphic_animation/waterdeath3.png", image_Size,image_Size , true, true));
 			}
 			if (carD == 4) {
-				setImage(new Image("file:src/p4_group_8_repo/waterdeath4.png", image_Size,image_Size , true, true));
+				setImage(new Image("/graphic_animation/waterdeath4.png", image_Size,image_Size , true, true));
 			}
 			if (carD == 5) {
 				setX(x_start);
 				setY(y_start + movement);
 				water_die = false;
 				carD = 0;
-				setImage(new Image("file:src/p4_group_8_repo/froggerUp.png", image_Size, image_Size, true, true));
+				setImage(new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true));
 				not_moving = false;
 				if (player_points > 50) {
 					player_points -= 50;

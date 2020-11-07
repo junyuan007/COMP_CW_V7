@@ -26,14 +26,14 @@ public class End extends Actor{
 	public End(int x_position, int y_position) {
 		setX(x_position);
 		setY(y_position);
-		setImage(new Image("file:src/p4_group_8_repo/End.png", 60, 60, true, true));
+		setImage(new Image("/graphic_animation/End.png", 60, 60, true, true));
 	}
 	
 	/**
 	 * Method where main_frog reach END goal
 	 */
 	public void setEnd() {
-		setImage(new Image("file:src/p4_group_8_repo/FrogEnd.png", 68, 63, true, true));
+		setImage(new Image("/graphic_animation/FrogEnd.png", 68, 63, true, true));
 		activated = true;
 		
 		// *********** IDEA

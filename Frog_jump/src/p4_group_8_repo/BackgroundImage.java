@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
  */
 public class BackgroundImage extends Actor{
 	
+	String image_link = "/graphic_animation/iKogsKW.png";
+	
 
 	/**
 	 * Empty class because BackgroundImage is not moving
@@ -22,7 +24,7 @@ public class BackgroundImage extends Actor{
 	 * Construct an instance of BackgroundImage
 	 */
 	public BackgroundImage() {
-		setImage(new Image("file:src/p4_group_8_repo/iKogsKW.png", 600, 910, true, true));
+		setImage(new Image(image_link, 600, 910, true, true));
 		
 	}
 
