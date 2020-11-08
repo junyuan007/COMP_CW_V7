@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
  */
 public class BackgroundImage extends Actor{
 	
-	String image_link = "/graphic_animation/iKogsKW.png";
+	String image_link = "/graphic_animation/game_back_image.png";
 	
 
 	/**

@@ -5,27 +5,58 @@ import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javafx.event.EventHandler;
+import javafx.scene.control.Label;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+
 /**
  * Class of main (launch)
  * @author CHIN JUN YUAN
  */
-public class Main extends Application {
+public class Main extends Application{
+//public class Main extends Application implements EventHandler<ActionEvent>{
 	AnimationTimer timer;
 	MyStage background;
 	Animal animal; 							//main_frog
 	int size_digit = 30;
+	
+	Scene scene_start, scene_game;
+	MyStage xxx;
+	Button button_start;
 
 	public static void main(String[] args) {
+		try {
 		launch(args);
+		System.out.println("Launch ");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			System.exit(0);
+		}
 	}
 	
 	/**
@@ -34,25 +65,47 @@ public class Main extends Application {
 	 * @throws IllegalStateException if cause is nonexistent or unknown
 	 */
 	@Override
-	public void start(Stage primaryStage) throws IllegalStateException {
-		
-	    background = new MyStage();
-	    Scene scene_game  = new Scene(background, 600, 800);
-	    create_animations();
-		
-		background.start();
+	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
-		primaryStage.setScene(scene_game);
-		primaryStage.show();
-		start(); 
 		
-	} 													// END start()
+		background = new MyStage();
+		xxx = new MyStage();
+		
+		Image image = new Image("/graphic_animation/version_1.png");
+		ImageView start_image = new ImageView(image);
+		
+		//Start Scene
+		//Label label1= new Label("This is the Start scene");
+	    //xxx.add(new Menu_page());
+	    button_start = new Button("Click to START...");
+	    button_start.setOnAction(e -> primaryStage.setScene(scene_game)); 
+	    button_start.setTranslateY(100);
+	    button_start.setStyle("-fx-font-size: 15pt;");
+	    
+	    StackPane stackPane = new StackPane(); 
+	    ObservableList list = stackPane.getChildren();
+	    list.addAll(start_image, button_start);
+	    scene_start  = new Scene(stackPane, 600, 800);
+	    
+	    //Game Scene
+	    scene_game  = new Scene(background, 600, 800);  
+	    create_animations();
+	    background.start();
+	    start(); 
+	    
+		primaryStage.setScene(scene_start);
+		primaryStage.show();
+												//create timer
+		
+		System.out.println("Game Start ");
+}
 	
 	/**
 	 * Create all animations(object) and background
 	 */
 	public void create_animations() {
 		
+		//if(State == STATE.GAME) {
 		//Background
 	    //Shifted image link to BackgroundImage constructor
 	    BackgroundImage frogger_wallpaper = new BackgroundImage();
@@ -83,14 +136,13 @@ public class Main extends Application {
 		background.add(new Turtle(300, 376, -1, 130, 130));
 		background.add(new WetTurtle(700, 376, -1, 130, 130));
 		
-		
 		//END goals
 		background.add(new End(11,95));
 		background.add(new End(139,95));
 		background.add(new End(267, 95));	//removed addition operator
 		background.add(new End(394, 95));
 		background.add(new End(523, 95));
-		
+		/*
 		//OBSTACLE
 		//truck
 		String truck_short_right = "/graphic_animation/truck1"+"Right.png";
@@ -118,7 +170,7 @@ public class Main extends Application {
 		//bottom (new)
 		background.add(new Obstacle(car_left, 175, 694, -0.60, car_size, car_size));
 		background.add(new Obstacle(car_left, 475, 694, -0.60, car_size, car_size));
-		
+		*/
 		//main_frog
 	    //String main_frog = "file:src/p4_group_8_repo/froggerUp.png";
 	    String main_frog = "/graphic_animation/froggerUp.png";
@@ -127,17 +179,19 @@ public class Main extends Application {
 		
 		//background.add(new Digit(0, 30, 360, 25));
 		background.add(new Digit(0, size_digit, 565, 30));		//initial score_board
-		
-	}
+
+		System.out.println("Animations created");
+}
+	
 	
 	/**
 	 * Method to create a timer
 	 */
 	public void createTimer() {
         timer = new AnimationTimer() {
-        	
             @Override
             public void handle(long now) {
+            	//System.out.println("xxx");
             	if (animal.changeScore()) {										//continue
             		set_number(animal.getPoints());
             	}
@@ -188,10 +242,10 @@ public class Main extends Application {
     	int x_coordinate = 565 - shift;
     	
     		//test print in console
-    		System.out.println("n = "+ number);
-    		System.out.println("k = "+ display);
-    		System.out.println("d = "+ temp);
-    		System.out.println();
+    		//System.out.println("n = "+ number);
+    		//System.out.println("k = "+ display);
+    		//System.out.println("d = "+ temp);
+    		//System.out.println();
 
     		  background.add(new Digit(display, size_digit, x_coordinate, 30));		//overlap initial digit
     		  shift+=30;
