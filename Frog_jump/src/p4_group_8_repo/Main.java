@@ -42,9 +42,9 @@ public class Main extends Application{
 	Animal animal; 							//main_frog
 	int size_digit = 30;
 	
-	Scene scene_start, scene_game;
-	MyStage xxx;
-	Button button_start;
+	Scene scene_start;
+	Scene scene_game;
+	Scene scene_info;
 
 	public static void main(String[] args) {
 		try {
@@ -68,37 +68,72 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
-		background = new MyStage();
-		xxx = new MyStage();
-		
-		Image image = new Image("/graphic_animation/version_1.png");
-		ImageView start_image = new ImageView(image);
-		
-		//Start Scene
-		//Label label1= new Label("This is the Start scene");
-	    //xxx.add(new Menu_page());
-	    button_start = new Button("Click to START...");
-	    button_start.setOnAction(e -> primaryStage.setScene(scene_game)); 
-	    button_start.setTranslateY(100);
-	    button_start.setStyle("-fx-font-size: 15pt;");
-	    
-	    StackPane stackPane = new StackPane(); 
-	    ObservableList list = stackPane.getChildren();
-	    list.addAll(start_image, button_start);
-	    scene_start  = new Scene(stackPane, 600, 800);
-	    
-	    //Game Scene
+		//Game Scene
+	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_animations();
-	    background.start();
-	    start(); 
+	    background.start();		
+	    start(); 						//create timer
+		
+
+	    StackPane start_stage = new StackPane(); 
+	    StackPane info_stage = new StackPane();
+	    ObservableList start_list = start_stage.getChildren();
+	    ObservableList info_list = info_stage.getChildren();
+	    scene_info  = new Scene(info_stage, 600, 800);
+	    scene_start  = new Scene(start_stage, 600, 800);
+
 	    
+	    //start page object
+	    Menu_page page = new Menu_page();
+	    start_button button_start = new start_button();
+	    Button_function(primaryStage, scene_game, button_start.getButton(), "start");
+	    info_button button_info = new info_button();
+	    Button_function(primaryStage, scene_info, button_info.getButton(), "info");
+	    //info page object
+	    ReadFile qqq = new ReadFile();
+		qqq.read_file();
+	    Text abc = new Text(qqq.text_content());
+	    back_start back_1 = new back_start();
+	    Button_function(primaryStage, scene_start, back_1.getButton(), "back_start");
+	    
+	    start_list.addAll(page.menu_page(), button_start.getButton(), button_info.getButton());
+	    info_list.addAll(abc, back_1.getButton());
+	    
+
 		primaryStage.setScene(scene_start);
 		primaryStage.show();
-												//create timer
-		
 		System.out.println("Game Start ");
+		//background.stop();
+		//file();
+		
 }
+	
+	public void file() {
+		CreateFile test1 = new CreateFile();
+		test1.check_file();
+		//WriteFile test2 = new WriteFile();
+		//test2.write_file();
+		ReadFile test3 = new ReadFile();
+		test3.read_file();
+	}
+	
+	public void Button_function(Stage primaryStage, Scene scene, Button butt, String id) {
+		
+		if(id == "start") {
+			butt.setOnAction(e -> primaryStage.setScene(scene)); 
+			System.out.println("Start Button Activated");
+		}
+		else if(id == "info") {
+			butt.setOnAction(e -> primaryStage.setScene(scene)); 
+			System.out.println("Info Button Activated");
+		}
+		else if(id == "back_start") {
+			butt.setOnAction(e -> primaryStage.setScene(scene)); 
+			System.out.println("Back Start Button Activated");
+		}
+		 
+	}
 	
 	/**
 	 * Create all animations(object) and background
