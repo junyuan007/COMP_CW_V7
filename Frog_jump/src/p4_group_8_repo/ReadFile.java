@@ -7,19 +7,20 @@ import java.util.Scanner;
 public class ReadFile {
 	
 	String data;
+	String path;
 	
-	public ReadFile() {
-		
+	public ReadFile(String path) {
+		this.path = path;
 	}
 	
   public void read_file() {
     try {
-      File myObj = new File("../Frog_Jump/Src/Files/tutorial.txt");
+      File myObj = new File(path);
       Scanner myReader = new Scanner(myObj);
       while (myReader.hasNextLine()) {
         data = myReader.nextLine();
         //System.out.println(data);
-        //text_content(data);
+
       }
       myReader.close();
     } catch (FileNotFoundException e) {
@@ -30,5 +31,10 @@ public class ReadFile {
   
   public String text_content() {
 	  return data;
+  }
+  
+  public int number_content() {
+	  int number = Integer.parseInt(data);  	//convert string to int
+	  return number;
   }
 }

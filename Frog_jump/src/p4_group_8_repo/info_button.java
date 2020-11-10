@@ -1,6 +1,7 @@
 package p4_group_8_repo;
 
 
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,9 +12,12 @@ public class info_button extends Actor{
 	String image_link = "/graphic_animation/infoButton.png";
 	Button button;
 	
-	public info_button() {
+	public info_button(Stage primaryStage, Scene scene) {
 		 button = new Button();
 		 design_button();
+		 
+		 button.setOnAction(e -> primaryStage.setScene(scene)); 
+		 //System.out.println("Info Button Activated");
 	}
 	
 	public void design_button() {

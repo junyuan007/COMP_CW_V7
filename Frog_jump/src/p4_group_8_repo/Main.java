@@ -29,7 +29,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+
 
 /**
  * Class of main (launch)
@@ -45,6 +45,8 @@ public class Main extends Application{
 	Scene scene_start;
 	Scene scene_game;
 	Scene scene_info;
+	TopScore top_score;
+	UpdateHigh popo;
 
 	public static void main(String[] args) {
 		try {
@@ -68,13 +70,19 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
+		top_score = new TopScore();
+		top_score.setScore(0);
+		
 		//Game Scene
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
-	    create_animations();
+	    create_frogger();										// main_frog created
+	    
+	    Animations animation = new Animations(background, top_score.getScore());		// all animations created
+	    popo = new UpdateHigh(top_score.getScore(), top_score, background);
+	    create_frogger();
 	    background.start();		
-	    start(); 						//create timer
-		
+	    start(); 												//create timer
 
 	    StackPane start_stage = new StackPane(); 
 	    StackPane info_stage = new StackPane();
@@ -83,142 +91,38 @@ public class Main extends Application{
 	    scene_info  = new Scene(info_stage, 600, 800);
 	    scene_start  = new Scene(start_stage, 600, 800);
 
-	    
 	    //start page object
 	    Menu_page page = new Menu_page();
-	    start_button button_start = new start_button();
-	    Button_function(primaryStage, scene_game, button_start.getButton(), "start");
-	    info_button button_info = new info_button();
-	    Button_function(primaryStage, scene_info, button_info.getButton(), "info");
+	    start_button button_start = new start_button(primaryStage, scene_game);
+	    info_button button_info = new info_button(primaryStage, scene_info);
+
 	    //info page object
-	    ReadFile qqq = new ReadFile();
-		qqq.read_file();
-	    Text abc = new Text(qqq.text_content());
-	    back_start back_1 = new back_start();
-	    Button_function(primaryStage, scene_start, back_1.getButton(), "back_start");
+	    Text abc = new Text("CHIN JUN YUAN IS COOL");
+	    back_start back_1 = new back_start(primaryStage, scene_start);
 	    
 	    start_list.addAll(page.menu_page(), button_start.getButton(), button_info.getButton());
 	    info_list.addAll(abc, back_1.getButton());
-	    
 
 		primaryStage.setScene(scene_start);
 		primaryStage.show();
-		System.out.println("Game Start ");
+		System.out.println("Game Start");
 		//background.stop();
 		//file();
-		
 }
 	
-	public void file() {
-		CreateFile test1 = new CreateFile();
-		test1.check_file();
-		//WriteFile test2 = new WriteFile();
-		//test2.write_file();
-		ReadFile test3 = new ReadFile();
-		test3.read_file();
-	}
-	
-	public void Button_function(Stage primaryStage, Scene scene, Button butt, String id) {
-		
-		if(id == "start") {
-			butt.setOnAction(e -> primaryStage.setScene(scene)); 
-			System.out.println("Start Button Activated");
-		}
-		else if(id == "info") {
-			butt.setOnAction(e -> primaryStage.setScene(scene)); 
-			System.out.println("Info Button Activated");
-		}
-		else if(id == "back_start") {
-			butt.setOnAction(e -> primaryStage.setScene(scene)); 
-			System.out.println("Back Start Button Activated");
-		}
-		 
-	}
 	
 	/**
-	 * Create all animations(object) and background
+	 * Create Main Frog
 	 */
-	public void create_animations() {
+	public void create_frogger() {
 		
-		//if(State == STATE.GAME) {
-		//Background
-	    //Shifted image link to BackgroundImage constructor
-	    BackgroundImage frogger_wallpaper = new BackgroundImage();
-	    background.add(frogger_wallpaper);
-	    
-	    //LOG
-		//top
-		String short_log = "/graphic_animation/log3.png";
-		String long_log = "/graphic_animation/logs.png";
-		background.add(new Log(short_log, 150, 0, 166, 0.75));	
-		background.add(new Log(short_log, 150, 220, 166, 0.75));	
-		background.add(new Log(short_log, 150, 440, 166, 0.75));	
-		//mid
-		background.add(new Log(long_log, 300, 0, 276, -2));		
-		background.add(new Log(long_log, 300, 400, 276, -2));	
-		//bottom
-		background.add(new Log(short_log, 150, 50, 329, 0.75));	
-		background.add(new Log(short_log, 150, 270, 329, 0.75));	
-		background.add(new Log(short_log, 150, 490, 329, 0.75));	
-		
-		//TURTLE
-		//top
-		background.add(new WetTurtle(600, 217, -1, 130, 130));
-		background.add(new WetTurtle(400, 217, -1, 130, 130));
-		background.add(new WetTurtle(200, 217, -1, 130, 130));	
-		//bottom
-		background.add(new Turtle(500, 376, -1, 130, 130));
-		background.add(new Turtle(300, 376, -1, 130, 130));
-		background.add(new WetTurtle(700, 376, -1, 130, 130));
-		
-		//END goals
-		background.add(new End(11,95));
-		background.add(new End(139,95));
-		background.add(new End(267, 95));	//removed addition operator
-		background.add(new End(394, 95));
-		background.add(new End(523, 95));
-		/*
-		//OBSTACLE
-		//truck
-		String truck_short_right = "/graphic_animation/truck1"+"Right.png";
-		String truck_long_right = "/graphic_animation/truck2"+"Right.png";
-		int short_truck_size = 120;
-		int long_truck_size = 200;
-		//top
-		background.add(new Obstacle(truck_long_right, 0, 540, 1, long_truck_size, long_truck_size));
-		background.add(new Obstacle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
-		//bottom
-		background.add(new Obstacle(truck_short_right, 0, 649, 1, short_truck_size, short_truck_size));
-		background.add(new Obstacle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));
-		background.add(new Obstacle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
-		
-		//CAR
-		String car_left = "/graphic_animation/car1"+"Left.png";
-		int car_size = 50;
-		//top
-		background.add(new Obstacle(car_left, 500, 490, -5, car_size, car_size));
-		//mid
-		background.add(new Obstacle(car_left, 100, 597, -1.1, car_size, car_size));
-		background.add(new Obstacle(car_left, 250, 597, -1.1, car_size, car_size));
-		background.add(new Obstacle(car_left, 400, 597, -1.1, car_size, car_size));
-		background.add(new Obstacle(car_left, 550, 597, -1.1, car_size, car_size));
-		//bottom (new)
-		background.add(new Obstacle(car_left, 175, 694, -0.60, car_size, car_size));
-		background.add(new Obstacle(car_left, 475, 694, -0.60, car_size, car_size));
-		*/
-		//main_frog
-	    //String main_frog = "file:src/p4_group_8_repo/froggerUp.png";
 	    String main_frog = "/graphic_animation/froggerUp.png";
 		animal = new Animal(main_frog);
 		background.add(animal);
-		
-		//background.add(new Digit(0, 30, 360, 25));
-		background.add(new Digit(0, size_digit, 565, 30));		//initial score_board
 
-		System.out.println("Animations created");
 }
 	
-	
+
 	/**
 	 * Method to create a timer
 	 */
@@ -226,12 +130,16 @@ public class Main extends Application{
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-            	//System.out.println("xxx");
             	if (animal.changeScore()) {										//continue
             		set_number(animal.getPoints());
+            		if(animal.getPoints() > top_score.getScore()) {
+            			top_score.setScore(animal.getPoints());
+            			popo.update_highest(animal.getPoints());
+ 
+            		}
             	}
             	
-            	if (animal.getStop()) {											//Victory 
+            	if (animal.getStop()) {											//Complete
             		System.out.print("*** STOP ! ***");
             		background.stopMusic();
             		stop();
@@ -265,27 +173,41 @@ public class Main extends Application{
     
     /**
      * Method to update score board
-     * @param number
+     * @param current_points
      */
-    public void set_number(int number) {
+    public void set_number(int current_points) {
     	int shift = 0;
-    	while (number > 0) {
-    		  int temp = number / 10;
-    		  int display = number - (temp * 10);			// k is number setter
-    		  number = temp;
-    		  
-    	int x_coordinate = 565 - shift;
-    	
-    		//test print in console
-    		//System.out.println("n = "+ number);
-    		//System.out.println("k = "+ display);
-    		//System.out.println("d = "+ temp);
-    		//System.out.println();
 
-    		  background.add(new Digit(display, size_digit, x_coordinate, 30));		//overlap initial digit
-    		  shift+=30;
+    	while (current_points > 0) {
+    		  int temp = current_points / 10;
+    		  int display = current_points - (temp * 10);			// k is number setter
+    		  current_points = temp;
+    		  int x_coordinate = 565 - shift;
+    		  background.add(new Digit(display, size_digit, x_coordinate, 35));		//overlap initial digit
+    		  shift += 30;
     		}
     }
+    
+    
+   /*
+    public void update_high(int current_points) {
+    	int shift = 0;
+    	
+    	if(current_points > top_score.getScore()) {
+    		while (current_points > 0) {
+    			//top_score.setScore(current_points);
+    			int temp = current_points / 10;
+    			int display = current_points - (temp * 10);			
+      		  	current_points = temp;
+      		 int x_coordinate = 450 - shift;
+      		 background.add(new Digit(display, size_digit, x_coordinate, 35));
+      		 shift += 30;
+    		}
+
+    	}
+    }
+    */
+    
 }
 
 //////////////////////////////////////THE END/////////////////////////////////////////////////////////////

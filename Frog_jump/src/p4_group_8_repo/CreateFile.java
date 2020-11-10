@@ -6,13 +6,16 @@ import java.io.IOException;
 
 public class CreateFile {
 	
-	public CreateFile() {
-		
+	String path;
+	
+	public CreateFile(String path) {
+		this.path = path;
 	}
 	
 	public void check_file() {
 	    try {
-	      File myObj = new File("../Frog_Jump/Src/Files/test.txt");
+	      //File myObj = new File("../Frog_Jump/Src/Files/test.txt");
+	      File myObj = new File(path);
 	      if (myObj.createNewFile()) {
 	        System.out.println("File created: " + myObj.getName());
 	      } 

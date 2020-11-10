@@ -6,16 +6,27 @@ import java.io.IOException;
 
 public class WriteFile {
 	
-	  public WriteFile() {
-		  
+		String path;
+		String message;
+		
+	  public WriteFile(String path) {
+		  this.path = path;
 	  }
-	
+	  
+	  public void sending(int number) {
+		  this.message = String.valueOf(number);  //convert int to string
+	  }
+	  
+
 	  public void write_file(){
 	    try {
-	      FileWriter myWriter = new FileWriter("../Frog_Jump/Src/Files/test.txt");
-	      myWriter.write("Frogger Game by CHIN JUN YUAN");
+	      FileWriter myWriter = new FileWriter(path);
+	      //myWriter.write("Frogger Game by CHIN JUN YUAN");
+	      myWriter.write(message);
 	      myWriter.close();
 	      System.out.println("Successfully wrote to the file.");
+	      System.out.println(message);
+	      
 	    }
 	    catch (IOException e) {
 	      System.out.println("An error occurred in Write File");
