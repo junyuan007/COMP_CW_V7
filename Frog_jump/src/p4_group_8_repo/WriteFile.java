@@ -25,7 +25,7 @@ public class WriteFile {
 	      myWriter.write(message);
 	      myWriter.close();
 	      System.out.println("Successfully wrote to the file.");
-	      System.out.println(message);
+	      System.out.println("From WriteFile ------------ " + message);
 	      
 	    }
 	    catch (IOException e) {

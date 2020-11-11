@@ -8,6 +8,7 @@ public class ReadFile {
 	
 	String data;
 	String path;
+	String final_output;
 	
 	public ReadFile(String path) {
 		this.path = path;
@@ -18,9 +19,9 @@ public class ReadFile {
       File myObj = new File(path);
       Scanner myReader = new Scanner(myObj);
       while (myReader.hasNextLine()) {
+    	//System.out.println("Before "+data);
         data = myReader.nextLine();
-        //System.out.println(data);
-
+        //System.out.println("After "+data);
       }
       myReader.close();
     } catch (FileNotFoundException e) {

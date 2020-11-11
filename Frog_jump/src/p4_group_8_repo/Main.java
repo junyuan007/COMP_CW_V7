@@ -71,17 +71,26 @@ public class Main extends Application{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
 		top_score = new TopScore();
-		top_score.setScore(0);
+		//top_score.setScore(0);
 		
 		//Game Scene
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
+	    Animations animation = new Animations(background);		// all animations created
 	    
-	    Animations animation = new Animations(background, top_score.getScore());		// all animations created
 	    popo = new UpdateHigh(top_score.getScore(), top_score, background);
+	    
+	    //Back to Menu Page Button
+	    Resume_button resume_butt = new Resume_button(background);
+	    Pause_button pause_butt = new Pause_button(background);
+	    
+	    ObservableList game_list = background.getChildren();
+	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton());
+	    
 	    create_frogger();
-	    background.start();		
+	    background.start();	
+	    
 	    start(); 												//create timer
 
 	    StackPane start_stage = new StackPane(); 
@@ -90,7 +99,7 @@ public class Main extends Application{
 	    ObservableList info_list = info_stage.getChildren();
 	    scene_info  = new Scene(info_stage, 600, 800);
 	    scene_start  = new Scene(start_stage, 600, 800);
-
+	    
 	    //start page object
 	    Menu_page page = new Menu_page();
 	    start_button button_start = new start_button(primaryStage, scene_game);
@@ -106,8 +115,7 @@ public class Main extends Application{
 		primaryStage.setScene(scene_start);
 		primaryStage.show();
 		System.out.println("Game Start");
-		//background.stop();
-		//file();
+
 }
 	
 	
@@ -130,25 +138,25 @@ public class Main extends Application{
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-            	if (animal.changeScore()) {										//continue
+            	if (animal.changeScore()) {
+            		//System.out.println("@@@@@@@@    " + animal.getPoints());
             		set_number(animal.getPoints());
             		if(animal.getPoints() > top_score.getScore()) {
             			top_score.setScore(animal.getPoints());
             			popo.update_highest(animal.getPoints());
- 
             		}
+            		//set_number(animal.getPoints());
             	}
             	
             	if (animal.getStop()) {											//Complete
-            		System.out.print("*** STOP ! ***");
+            		System.out.println("*** STOP  ***");
             		background.stopMusic();
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("Victory !");
+            		alert.setTitle("*****YOU WIN*****");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
             		alert.setContentText("Highest Possible Score: 800");
-            		// set high score see whether beaten or not
             		alert.show();
             	}
             }

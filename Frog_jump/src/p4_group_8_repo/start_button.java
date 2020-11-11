@@ -23,6 +23,7 @@ public class start_button extends Actor{
 	public void design_button() {
 		Image image = new Image(image_link, 130, 130, true, true);
 		ImageView start_image = new ImageView(image);
+		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
 		button.setTranslateY(150);
 	}

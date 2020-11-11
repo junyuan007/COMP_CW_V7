@@ -44,6 +44,8 @@ public class Animal extends Actor {
 	double x_start = 300;
 	double y_start = 725;
 	
+	int goal = 0;
+	
 	// Troll code
 	//double movement = 13.3333333*2;
 	//double movementX = 10.666666*2;
@@ -264,10 +266,15 @@ public class Animal extends Actor {
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
-				end-- ;														
-				player_points -= 50;
+				end --;	
+				goal ++;
+				//player_points -= 50;				// WHYYYYYYY
+				System.out.println("LOVE U ");
 			}
+			System.out.println(player_points);
+			//System.out.println("I am here");
 			player_points += 50;											//victory...main_frog landed on End goal 		
+			System.out.println(player_points);
 			changeScore = true;
 			w = 800;
 			getIntersectingObjects(End.class).get(0).setEnd();
@@ -278,6 +285,7 @@ public class Animal extends Actor {
 		}
 		else if (getY() < 413){
 			water_die = true;
+			
 			//setX(x_start);
 			//setY(y_start + movement);
 		}
@@ -288,7 +296,11 @@ public class Animal extends Actor {
 	 * @return the value of stop 
 	 */
 	public boolean getStop() {
-		return end == 5;
+		
+		if(goal == 5) {
+			return true;
+		}
+		else return false;
 	}
 	
 	/**

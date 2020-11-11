@@ -33,8 +33,6 @@ public class UpdateHigh {
 	
 	 public void update_highest(int current_points) {
 	    	int shift = 0;
-	    	//System.out.println("UPDATE " + current_points);
-	    	//System.out.println("TOP " + top_score.getScore());
 	    	if(current_points >= top_score.getScore()) {
 	    		while (current_points > 0) {
 	    			int temp = current_points / 10;

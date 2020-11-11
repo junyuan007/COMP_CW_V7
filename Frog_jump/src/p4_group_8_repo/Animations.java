@@ -1,8 +1,11 @@
 package p4_group_8_repo;
 
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+
 public class Animations {
 
-	public Animations(MyStage background, int high_score) {
+	public Animations(MyStage background) {
 		
 		//Animal animal;
 		int size_digit = 30;
@@ -78,6 +81,9 @@ public class Animations {
 
 		background.add(new Score(60, 520, 9));					//score button
 		background.add(new Digit(0, size_digit, 565, 35));		//initial score_board
+		
+		//back_menu back_2 = new back_menu(background, scene_start);
+	    //background.add(back_2);
 		
 		//System.out.println("ALL animations created");
 	}
