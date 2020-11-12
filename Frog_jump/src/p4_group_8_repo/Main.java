@@ -3,6 +3,16 @@ package p4_group_8_repo;
 import java.io.File;
 import java.util.List;
 
+import All_animation.Digit;
+import All_animation.Menu_page;
+import All_button.Back_menu_butt;
+import All_button.Enter_game_butt;
+import All_button.Info_butt;
+import All_button.Pause_butt;
+import All_button.Resume_butt;
+import Files_IO.Edit_topScore;
+import Game_functions.Create_animations;
+import Game_functions.Update_HighScore;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -18,7 +28,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+import random.HelloWorld;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
@@ -39,14 +49,14 @@ public class Main extends Application{
 //public class Main extends Application implements EventHandler<ActionEvent>{
 	AnimationTimer timer;
 	MyStage background;
-	Animal animal; 							//main_frog
+	Frog_player animal; 							//main_frog
 	int size_digit = 30;
 	
 	Scene scene_start;
 	Scene scene_game;
 	Scene scene_info;
-	TopScore top_score;
-	UpdateHigh popo;
+	Edit_topScore top_score;
+	Update_HighScore popo;
 
 	public static void main(String[] args) {
 		try {
@@ -70,20 +80,20 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
-		top_score = new TopScore();
-		//top_score.setScore(0);
+		top_score = new Edit_topScore();
+		//top_score.setScore(999);
 		
 		//Game Scene
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
-	    Animations animation = new Animations(background);		// all animations created
+	    Create_animations animation = new Create_animations(background);		// all animations created
 	    
-	    popo = new UpdateHigh(top_score.getScore(), top_score, background);
+	    popo = new Update_HighScore(top_score.getScore(), top_score, background);
 	    
 	    //Back to Menu Page Button
-	    Resume_button resume_butt = new Resume_button(background);
-	    Pause_button pause_butt = new Pause_button(background);
+	    Resume_butt resume_butt = new Resume_butt(background);
+	    Pause_butt pause_butt = new Pause_butt(background);
 	    
 	    ObservableList game_list = background.getChildren();
 	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton());
@@ -102,12 +112,12 @@ public class Main extends Application{
 	    
 	    //start page object
 	    Menu_page page = new Menu_page();
-	    start_button button_start = new start_button(primaryStage, scene_game);
-	    info_button button_info = new info_button(primaryStage, scene_info);
+	    Enter_game_butt button_start = new Enter_game_butt(primaryStage, scene_game);
+	    Info_butt button_info = new Info_butt(primaryStage, scene_info);
 
 	    //info page object
 	    Text abc = new Text("CHIN JUN YUAN IS COOL");
-	    back_start back_1 = new back_start(primaryStage, scene_start);
+	    Back_menu_butt back_1 = new Back_menu_butt(primaryStage, scene_start);
 	    
 	    start_list.addAll(page.menu_page(), button_start.getButton(), button_info.getButton());
 	    info_list.addAll(abc, back_1.getButton());
@@ -115,6 +125,8 @@ public class Main extends Application{
 		primaryStage.setScene(scene_start);
 		primaryStage.show();
 		System.out.println("Game Start");
+		
+		HelloWorld qiqi = new HelloWorld();
 
 }
 	
@@ -125,7 +137,7 @@ public class Main extends Application{
 	public void create_frogger() {
 		
 	    String main_frog = "/graphic_animation/froggerUp.png";
-		animal = new Animal(main_frog);
+		animal = new Frog_player(main_frog);
 		background.add(animal);
 
 }
@@ -139,13 +151,12 @@ public class Main extends Application{
             @Override
             public void handle(long now) {
             	if (animal.changeScore()) {
-            		//System.out.println("@@@@@@@@    " + animal.getPoints());
             		set_number(animal.getPoints());
             		if(animal.getPoints() > top_score.getScore()) {
             			top_score.setScore(animal.getPoints());
             			popo.update_highest(animal.getPoints());
             		}
-            		//set_number(animal.getPoints());
+
             	}
             	
             	if (animal.getStop()) {											//Complete
@@ -154,7 +165,7 @@ public class Main extends Application{
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("*****YOU WIN*****");
+            		alert.setTitle("***** YOU WIN *****");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();

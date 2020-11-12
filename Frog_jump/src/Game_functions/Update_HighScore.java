@@ -1,13 +1,17 @@
-package p4_group_8_repo;
+package Game_functions;
 
-public class UpdateHigh {
+import All_animation.Digit;
+import Files_IO.Edit_topScore;
+import p4_group_8_repo.MyStage;
+
+public class Update_HighScore {
 	
 	int size_digit = 30;
 	int points;
-	TopScore top_score;
+	Edit_topScore top_score;
 	MyStage background;
 	
-	public UpdateHigh(int points, TopScore top_score, MyStage background) {
+	public Update_HighScore(int points, Edit_topScore top_score, MyStage background) {
 		this.points = points;
 		this.top_score = top_score;
 		this.background = background;

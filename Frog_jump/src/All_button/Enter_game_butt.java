@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package All_button;
 
 
 import javafx.scene.Scene;
@@ -6,13 +6,14 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import p4_group_8_repo.Actor;
 
-public class start_button extends Actor{
+public class Enter_game_butt extends Actor{
 	
 	String image_link = "/graphic_animation/startButton.png";
 	Button button;
 	
-	public start_button(Stage primaryStage, Scene scene) {
+	public Enter_game_butt(Stage primaryStage, Scene scene) {
 		 button = new Button();
 		 design_button();
 		 

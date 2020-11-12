@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package All_button;
 
 
 import javafx.scene.Scene;
@@ -6,13 +6,14 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import p4_group_8_repo.Actor;
 
-public class info_button extends Actor{
+public class Info_butt extends Actor{
 	
 	String image_link = "/graphic_animation/infoButton.png";
 	Button button;
 	
-	public info_button(Stage primaryStage, Scene scene) {
+	public Info_butt(Stage primaryStage, Scene scene) {
 		 button = new Button();
 		 design_button();
 		 

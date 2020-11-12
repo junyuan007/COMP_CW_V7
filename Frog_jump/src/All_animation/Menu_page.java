@@ -1,7 +1,8 @@
-package p4_group_8_repo;
+package All_animation;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import p4_group_8_repo.Actor;
 
 public class Menu_page extends Actor{
 	

@@ -2,6 +2,11 @@ package p4_group_8_repo;
 
 import java.util.ArrayList;
 
+import All_animation.End;
+import All_animation.Log;
+import All_animation.Turtle;
+import All_animation.Vehicle;
+import All_animation.WetTurtle;
 import javafx.event.EventHandler;
 
 import javafx.scene.image.Image;
@@ -13,7 +18,7 @@ import javafx.scene.input.KeyEvent;
  * @author Jun Yuan
  *
  */
-public class Animal extends Actor {
+public class Frog_player extends Actor {
 	//direction
 	Image W_direction;
 	Image A_direction;
@@ -55,7 +60,7 @@ public class Animal extends Actor {
 	 * @param imageLink is the source of the image
 	 * 
 	 */
-	public Animal(String imageLink) {
+	public Frog_player(String imageLink) {
 		setImage(new Image(imageLink, image_Size, image_Size, true, true));
 		
 		setX(x_start);
@@ -200,7 +205,8 @@ public class Animal extends Actor {
 				not_moving = false;
 				if (player_points > 50) {
 					player_points -= 50;			// if points more than 50 and car accident then minus points
-					changeScore = true;		
+					changeScore = true;	
+					System.out.println("Car Die");
 				}
 			}
 			
@@ -232,6 +238,7 @@ public class Animal extends Actor {
 				if (player_points > 50) {
 					player_points -= 50;
 					changeScore = true;
+					System.out.println("Water Die");
 				}
 			}
 			
@@ -240,7 +247,7 @@ public class Animal extends Actor {
 		if (getX() > 600) {
 			move(-movement * 2, 0);
 		}
-		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
+		if (getIntersectingObjects(Vehicle.class).size() >= 1) {
 			car_die = true;											// car accident
 		}
 		if (getX() == 240 && getY() == 82) {
@@ -266,13 +273,12 @@ public class Animal extends Actor {
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
-				end --;	
+				//end --;	
 				goal ++;
 				//player_points -= 50;				// WHYYYYYYY
 				System.out.println("LOVE U ");
 			}
 			System.out.println(player_points);
-			//System.out.println("I am here");
 			player_points += 50;											//victory...main_frog landed on End goal 		
 			System.out.println(player_points);
 			changeScore = true;
@@ -289,6 +295,7 @@ public class Animal extends Actor {
 			//setX(x_start);
 			//setY(y_start + movement);
 		}
+		//System.out.println(end);
 	}		//END act method
 	
 	/**

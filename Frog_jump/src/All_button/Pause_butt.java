@@ -1,17 +1,19 @@
-package p4_group_8_repo;
+package All_button;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import p4_group_8_repo.Actor;
+import p4_group_8_repo.MyStage;
 
-public class Pause_button extends Actor{
+public class Pause_butt extends Actor{
 
 	String image_link = "/graphic_animation/pause.png";
 	Button button;
 	
-	public Pause_button(MyStage background) {
+	public Pause_butt(MyStage background) {
 		
 		 button = new Button();
 		 design_button();

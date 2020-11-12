@@ -1,4 +1,4 @@
-package gaphic_image;
+package random;
 
 public class Hello {
 	

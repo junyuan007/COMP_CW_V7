@@ -1,6 +1,7 @@
-package p4_group_8_repo;
+package All_animation;
 
 import javafx.scene.image.Image;
+import p4_group_8_repo.Actor;
 
 /**
  * Class of WetTurtle (animation)

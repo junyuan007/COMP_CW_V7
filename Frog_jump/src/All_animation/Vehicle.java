@@ -1,13 +1,14 @@
-package p4_group_8_repo;
+package All_animation;
 
 import javafx.scene.image.Image;
+import p4_group_8_repo.Actor;
 
 /**
  * Class of obstacle / vehicle (animation)
  * @author tigus
  *
  */
-public class Obstacle extends Actor {
+public class Vehicle extends Actor {
 	private double speed;
 	@Override
 	public void act(long now) {
@@ -28,7 +29,7 @@ public class Obstacle extends Actor {
 	 * @param width of obstacle
 	 * @param height of obstacle
 	 */
-	public Obstacle(String imageLink, int x_position, int y_position, double speed_movement, int width, int height) {
+	public Vehicle(String imageLink, int x_position, int y_position, double speed_movement, int width, int height) {
 		setImage(new Image(imageLink, width, height, true, true));
 		setX(x_position);
 		setY(y_position);

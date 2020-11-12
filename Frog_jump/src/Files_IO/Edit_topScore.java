@@ -1,10 +1,10 @@
-package p4_group_8_repo;
+package Files_IO;
 
-public class TopScore {
+public class Edit_topScore {
 	
 	String path = "../Frog_Jump/Src/Files/highest.txt";
 	
-	public TopScore() {
+	public Edit_topScore() {
 		CreateFile file = new CreateFile(path);
 		file.check_file();
 		//System.out.println("I am here");
