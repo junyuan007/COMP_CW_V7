@@ -31,9 +31,9 @@ public class ReadFile {
 			File myObj = new File(path);
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
-				//System.out.println("Before "+data);
+
 				data = myReader.nextLine();
-				//System.out.println("After "+data);
+
 			}
 			myReader.close();
 		} catch (FileNotFoundException e) {

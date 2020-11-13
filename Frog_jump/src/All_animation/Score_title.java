@@ -1,6 +1,9 @@
 package All_animation;
 
+import javafx.event.EventHandler;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import p4_group_8_repo.Actor;
 
 /**
@@ -33,6 +36,7 @@ public class Score_title extends Actor{
 		setImage(image_1);
 		setX(x_position);
 		setY(y_position);
+		
 	}
 	
 }

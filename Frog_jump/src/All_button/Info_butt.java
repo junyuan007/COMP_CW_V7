@@ -1,10 +1,13 @@
 package All_button;
 
 
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import p4_group_8_repo.Actor;
 
@@ -42,6 +45,22 @@ public class Info_butt extends Actor{
 		button.setGraphic(start_image);
 		button.setTranslateY(150);
 		button.setTranslateX(125);
+		
+		DropShadow shadow = new DropShadow();
+		//Adding the shadow when the mouse cursor is on
+		button.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+		    new EventHandler<MouseEvent>() {
+		        @Override public void handle(MouseEvent e) {
+		        	button.setEffect(shadow);
+		        }
+		});
+		//Removing the shadow when the mouse cursor is off
+		button.addEventHandler(MouseEvent.MOUSE_EXITED, 
+		    new EventHandler<MouseEvent>() {
+		        @Override public void handle(MouseEvent e) {
+		        	button.setEffect(null);
+		        }
+		});
 	}
 	
 	/**

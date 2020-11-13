@@ -1,8 +1,7 @@
 package p4_group_8_repo;
 
-import java.io.File;
-import java.util.List;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 import All_animation.Digit;
 import All_animation.Menu_page;
 import All_button.Back_menu_butt;
@@ -10,6 +9,7 @@ import All_button.Enter_game_butt;
 import All_button.Info_butt;
 import All_button.Pause_butt;
 import All_button.Resume_butt;
+import Files_IO.CreateFile;
 import Files_IO.Edit_topScore;
 import Game_functions.Create_animations;
 import Game_functions.Update_HighScore;
@@ -19,26 +19,12 @@ import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Text;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import random.HelloWorld;
-import javafx.event.EventHandler;
-import javafx.scene.control.Label;
-import javafx.event.ActionEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.StackPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
 
 
 /**
@@ -90,14 +76,24 @@ public class Main extends Application{
 	    Create_animations animation = new Create_animations(background);		// all animations created
 	    
 	    popo = new Update_HighScore(top_score.getScore(), top_score, background);
-	    
 	    create_frogger();
 	    background.start();	
-	    
 	    start(); 												//create timer
 
-	    StackPane start_stage = new StackPane(); 
+	    info_menu_page(primaryStage);
+
+		primaryStage.setScene(scene_start);
+		primaryStage.show();
+		System.out.println("Game Start");
+		
+		HelloWorld qiqi = new HelloWorld();
+
+}
+
+	private void info_menu_page(Stage primaryStage) {
+		StackPane start_stage = new StackPane(); 
 	    StackPane info_stage = new StackPane();
+
 	    ObservableList start_list = start_stage.getChildren();
 	    ObservableList info_list = info_stage.getChildren();
 	    scene_info  = new Scene(info_stage, 600, 800);
@@ -109,19 +105,33 @@ public class Main extends Application{
 	    Info_butt button_info = new Info_butt(primaryStage, scene_info);
 
 	    //info page object
-	    Text abc = new Text("CHIN JUN YUAN IS COOL");
 	    Back_menu_butt back_1 = new Back_menu_butt(primaryStage, scene_start);
+	    
+	    String path = "../Frog_Jump/Src/Files/tutorial.txt";
+	    BuffRead read = new BuffRead(path);
+	    ArrayList<String> instructions = new ArrayList<String> ();
+	    instructions = read.buffer_reader();
+	    Iterator it = instructions.iterator(); 
+
+	    TextArea txting = new TextArea ();
+	    while(it.hasNext()) {
+	    	String element = (String)it.next();
+	        txting.appendText(element + "\n");
+	        //System.out.println("elements are: " + element);
+	    }
+	    txting.setScrollTop(1);
+	    txting.setStyle("-fx-font-size: 30");
+	    txting.setFont(Font.font ("Verdana", 200));
+	    txting.setWrapText(true);
+	    txting.setEditable(false);
+	    txting.setTranslateY(75);
+	    txting.setPrefHeight(100);
+	    txting.setPrefWidth(100);
 	
 	    start_list.addAll(menu_page.menu_page(), button_start.getButton(), button_info.getButton());
-	    info_list.addAll(abc, back_1.getButton());
+	    info_list.addAll(menu_page.menu_page(), txting, back_1.getButton());
 
-		primaryStage.setScene(scene_start);
-		primaryStage.show();
-		System.out.println("Game Start");
-		
-		HelloWorld qiqi = new HelloWorld();
-
-}
+	}
 	
 	
 	/**

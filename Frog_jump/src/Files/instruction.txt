@@ -1,0 +1,53 @@
+How to Play Frogger
+
+At the very beginning of the game, you
+should see Flogger positioned at the 
+bottom of the screen. Going from top to
+bottom, there will be a five lane 
+highway, a concrete median, a river and 
+a swampy marsh. Car traffic will go 
+from left to right, but enemies such as 
+the crocodile will be moving in the 
+opposite direction. On the river, the 
+log, crocodiles and turtles will be 
+floating from the right to the left. 
+Use this information to your advantage 
+during later stages where you will have 
+fewer rectangles available to place 
+your frogs.
+
+There are three varieties of logs in 
+Frogger; short, normal and long. As 
+expected, longer logs are ideal because 
+there will be more area for you to hop 
+on. Be aware of the fact that logs are 
+not safe spots to rest. Snakes can 
+instantly appear on any log, at any 
+time, including before, during and 
+directly after you jump.
+
+Turtles are useful 'stepping stones,' 
+but they also come with risks. Some 
+turtles periodically dive beneath the 
+surface of the river, causing Frogger 
+to drown and lose a life. You should 
+observe each new group of turtles in 
+order to determine which ones are 
+divers.
+
+Cars also come in three different 
+versions. Slower cars usually travel in 
+the same lanes, but this is not always 
+the case. There will be more cars that 
+move at a normal speed during the 
+initial stages of Frogger, but as you 
+progress they will become less 
+numerous. Fast cars will re
+
+There is an infinite number of stages 
+on the original Frogger arcade game, 
+but a specific group of four levels are 
+used to establish a repetitive pattern. 
+After you have completed the sixth 
+through the 10th stage, you will learn 
+what to expect on future levels.
