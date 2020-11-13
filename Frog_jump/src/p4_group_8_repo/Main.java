@@ -91,13 +91,6 @@ public class Main extends Application{
 	    
 	    popo = new Update_HighScore(top_score.getScore(), top_score, background);
 	    
-	    //Back to Menu Page Button
-	    Resume_butt resume_butt = new Resume_butt(background);
-	    Pause_butt pause_butt = new Pause_butt(background);
-	    
-	    ObservableList game_list = background.getChildren();
-	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton());
-	    
 	    create_frogger();
 	    background.start();	
 	    
@@ -111,15 +104,15 @@ public class Main extends Application{
 	    scene_start  = new Scene(start_stage, 600, 800);
 	    
 	    //start page object
-	    Menu_page page = new Menu_page();
+	    Menu_page menu_page = new Menu_page();
 	    Enter_game_butt button_start = new Enter_game_butt(primaryStage, scene_game);
 	    Info_butt button_info = new Info_butt(primaryStage, scene_info);
 
 	    //info page object
 	    Text abc = new Text("CHIN JUN YUAN IS COOL");
 	    Back_menu_butt back_1 = new Back_menu_butt(primaryStage, scene_start);
-	    
-	    start_list.addAll(page.menu_page(), button_start.getButton(), button_info.getButton());
+	
+	    start_list.addAll(menu_page.menu_page(), button_start.getButton(), button_info.getButton());
 	    info_list.addAll(abc, back_1.getButton());
 
 		primaryStage.setScene(scene_start);
@@ -132,19 +125,17 @@ public class Main extends Application{
 	
 	
 	/**
-	 * Create Main Frog
+	 * Create Main Frog Character
 	 */
 	public void create_frogger() {
 		
 	    String main_frog = "/graphic_animation/froggerUp.png";
 		animal = new Frog_player(main_frog);
 		background.add(animal);
-
 }
 	
-
 	/**
-	 * Method to create a timer
+	 * Method to create animation timer
 	 */
 	public void createTimer() {
         timer = new AnimationTimer() {
@@ -159,7 +150,7 @@ public class Main extends Application{
 
             	}
             	
-            	if (animal.getStop()) {											//Complete
+            	if (animal.getStop()) {											//Complete GAME
             		System.out.println("*** STOP  ***");
             		background.stopMusic();
             		stop();
@@ -208,24 +199,6 @@ public class Main extends Application{
     }
     
     
-   /*
-    public void update_high(int current_points) {
-    	int shift = 0;
-    	
-    	if(current_points > top_score.getScore()) {
-    		while (current_points > 0) {
-    			//top_score.setScore(current_points);
-    			int temp = current_points / 10;
-    			int display = current_points - (temp * 10);			
-      		  	current_points = temp;
-      		 int x_coordinate = 450 - shift;
-      		 background.add(new Digit(display, size_digit, x_coordinate, 35));
-      		 shift += 30;
-    		}
-
-    	}
-    }
-    */
     
 }
 

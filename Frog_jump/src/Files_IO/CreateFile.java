@@ -4,14 +4,26 @@ package Files_IO;
 import java.io.File;  
 import java.io.IOException;  
 
+/**
+ * Class to Create Files
+ * @author Jun Yuan
+ *
+ */
 public class CreateFile {
 	
 	String path;
 	
+	/**
+	 * Construct an instance of CreateFile
+	 * @param path of the file
+	 */
 	public CreateFile(String path) {
 		this.path = path;
 	}
 	
+	/**
+	 * Check status of desired file
+	 */
 	public void check_file() {
 	    try {
 	      //File myObj = new File("../Frog_Jump/Src/Files/test.txt");

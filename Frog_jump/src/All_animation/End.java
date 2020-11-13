@@ -36,9 +36,7 @@ public class End extends Actor{
 	public void setEnd() {
 		setImage(new Image("/graphic_animation/FrogEnd.png", 68, 63, true, true));
 		activated = true;
-		
-		// *********** IDEA
-		// added static int variable to count how many victory
+
 	}
 	
 	

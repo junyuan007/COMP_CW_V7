@@ -4,6 +4,11 @@ import All_animation.Digit;
 import Files_IO.Edit_topScore;
 import p4_group_8_repo.MyStage;
 
+/**
+ * Class to Update High Score in game scene
+ * @author Jun Yuan
+ *
+ */
 public class Update_HighScore {
 	
 	int size_digit = 30;
@@ -11,6 +16,12 @@ public class Update_HighScore {
 	Edit_topScore top_score;
 	MyStage background;
 	
+	/**
+	 * Construct an instance of Update_HighScore
+	 * @param points is the NEW high score
+	 * @param top_score is for the update of High Score Files
+	 * @param background is the container for the scene
+	 */
 	public Update_HighScore(int points, Edit_topScore top_score, MyStage background) {
 		this.points = points;
 		this.top_score = top_score;
@@ -34,7 +45,10 @@ public class Update_HighScore {
 	}
 	
 	
-	
+	/**
+	 * Method to update High Score while game running
+	 * @param current_points is the current point of player
+	 */
 	 public void update_highest(int current_points) {
 	    	int shift = 0;
 	    	if(current_points >= top_score.getScore()) {

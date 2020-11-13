@@ -19,7 +19,7 @@ public class Turtle extends Actor{
 	
 	/**
 	 * Method act to make Turtle animation move
-	 * @param now is the current time
+	 * @param now is the current run time
 	 */
 	@Override
 	public void act(long now) {

@@ -14,7 +14,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 /**
- * Class of Animal (animation)
+ * Class of Frog Character (animation)
  * @author Jun Yuan
  *
  */
@@ -51,12 +51,8 @@ public class Frog_player extends Actor {
 	
 	int goal = 0;
 	
-	// Troll code
-	//double movement = 13.3333333*2;
-	//double movementX = 10.666666*2;
-	
 	/**
-	 * Constructor for main_frog
+	 * Constructor for main_frog character
 	 * @param imageLink is the source of the image
 	 * 
 	 */
@@ -169,7 +165,7 @@ public class Frog_player extends Actor {
 	
 	@Override
 	/**
-	 * Method for frogger animations to interact
+	 * Method for frog character to interact
 	 * @param now
 	 */
 	public void act(long now) {
@@ -299,8 +295,8 @@ public class Frog_player extends Actor {
 	}		//END act method
 	
 	/**
-	 * Method to get Stop
-	 * @return the value of stop 
+	 * Method to check if all 5 goals are scored 
+	 * @return is end of game
 	 */
 	public boolean getStop() {
 		

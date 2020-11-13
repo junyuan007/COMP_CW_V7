@@ -19,7 +19,6 @@ public class MyStage extends World{
 	 */
 	@Override
 	public void act(long now) {
-		
 	}
 	
 	/**
@@ -27,17 +26,6 @@ public class MyStage extends World{
 	 */
 	public MyStage() {
 		
-//		mediaPlayer.play();
-//		mediaPlayer.setOnEndOfMedia(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				mediaPlayer.seek(Duration.ZERO);
-//				
-//			}
-//			
-//		});
-//		mediaPlayer.play();
 	}
 	
 	/**
@@ -59,3 +47,13 @@ public class MyStage extends World{
 	}
 
 }
+
+//mediaPlayer.play();
+//mediaPlayer.setOnEndOfMedia(new Runnable() {
+//
+//	@Override
+//	public void run() {
+//		mediaPlayer.seek(Duration.ZERO);	
+//	}
+//});
+//mediaPlayer.play();

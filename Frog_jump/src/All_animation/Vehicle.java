@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import p4_group_8_repo.Actor;
 
 /**
- * Class of obstacle / vehicle (animation)
+ * Class of Vehicle (animation)
  * @author tigus
  *
  */
@@ -21,13 +21,13 @@ public class Vehicle extends Actor {
 	
 	
 	/**
-	 * Construct an instance of obstacle
+	 * Construct an instance of vehicle
 	 * @param imageLink is the source path of image
-	 * @param x_position is the X-coordinate of obstacle
-	 * @param y_position is the Y-coordinate of obstacle
-	 * @param speed_movement is the speed of obstacle
-	 * @param width of obstacle
-	 * @param height of obstacle
+	 * @param x_position is the X-coordinate of vehicle
+	 * @param y_position is the Y-coordinate of vehicle
+	 * @param speed_movement is the speed of vehicle
+	 * @param width of vehicle
+	 * @param height of vehicle
 	 */
 	public Vehicle(String imageLink, int x_position, int y_position, double speed_movement, int width, int height) {
 		setImage(new Image(imageLink, width, height, true, true));

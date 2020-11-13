@@ -14,7 +14,7 @@ public class Log extends Actor {
 	
 	/**
 	 * Method act to make Log animation move
-	 * @param now is the current time
+	 * @param now is the current run time
 	 */
 	@Override
 	public void act(long now) {

@@ -4,38 +4,58 @@ import java.io.File;
 import java.io.FileNotFoundException;  
 import java.util.Scanner; 
 
+/**
+ * Class of Read Files
+ * @author tigus
+ *
+ */
 public class ReadFile {
 	
 	String data;
 	String path;
 	String final_output;
 	
+	/**
+	 * Construct an instance of ReadFile
+	 * @param path of the file
+	 */
 	public ReadFile(String path) {
 		this.path = path;
 	}
 	
-  public void read_file() {
-    try {
-      File myObj = new File(path);
-      Scanner myReader = new Scanner(myObj);
-      while (myReader.hasNextLine()) {
-    	//System.out.println("Before "+data);
-        data = myReader.nextLine();
-        //System.out.println("After "+data);
-      }
-      myReader.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("An error occurred.");
-      e.printStackTrace();
-    }
+	/**
+	 * Read the file
+	 */
+	public void read_file() {
+		try {
+			File myObj = new File(path);
+			Scanner myReader = new Scanner(myObj);
+			while (myReader.hasNextLine()) {
+				//System.out.println("Before "+data);
+				data = myReader.nextLine();
+				//System.out.println("After "+data);
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+     	System.out.println("An error occurred.");
+     	e.printStackTrace();
+		}
   }
   
-  public String text_content() {
+	/**
+	 * Method to get file content in String
+	 * @return content of file in string format
+	 */
+	public String text_content() {
 	  return data;
-  }
+	}
   
-  public int number_content() {
+	/**
+	 * Method to get file content in Integer
+	 * @return content of file in integer format
+	 */
+	public int number_content() {
 	  int number = Integer.parseInt(data);  	//convert string to int
 	  return number;
-  }
+	}
 }

@@ -8,11 +8,22 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import p4_group_8_repo.Actor;
 
+
+/**
+ * Class of Button (Menu Page -> Info Page)
+ * @author Jun Yuan
+ *
+ */
 public class Info_butt extends Actor{
 	
 	String image_link = "/graphic_animation/infoButton.png";
 	Button button;
 	
+	/**
+	 * Construct an instance of Info_butt
+	 * @param primaryStage is a type of stage is where all the visual parts of the JavaFX application are displayed
+	 * @param scene to be set when button is pressed
+	 */
 	public Info_butt(Stage primaryStage, Scene scene) {
 		 button = new Button();
 		 design_button();
@@ -21,6 +32,9 @@ public class Info_butt extends Actor{
 		 //System.out.println("Info Button Activated");
 	}
 	
+	/**
+	 * Design and settings of button
+	 */
 	public void design_button() {
 		Image image = new Image(image_link, 38, 38, true, true);
 		ImageView start_image = new ImageView(image);
@@ -30,10 +44,17 @@ public class Info_butt extends Actor{
 		button.setTranslateX(125);
 	}
 	
+	/**
+	 * Method to get Button
+	 * @return button (Menu Page -> Info Page) 
+	 */
 	public Button getButton() {
 		return button;
 	}
 
+	/**
+	 * Empty body
+	 */
 	@Override
 	public void act(long now) {
 		// TODO Auto-generated method stub

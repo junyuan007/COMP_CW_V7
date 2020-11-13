@@ -8,12 +8,24 @@ import All_animation.Log;
 import All_animation.Score_title;
 import All_animation.Turtle;
 import All_animation.WetTurtle;
+import All_button.Pause_butt;
+import All_button.Resume_butt;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import p4_group_8_repo.MyStage;
 
+/**
+ * Class to create animations in game scene
+ * @author Jun Yuan
+ * 
+ */
 public class Create_animations {
 
+	/**
+	 * Construct an instance of Create_animations
+	 * @param background is the container for the scene
+	 */
 	public Create_animations(MyStage background) {
 		
 		//Animal animal;
@@ -85,14 +97,18 @@ public class Create_animations {
 		background.add(new Vehicle(car_left, 475, 694, -0.60, car_size, car_size));
 		*/
 		
+		//High Score
 		background.add(new HighScore_title(60, 400, 12));			//high score button
-		//background.add(new Digit(high_score, size_digit, 450, 35));		//initial score_board
 
+		//Score
 		background.add(new Score_title(60, 520, 9));					//score button
 		background.add(new Digit(0, size_digit, 565, 35));		//initial score_board
 		
-		//back_menu back_2 = new back_menu(background, scene_start);
-	    //background.add(back_2);
+		//Resume and Pause button
+		Resume_butt resume_butt = new Resume_butt(background);
+	    Pause_butt pause_butt = new Pause_butt(background);
+	    ObservableList game_list = background.getChildren();
+	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton());
 		
 		//System.out.println("ALL animations created");
 	}

@@ -96,11 +96,7 @@ public abstract class World extends Pane {
     	createTimer();
         timer.start();
     }
-    /*
-    public void temp_start() {
-    	timer.start();
-    }
-    */
+
     /**
      * Method to stop timer
      */
