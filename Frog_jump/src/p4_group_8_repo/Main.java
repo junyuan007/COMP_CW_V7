@@ -1,29 +1,17 @@
 package p4_group_8_repo;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import All_animation.Digit;
-import All_animation.Menu_page;
-import All_button.Back_menu_butt;
-import All_button.Enter_game_butt;
-import All_button.Info_butt;
-import All_button.Pause_butt;
-import All_button.Resume_butt;
-import Files_IO.CreateFile;
-import Files_IO.Edit_topScore;
-import Game_functions.Create_animations;
-import Game_functions.Update_HighScore;
+import game_animation.Digit;
+import game_functions.Create_animations;
+import game_functions.Update_HighScore_animation;
+import game_highscore.Top_HighScore;
+import game_highscore.HighScore_list;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import random.HelloWorld;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.StackPane;
 
 
 
@@ -41,8 +29,9 @@ public class Main extends Application{
 	Scene scene_start;
 	Scene scene_game;
 	Scene scene_info;
-	Edit_topScore top_score;
-	Update_HighScore popo;
+	Top_HighScore top_score;
+	Update_HighScore_animation popo;
+	Level_control level_control;
 
 	public static void main(String[] args) {
 		try {
@@ -66,79 +55,35 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
-		top_score = new Edit_topScore();
-		//top_score.setScore(999);
+		top_score = new Top_HighScore();
+		top_score.setScore(0);
 		
 		//Game Scene
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
 	    Create_animations animation = new Create_animations(background);		// all animations created
+	    level_control = new Level_control(background);
 	    
-	    popo = new Update_HighScore(top_score.getScore(), top_score, background);
+	    popo = new Update_HighScore_animation(top_score.getScore(), top_score, background);
 	    create_frogger();
 	    background.start();	
 	    start(); 												//create timer
 
-	    info_menu_page(primaryStage);
+	    Menu_info_page well = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game);
 
-		primaryStage.setScene(scene_start);
+	    primaryStage.setScene(well.get_start_scene());
 		primaryStage.show();
 		System.out.println("Game Start");
 		
 		HelloWorld qiqi = new HelloWorld();
 
 }
-
-	private void info_menu_page(Stage primaryStage) {
-		StackPane start_stage = new StackPane(); 
-	    StackPane info_stage = new StackPane();
-
-	    ObservableList start_list = start_stage.getChildren();
-	    ObservableList info_list = info_stage.getChildren();
-	    scene_info  = new Scene(info_stage, 600, 800);
-	    scene_start  = new Scene(start_stage, 600, 800);
-	    
-	    //start page object
-	    Menu_page menu_page = new Menu_page();
-	    Enter_game_butt button_start = new Enter_game_butt(primaryStage, scene_game);
-	    Info_butt button_info = new Info_butt(primaryStage, scene_info);
-
-	    //info page object
-	    Back_menu_butt back_1 = new Back_menu_butt(primaryStage, scene_start);
-	    
-	    String path = "../Frog_Jump/Src/Files/tutorial.txt";
-	    BuffRead read = new BuffRead(path);
-	    ArrayList<String> instructions = new ArrayList<String> ();
-	    instructions = read.buffer_reader();
-	    Iterator it = instructions.iterator(); 
-
-	    TextArea txting = new TextArea ();
-	    while(it.hasNext()) {
-	    	String element = (String)it.next();
-	        txting.appendText(element + "\n");
-	        //System.out.println("elements are: " + element);
-	    }
-	    txting.setScrollTop(1);
-	    txting.setStyle("-fx-font-size: 30");
-	    txting.setFont(Font.font ("Verdana", 200));
-	    txting.setWrapText(true);
-	    txting.setEditable(false);
-	    txting.setTranslateY(75);
-	    txting.setPrefHeight(100);
-	    txting.setPrefWidth(100);
-	
-	    start_list.addAll(menu_page.menu_page(), button_start.getButton(), button_info.getButton());
-	    info_list.addAll(menu_page.menu_page(), txting, back_1.getButton());
-
-	}
-	
 	
 	/**
 	 * Create Main Frog Character
 	 */
 	public void create_frogger() {
-		
 	    String main_frog = "/graphic_animation/froggerUp.png";
 		animal = new Frog_player(main_frog);
 		background.add(animal);
@@ -148,6 +93,10 @@ public class Main extends Application{
 	 * Method to create animation timer
 	 */
 	public void createTimer() {
+		HighScore_list bobo = new HighScore_list();
+		//bobo.setScore(1, 0);
+		//bobo.setScore(2, 0);
+		//bobo.setScore(3, 0);
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -157,18 +106,31 @@ public class Main extends Application{
             			top_score.setScore(animal.getPoints());
             			popo.update_highest(animal.getPoints());
             		}
+            		if(animal.getPoints() > bobo.getScore(3)) {
+            			if(animal.getPoints() > bobo.getScore(2)) {
+            				if(animal.getPoints() > bobo.getScore(1)) {
+            					bobo.setScore(1, animal.getPoints());
+            				}		//end 1
+            				bobo.setScore(2, animal.getPoints());
+            			}			// end 2
+            			bobo.setScore(3, animal.getPoints());
+            		}				//end 3
 
             	}
             	
+            	if (animal.change_level()) {
+            		level_control.set_level((animal.getGoal() + 1));
+            	}
+            	
             	if (animal.getStop()) {											//Complete GAME
-            		System.out.println("*** STOP  ***");
+            		System.out.println("*** STOP ***");
             		background.stopMusic();
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("***** YOU WIN *****");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
+            		//alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}
             }

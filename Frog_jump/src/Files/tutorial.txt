@@ -1,6 +1,10 @@
-How to Play Frogger
+How to Play...
 
-At the very beginning of the game, you should see Flogger positioned at the bottom of the screen. Going from top to bottom, there will be a five lane highway, a concrete median, a river and a swampy marsh. Car traffic will go from left to right, but enemies such as the crocodile will be moving in the opposite direction. On the river, the log, crocodiles and turtles will be floating from the right to the left. Use this information to your advantage during later stages where you will have fewer rectangles available to place your frogs.
+Game Controls:
+WASD keys are used to control the frogger character in this game. W & S key are used to control forward and backward respectively, while A & D keys are used to move left and right respectively
+
+Game Operation:
+At the very beginning of the game, you should see Frogger positioned at the bottom of the screen. Going from top to bottom, there will be a 5 lane highway, a concrete median, a river and a swampy marsh. Car traffic will go from left to right, but enemies such as the crocodile will be moving in the opposite direction. On the river, the log, crocodiles and turtles will be floating from the right to the left. Use this information to your advantage during later stages where you will have fewer rectangles available to place your frogs.
 
 There are three varieties of logs in Frogger; short, normal and long. As expected, longer logs are ideal because there will be more area for you to hop on. Be aware of the fact that logs are not safe spots to rest. Snakes can instantly appear on any log, at any time, including before, during and directly after you jump.
 

@@ -2,11 +2,11 @@ package p4_group_8_repo;
 
 import java.util.ArrayList;
 
-import All_animation.End;
-import All_animation.Log;
-import All_animation.Turtle;
-import All_animation.Vehicle;
-import All_animation.WetTurtle;
+import game_animation.End;
+import game_animation.Log;
+import game_animation.Turtle;
+import game_animation.Vehicle;
+import game_animation.WetTurtle;
 import javafx.event.EventHandler;
 
 import javafx.scene.image.Image;
@@ -50,6 +50,8 @@ public class Frog_player extends Actor {
 	double y_start = 725;
 	
 	int goal = 0;
+	int flag = 0;
+	boolean snake_die = false;
 	
 	/**
 	 * Constructor for main_frog character
@@ -240,11 +242,49 @@ public class Frog_player extends Actor {
 			
 		}
 		
+		if (snake_die) {
+			not_moving = true;
+			if ((now) % 11 == 0) {
+				carD++;
+			}
+			if (carD == 1) {
+				setImage(new Image("/graphic_animation/waterdeath1.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 2) {
+				setImage(new Image("/graphic_animation/waterdeath2.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 3) {
+				setImage(new Image("/graphic_animation/waterdeath3.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 4) {
+				setImage(new Image("/graphic_animation/waterdeath4.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 5) {
+				setX(x_start);
+				setY(y_start + movement);
+				snake_die = false;
+				carD = 0;
+				setImage(new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true));
+				not_moving = false;
+				if (player_points > 50) {
+					player_points -= 50;
+					changeScore = true;
+					System.out.println("Snake Die");
+				}
+			}
+			
+		}
+		
+		
 		if (getX() > 600) {
 			move(-movement * 2, 0);
 		}
 		if (getIntersectingObjects(Vehicle.class).size() >= 1) {
 			car_die = true;											// car accident
+		}
+		//-----------------------------
+		if (getIntersectingObjects(Snake.class).size() >= 1) {
+			snake_die = true;											
 		}
 		if (getX() == 240 && getY() == 82) {
 			stop = true;
@@ -299,11 +339,27 @@ public class Frog_player extends Actor {
 	 * @return is end of game
 	 */
 	public boolean getStop() {
-		
-		if(goal == 5) {
+		if(goal == 10) {
 			return true;
 		}
 		else return false;
+	}
+	
+	public boolean change_level() {
+		if(goal > flag) {
+			flag = goal;
+			return true;
+		}
+		else if(goal == flag) {
+			return false;
+		}
+		else
+			System.out.println("Error in Frog_player.change_level method ");
+			return false;
+	}
+	
+	public int getGoal() {
+		return goal;
 	}
 	
 	/**

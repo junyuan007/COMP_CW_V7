@@ -96,6 +96,13 @@ public abstract class World extends Pane {
     	createTimer();
         timer.start();
     }
+    
+    /**
+     * Method to resume timer
+     */
+    public void resume_timer() {
+        timer.start();
+    }
 
     /**
      * Method to stop timer
