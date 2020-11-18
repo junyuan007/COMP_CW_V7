@@ -43,12 +43,12 @@ public class Create_animations {
 		//top
 		String short_log = "/graphic_animation/log3.png";
 		String long_log = "/graphic_animation/logs.png";
-		background.add(new Log(short_log, 150, 0, 166, 0.75));	// 2
+		background.add(new Log(short_log, 150, 0, 166, 0.75));		// 2
 		background.add(new Log(short_log, 150, 220, 166, 0.75));	// 3
 		background.add(new Log(short_log, 150, 440, 166, 0.75));	// 4	
 		//mid
-		background.add(new Log(long_log, 300, 0, 276, -2));		// 5	
-		background.add(new Log(long_log, 300, 400, 276, -2));	// 6	
+		background.add(new Log(long_log, 300, 0, 276, -2));			// 5	
+		background.add(new Log(long_log, 300, 400, 276, -2));		// 6	
 		//bottom
 		background.add(new Log(short_log, 150, 50, 329, 0.75));		// 7
 		background.add(new Log(short_log, 150, 270, 329, 0.75));	// 8	
@@ -97,7 +97,8 @@ public class Create_animations {
 		//Vehicle v1 = new Vehicle(car_left, 500, 490, -3, car_size, car_size); 
 		//background.add(v1);
 		//TEMP STOP
-		//background.add(new Vehicle(car_left, 500, 490, -3, car_size, car_size)); // 26
+		background.add(new Vehicle(car_left, 500, 490, -3, car_size, car_size)); // 26
+		//background.add(new Vehicle());
 		
 		//mid
 		background.add(new Vehicle(car_left, 100, 597, -1.1, car_size, car_size)); // 27
@@ -115,9 +116,9 @@ public class Create_animations {
 		//background.add(new HighScore_title(60, 400, 12));			//high score button
 
 		//Score
-		background.add(new Score_title(60, 520, 9));				//score button
-		background.add(new Digit(0, size_digit, 565, 35));			//initial score_board
-		//30
+		background.add(new Score_title(60, 520, 9));				// 34 score button
+		background.add(new Digit(0, size_digit, 565, 35));			// 35 initial score_board
+
 		//Resume and Pause button
 		Resume_butt resume_butt = new Resume_butt(background);
 	    Pause_butt pause_butt = new Pause_butt(background);

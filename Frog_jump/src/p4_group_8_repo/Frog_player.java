@@ -52,6 +52,7 @@ public class Frog_player extends Actor {
 	int goal = 0;
 	int flag = 0;
 	boolean snake_die = false;
+	boolean croc_die = false;
 	
 	/**
 	 * Constructor for main_frog character
@@ -163,7 +164,7 @@ public class Frog_player extends Actor {
 			}
 			
 		});
-	}			//END animal constructor (can factorize movement out )
+	}			//END animal constructor
 	
 	@Override
 	/**
@@ -180,6 +181,7 @@ public class Frog_player extends Actor {
 		if (getX()<0) {
 			move(movement * 2, 0);
 		}
+		//  Car die
 		if (car_die) {
 			not_moving = true;
 			if ((now) % 11 == 0) {
@@ -209,6 +211,7 @@ public class Frog_player extends Actor {
 			}
 			
 		}
+		//  Water die
 		if (water_die) {
 			not_moving = true;
 			if ((now) % 11 == 0) {
@@ -226,7 +229,7 @@ public class Frog_player extends Actor {
 			if (carD == 4) {
 				setImage(new Image("/graphic_animation/waterdeath4.png", image_Size,image_Size , true, true));
 			}
-			if (carD == 5) {
+			if (carD == 4) {
 				setX(x_start);
 				setY(y_start + movement);
 				water_die = false;
@@ -241,8 +244,38 @@ public class Frog_player extends Actor {
 			}
 			
 		}
-		
+		//	Snake die
 		if (snake_die) {
+			not_moving = true;
+			if ((now) % 11 == 0) {
+				carD++;
+			}
+			if (carD == 1) {
+				setImage(new Image("/graphic_animation/cardeath1.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 2) {
+				setImage(new Image("/graphic_animation/cardeath2.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 3) {
+				setImage(new Image("/graphic_animation/cardeath3.png", image_Size,image_Size , true, true));
+			}
+			if (carD == 4) {
+				setX(x_start);
+				setY(y_start + movement);
+				snake_die = false;
+				carD = 0;
+				setImage(new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true));
+				not_moving = false;
+				if (player_points > 50) {
+					player_points -= 50;
+					changeScore = true;
+					System.out.println("Snake Die");
+				}
+			}
+			
+		}
+		// Crocodile die 
+		if (croc_die) {
 			not_moving = true;
 			if ((now) % 11 == 0) {
 				carD++;
@@ -262,14 +295,14 @@ public class Frog_player extends Actor {
 			if (carD == 5) {
 				setX(x_start);
 				setY(y_start + movement);
-				snake_die = false;
+				croc_die = false;
 				carD = 0;
 				setImage(new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true));
 				not_moving = false;
 				if (player_points > 50) {
 					player_points -= 50;
 					changeScore = true;
-					System.out.println("Snake Die");
+					//System.out.println("Crocodile Die");
 				}
 			}
 			
@@ -280,9 +313,8 @@ public class Frog_player extends Actor {
 			move(-movement * 2, 0);
 		}
 		if (getIntersectingObjects(Vehicle.class).size() >= 1) {
-			car_die = true;											// car accident
+			car_die = true;															// car accident
 		}
-		//-----------------------------
 		if (getIntersectingObjects(Snake.class).size() >= 1) {
 			snake_die = true;											
 		}
@@ -306,6 +338,18 @@ public class Frog_player extends Actor {
 				move(-1, 0);														
 			}
 		}
+		
+		//************************************
+		else if (getIntersectingObjects(Crocodile.class).size() >= 1) {
+			if (getIntersectingObjects(Crocodile.class).get(0).isSunk()) {
+				croc_die = true;													//if step on SUNK turtle then die
+			} 
+			else {
+				move(1, 0);
+			}
+		}
+		
+		//****************************************
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
