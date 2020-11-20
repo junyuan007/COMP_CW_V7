@@ -23,10 +23,6 @@ public class Level_3 {
 		animation_list.set(24, new Vehicle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));
 		animation_list.set(25, new Vehicle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
 		
-		//background.add(new Vehicle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
-		//animation_list.remove(34, 36);
-		//animation_list.remove(35);
-		
-		System.out.println("New Trucks added");
+		//System.out.println("1 short 1 long trucks added");
 	}
 }

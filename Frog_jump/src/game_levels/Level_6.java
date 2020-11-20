@@ -22,8 +22,9 @@ public class Level_6 {
 		
 		
 		// Bottom car
-		animation_list.set(31, new Vehicle(car_left, 175, 694, -3.5, car_size, car_size));
-		animation_list.set(32, new Vehicle(car_left, 475, 694, -3.5, car_size, car_size));
+		animation_list.set(31, new Vehicle(car_left, 175, 700, -3.5, car_size, car_size));
+		animation_list.set(32, new Vehicle(car_left, 475, 700, -3.5, car_size, car_size));
+		//System.out.println("Top & Bottom cars are Faster");
 		
 		try {
 		TimeUnit.SECONDS.sleep(2);					//time delay of 2 seconds 
@@ -32,7 +33,7 @@ public class Level_6 {
 		animation_list.set(18, new End(267,95));
 		animation_list.set(19, new End(394,95));
 		animation_list.set(20, new End(523,95));
-		System.out.println("End Goal is RESET");
+		//System.out.println("End Goal is RESET");
 		
 		//maybe add alert to say proceed
 		}

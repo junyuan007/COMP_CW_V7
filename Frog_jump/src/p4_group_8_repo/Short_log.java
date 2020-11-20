@@ -1,4 +1,4 @@
-package game_animation;
+package p4_group_8_repo;
 
 import javafx.scene.image.Image;
 import p4_group_8_repo.Actor;
@@ -8,9 +8,10 @@ import p4_group_8_repo.Actor;
  * @author Jun Yuan
  *
  */
-public class Log extends Actor {
+public class Short_log extends Actor {
 	
 	private double speed;
+	String image_link = "/graphic_animation/log3.png";
 	
 	/**
 	 * Method act to make Log animation move
@@ -18,11 +19,12 @@ public class Log extends Actor {
 	 */
 	@Override
 	public void act(long now) {
+		
 		move(speed , 0);
 		if (getX() > 600 && speed > 0)
-			setX(-180);
-		if (getX() < -300 && speed < 0)
-			setX(700);
+			setX(-200);
+		if (getX() < -50 && speed < 0)
+			setX(600);
 	}
 	
 	/**
@@ -34,7 +36,7 @@ public class Log extends Actor {
 	 * @param speed_movement is the speed of log 
 	 * 
 	 */
-	public Log(String image_link, int size, int x_position, int y_position, double speed_movement) {
+	public Short_log(int size, int x_position, int y_position, double speed_movement) {
 		setImage(new Image(image_link, size,size, true, true));
 		setX(x_position);
 		setY(y_position);

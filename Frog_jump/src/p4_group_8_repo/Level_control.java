@@ -1,5 +1,6 @@
 package p4_group_8_repo;
 
+import game_levels.Level_10;
 import game_levels.Level_2;
 import game_levels.Level_3;
 import game_levels.Level_4;
@@ -25,7 +26,7 @@ public class Level_control {
 	}
 	
 	public void change_level() {
-		/*
+		
 		if(level == 2) {
 			Level_2 level_2 = new Level_2(background);
 		}
@@ -52,7 +53,7 @@ public class Level_control {
 		}
 		if(level == 10) {
 			Level_10 level_10 = new Level_10(background);
-		}*/
+		}
 		
 		/*
 		if(level == 2) {
@@ -78,11 +79,11 @@ public class Level_control {
 		}
 		if(level == 2) {
 			Level_9 level_9 = new Level_9(background);
-		}*/
+		}
 		if(level == 2) {
 			Level_10 level_10 = new Level_10(background);
 		}
-		
+		*/
 		
 	}
 

@@ -4,7 +4,7 @@ import game_animation.BackgroundImage;
 import game_animation.Digit;
 import game_animation.End;
 import game_animation.HighScore_title;
-import game_animation.Log;
+import game_animation.Long_log;
 import game_animation.Score_title;
 import game_animation.Turtle;
 import game_animation.Vehicle;
@@ -16,6 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import p4_group_8_repo.MyStage;
+import p4_group_8_repo.Short_log;
 import p4_group_8_repo.Snake;
 
 /**
@@ -43,17 +44,17 @@ public class Create_animations {
 		//top
 		String short_log = "/graphic_animation/log3.png";
 		String long_log = "/graphic_animation/logs.png";
-		background.add(new Log(short_log, 150, 0, 166, 0.75));		// 2
-		background.add(new Log(short_log, 150, 220, 166, 0.75));	// 3
-		background.add(new Log(short_log, 150, 440, 166, 0.75));	// 4	
+		background.add(new Short_log(150, 0, 166, 0.75));	// 2
+		background.add(new Short_log(150, 220, 166, 0.75));	// 3
+		background.add(new Short_log(150, 440, 166, 0.75));	// 4	
 		//mid
-		background.add(new Log(long_log, 300, 0, 276, -2));			// 5	
-		background.add(new Log(long_log, 300, 400, 276, -2));		// 6	
+		background.add(new Long_log(300, 0, 276, -2));			// 5	
+		background.add(new Long_log(300, 400, 276, -2));		// 6	
 		//bottom
-		background.add(new Log(short_log, 150, 50, 329, 0.75));		// 7
-		background.add(new Log(short_log, 150, 270, 329, 0.75));	// 8	
-		background.add(new Log(short_log, 150, 490, 329, 0.75));	// 9	
-		//9
+		background.add(new Short_log(150, 30, 329, 0.75));		// 7
+		background.add(new Short_log(150, 270, 329, 0.75));		// 8	
+		background.add(new Short_log(150, 510, 329, 0.75));		// 9
+		
 		//TURTLE
 		//top
 		background.add(new Turtle(600, 217, -1, 130, 130)); // 10
@@ -71,7 +72,7 @@ public class Create_animations {
 		background.add(new End(267, 95));	// 18			removed addition operator
 		background.add(new End(394, 95));	// 19
 		background.add(new End(523, 95));	// 20
-		//27
+		
 		//Vehicle
 		//truck
 		String truck_short_right = "/graphic_animation/truck1"+"Right.png";

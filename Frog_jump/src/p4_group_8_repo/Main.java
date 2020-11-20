@@ -101,11 +101,13 @@ public class Main extends Application{
             @Override
             public void handle(long now) {
             	if (animal.changeScore()) {
-            		set_number(animal.getPoints());
             		if(animal.getPoints() > top_score.getScore()) {
             			top_score.setScore(animal.getPoints());
             			popo.update_highest(animal.getPoints());
             		}
+            		
+            		set_number(animal.getPoints());
+            		
             		if(animal.getPoints() > bobo.getScore(3)) {
             			if(animal.getPoints() > bobo.getScore(2)) {
             				if(animal.getPoints() > bobo.getScore(1)) {

@@ -3,12 +3,12 @@ package p4_group_8_repo;
 import java.util.ArrayList;
 
 import game_animation.End;
-import game_animation.Log;
+import game_animation.Long_log;
 import game_animation.Turtle;
 import game_animation.Vehicle;
 import game_animation.WetTurtle;
 import javafx.event.EventHandler;
-
+import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -42,7 +42,7 @@ public class Frog_player extends Actor {
 	boolean stop = false;
 	boolean changeScore = false;
 	int carD = 0;
-	double w = 800;
+	double scene_width = 800;
 	ArrayList<End> inter = new ArrayList<End>();			// array list of END goals
 	
 	int divide = 99;
@@ -53,6 +53,8 @@ public class Frog_player extends Actor {
 	int flag = 0;
 	boolean snake_die = false;
 	boolean croc_die = false;
+	boolean end_die = false;
+	int temp = 0;
 	
 	/**
 	 * Constructor for main_frog character
@@ -136,9 +138,9 @@ public class Frog_player extends Actor {
 				
 				else {
 				if (event.getCode() == KeyCode.W) {	  
-					if (getY() < w) {
+					if (getY() < scene_width) {
 						changeScore = true;
-						w = getY();
+						scene_width = getY();
 						player_points += 10;  //gain points
 					}
 	                move(0, -movement);
@@ -172,8 +174,7 @@ public class Frog_player extends Actor {
 	 * @param now
 	 */
 	public void act(long now) {
-		//int bounds = 0;
-		//if (getY() < 0 || getY() > 734) {
+
 		if (getY() < 0 || getY() > 800) {
 			setX(x_start);
 			setY(y_start + movement);
@@ -206,7 +207,6 @@ public class Frog_player extends Actor {
 				if (player_points > 50) {
 					player_points -= 50;			// if points more than 50 and car accident then minus points
 					changeScore = true;	
-					System.out.println("Car Die");
 				}
 			}
 			
@@ -229,7 +229,7 @@ public class Frog_player extends Actor {
 			if (carD == 4) {
 				setImage(new Image("/graphic_animation/waterdeath4.png", image_Size,image_Size , true, true));
 			}
-			if (carD == 4) {
+			if (carD == 5) {
 				setX(x_start);
 				setY(y_start + movement);
 				water_die = false;
@@ -302,7 +302,6 @@ public class Frog_player extends Actor {
 				if (player_points > 50) {
 					player_points -= 50;
 					changeScore = true;
-					//System.out.println("Crocodile Die");
 				}
 			}
 			
@@ -314,68 +313,77 @@ public class Frog_player extends Actor {
 		}
 		if (getIntersectingObjects(Vehicle.class).size() >= 1) {
 			car_die = true;															// car accident
+			System.out.println("66666666");
 		}
-		if (getIntersectingObjects(Snake.class).size() >= 1) {
+		if (getIntersectingObjects(Snake.class).size() >= 1) {						// snake accident	
 			snake_die = true;											
 		}
 		if (getX() == 240 && getY() == 82) {
 			stop = true;
 		}
-		if (getIntersectingObjects(Log.class).size() >= 1 && !not_moving) {
-			if(getIntersectingObjects(Log.class).get(0).getLeft())					//intersect with log no problem!
+		if (getIntersectingObjects(Short_log.class).size() >= 1 && !not_moving) {
+			if(getIntersectingObjects(Short_log.class).get(0).getLeft())			//intersect with short log no problem!
+				move(-2, 0);
+			else
+				move (0.75, 0);
+		}
+		else if (getIntersectingObjects(Long_log.class).size() >= 1 && !not_moving) {
+			if(getIntersectingObjects(Long_log.class).get(0).getLeft())				//intersect with long log no problem!
 				move(-2, 0);
 			else
 				move (0.75, 0);
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !not_moving) {
-			move(-1, 0);															//intersect with turtle no problem!
+			move(-1, 0);															//intersect with normal turtle no problem!
 		}
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
-				water_die = true;													//if step on SUNK turtle then die
+				water_die = true;													// SUNKEN turtle accident
 			} 
 			else {
 				move(-1, 0);														
 			}
 		}
 		
-		//************************************
 		else if (getIntersectingObjects(Crocodile.class).size() >= 1) {
 			if (getIntersectingObjects(Crocodile.class).get(0).isSunk()) {
-				croc_die = true;													//if step on SUNK turtle then die
+				croc_die = true;													// Crocodile accident
 			} 
 			else {
 				move(1, 0);
 			}
 		}
-		
-		//****************************************
 		else if (getIntersectingObjects(End.class).size() >= 1) {
-			inter = (ArrayList<End>) getIntersectingObjects(End.class);
+			//inter = (ArrayList<End>) getIntersectingObjects(End.class);
+			//inter.addAll(getIntersectingObjects(End.class));
+			//System.out.println(inter.size());
+			System.out.println("++++++++++");
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
-				//end --;	
-				goal ++;
-				//player_points -= 50;				// WHYYYYYYY
-				System.out.println("LOVE U ");
+				end --;	
+				player_points -= 50;	
+				System.out.println("GOAL FAIL");
 			}
-			System.out.println(player_points);
-			player_points += 50;											//victory...main_frog landed on End goal 		
-			System.out.println(player_points);
-			changeScore = true;
-			w = 800;
+
 			getIntersectingObjects(End.class).get(0).setEnd();
+			player_points += 50;
+			goal ++;
 			end++;
-			
+			scene_width = 800;
+			changeScore = true;
+			System.out.println("GOAL SUCCESS");
 			setX(x_start);
 			setY(y_start + movement);
+			
+			int yyy = (int) getY();
+			System.out.println(yyy);
 		}
+		
+		
+		
 		else if (getY() < 413){
 			water_die = true;
-			
-			//setX(x_start);
-			//setY(y_start + movement);
 		}
-		//System.out.println(end);
+			
 	}		//END act method
 	
 	/**

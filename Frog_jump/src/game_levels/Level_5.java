@@ -14,7 +14,7 @@ public class Level_5 {
 		animation_list.set(11, new WetTurtle(400, 217, -1, 130, 130));
 		animation_list.set(12, new WetTurtle(200, 217, -1, 130, 130));
 
-		System.out.println("3 Turtles changes to Wet Turtles");
+		//System.out.println("3 Turtles changes to Wet Turtles");
 	}
 
 }

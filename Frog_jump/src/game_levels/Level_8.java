@@ -1,10 +1,11 @@
 package game_levels;
 
 
-import game_animation.Log;
+import game_animation.Long_log;
 import javafx.collections.ObservableList;
 import p4_group_8_repo.Crocodile;
 import p4_group_8_repo.MyStage;
+import p4_group_8_repo.Short_log;
 
 
 public class Level_8 {
@@ -16,9 +17,15 @@ public class Level_8 {
 		int croc_height = 135;
 		int croc_width = 155;
 
-		animation_list.set(2, new Log(short_log, 150, 220, 166, 0.75));
+		//animation_list.set(2, new Log(short_log, 150, 220, 166, 0.75));
+		//animation_list.set(3, new Crocodile(0, 166, 0.75, croc_width, croc_height));
+		//animation_list.set(4, new Log(short_log, 150, 440, 166, 0.75));
+		
+		animation_list.set(2, new Short_log(150, 220, 166, 0.75));
 		animation_list.set(3, new Crocodile(0, 166, 0.75, croc_width, croc_height));
-		animation_list.set(4, new Log(short_log, 150, 440, 166, 0.75));
+		animation_list.set(4, new Short_log(150, 440, 166, 0.75));
+		
+		//System.out.println("1 short log changed to crocodile");
 	}
 
 }
