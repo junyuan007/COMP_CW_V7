@@ -11,6 +11,7 @@ import p4_group_8_repo.Actor;
 public class Digit extends Actor{
 
 	Image image_1;
+	int size_digit = 25;
 	
 	/**
 	 * Empty body
@@ -27,8 +28,8 @@ public class Digit extends Actor{
 	 * @param x_position is the X-coordinate of the score board
 	 * @param y_position is the Y-coordinate of the score board
 	 */
-	public Digit(int current_score, int size, int x_position, int y_position) {
-		image_1 = new Image("/graphic_animation/"+ current_score +".png", size, size, true, true);
+	public Digit(int current_score, int x_position, int y_position) {
+		image_1 = new Image("/graphic_animation/"+ current_score +".png", size_digit, size_digit, true, true);
 		setImage(image_1);
 		setX(x_position);
 		setY(y_position);

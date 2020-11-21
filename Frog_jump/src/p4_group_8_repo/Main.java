@@ -130,9 +130,9 @@ public class Main extends Application{
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("***** YOU WIN *****");
+            		alert.setTitle("*-*-* YOU WIN *-*-*");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		//alert.setContentText("Highest Possible Score: 800");
+            		alert.setContentText("Highest Possible Score: 1200");
             		alert.show();
             	}
             }
@@ -161,14 +161,15 @@ public class Main extends Application{
      */
     public void set_number(int current_points) {
     	int shift = 0;
+    	int y_coordinate = 42;
 
     	while (current_points > 0) {
     		  int temp = current_points / 10;
     		  int display = current_points - (temp * 10);			// k is number setter
     		  current_points = temp;
     		  int x_coordinate = 565 - shift;
-    		  background.add(new Digit(display, size_digit, x_coordinate, 35));		//overlap initial digit
-    		  shift += 30;
+    		  background.add(new Digit(display, x_coordinate, y_coordinate));		//overlap initial digit
+    		  shift += 25;
     		}
     }
     

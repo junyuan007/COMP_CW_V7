@@ -57,7 +57,7 @@ public class HighScore_list_butt extends Actor{
 		Image image = new Image(image_link, 65, 65, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setGraphic(start_image);
-		button.setTranslateY(8);
+		button.setTranslateY(12);
 		button.setTranslateX(395);
 		
 		//Button Shadow Effect 
