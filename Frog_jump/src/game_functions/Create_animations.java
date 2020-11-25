@@ -99,8 +99,8 @@ public class Create_animations {
 		String car_left = "/graphic_animation/car1"+"Left.png";
 		int car_size = 50;
 		//top
-		//Vehicle v1 = new Vehicle(car_left, 500, 490, -3, car_size, car_size); 
-		//background.add(v1);
+		//background.add(new Vehicle(car_left, 500, 490, -3, car_size, car_size)); 
+
 		//TEMP STOP
 		background.add(new Vehicle(car_left, 500, 490, -3, car_size, car_size)); // 26
 		//background.add(new Vehicle());
@@ -121,8 +121,10 @@ public class Create_animations {
 		//background.add(new HighScore_title(60, 400, 12));			//high score button
 
 		//Score
+
 		background.add(new Score_title(60, 520, 19));				// 34 score button
 		background.add(new Digit(0, 565));			// 35 initial score_board
+
 
 		//Resume and Pause button
 		Resume_butt resume_butt = new Resume_butt(background);

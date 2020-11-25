@@ -1,15 +1,44 @@
 How to Play...
 
-Game Controls:
-WASD keys are used to control the frogger character in this game. W & S key are used to control forward and backward respectively, while A & D keys are used to move left and right respectively
+### Game Controls ###
+WASD keys are used to control the frogger character in this game. W & S key are used to control forward and backward respectively, while A & D keys are used to move left and right respectively. When either one of the WASD is pressed, the Frogger will move to that direction by one step, so do not long press the key as points will not be counted and it is DANGEROUS! TQ :)
 
-Game Operation:
-At the very beginning of the game, you should see Frogger positioned at the bottom of the screen. Going from top to bottom, there will be a 5 lane highway, a concrete median, a river and a swampy marsh. Car traffic will go from left to right, but enemies such as the crocodile will be moving in the opposite direction. On the river, the log, crocodiles and turtles will be floating from the right to the left. Use this information to your advantage during later stages where you will have fewer rectangles available to place your frogs.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
-There are three varieties of logs in Frogger; short, normal and long. As expected, longer logs are ideal because there will be more area for you to hop on. Be aware of the fact that logs are not safe spots to rest. Snakes can instantly appear on any log, at any time, including before, during and directly after you jump.
+### Animations ###
+Vehicles - Look out for cars as well as trucks while crossing the road!
+Frogger - Frogger is the main character, but he represents an unlimited number of frogs that you must lead to the swamp.
+Turtles - Although turtles are not really an enemy, they can cause you to lose a turn if they go below the surface. Use turtles to get from one point to another, but do not get complacent.
+Logs - Frogger uses logs of varying lengths to make it across the river to the bank.
+Snakes - Snakes are extremely dangerous, and its movement speed is extremely fast. One slightest contact with the snake will cause Frogger to be poisoned and cause death.
+Crocodiles - Crocodiles might look scary but when their mouth are shut Frogger can still step on them to cross the river to the bank, else when crocodiles open their mouth Frogger will be eaten instantly by them.
 
-Turtles are useful 'stepping stones,' but they also come with risks. Some turtles periodically dive beneath the surface of the river, causing Frogger to drown and lose a life. You should observe each new group of turtles in order to determine which ones are divers.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
-Cars also come in three different versions. Slower cars usually travel in the same lanes, but this is not always the case. There will be more cars that move at a normal speed during the initial stages of Frogger, but as you progress they will become less numerous. Fast cars will re
+### Game Play Overview ###
+The objective of Frogger is to assist frogs across a busy, multi-line highway, a highway median, an embankment, and a treacherous river. At each level, there are unique challenges and obstacles for players to work around, including the fact that Frogger has no physical defenses. Each stage is having its own unique challenges for Frogger. 
+There is a total of 10 levels in the game as when game launches the Frogger will start at Level 1. As when Frogger reaches the destinated area or known as the End Goals, the level will increase by one. High score will be recorded and Frogger has infinite amount of life as this game test your patients more. SO, DON’T GIVE UP!!!
+Vehicles are the biggest enemies of Frogger, but they are not the most dangerous. Each stage has five lanes of traffic that players must hop across to get to the first safety zone. Snakes and crocodiles also periodically appear on the highway.
+Median that separates the highway from the river is regarded as a safe place for you to gain your bearing but do note that there are also snakes that patrol the area on a regular basis. The river section of each level houses the most numerous enemies. Because Frogger is not able to swim, you must hop and aim to land on the backs of floating turtles as well as logs. Touching the front of any crocodiles and immediately cause a loss of life. Snakes must be avoided entirely.
 
-There is an infinite number of stages on the original Frogger arcade game, but a specific group of four levels are used to establish a repetitive pattern. After you have completed the sixth through the 10th stage, you will learn what to expect on future levels.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+### Game Operation ###
+At the very beginning of the game, you should see Frogger positioned at the bottom of the screen. Going from top to bottom, there will be a 5-lane highway, a concrete median, a river and a swampy marsh. Car traffic will go from left to right, but enemies such as the crocodile will be moving in the opposite direction. On the river, the log, crocodiles, and turtles will be floating from either left to right or right to left direction. 
+
+There are 2 varieties of logs in Frogger; short and long. As expected, longer logs are ideal because there will be more area for you to hop on. Be aware of the fact that logs are not safe spots to rest. Crocodiles might replace the logs as Frogger might be EATEN. OMG!!!
+
+Turtles are useful 'steppingstones,' but they also come with risks. Some turtles periodically dive beneath the surface of the river, causing Frogger to drown and lose a life. You should observe each new group of turtles to determine which ones are divers.
+
+There are 3 varieties of vehicle in Frogger; long truck, short truck, and cars. Vehicles in the same lane will have the same speed while vehicles in different lanes has different speed and it varies with the level of the game.
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+### History ###
+Although the objective of Frogger is very simplistic, this arcade game has gained an enormous following over the last 30 years. Robert Papas was just a teenager when he authored the iconic game. Konami then developed the game before transferring publishing rights to Sega. A partnership was formed between Sega and Gremlin Industries to mass produce thousands of Frogger arcade machines.
+After Frogger's official unveiling in 1981, other game developers began to release their own versions of this arcade classic. As with most other arcade games developed at the time, Frogger is available in both one and two player modes. The first Frogger port became available on home computers, with another port for the original Atari 2600 becoming available soon after.
+Frogger was released for the Commodore 64, Intellivision and several other Atari home video game consoles by the mid-1980s. Parker Brothers, Sierra, Coleco and Cornsoft purchased development rights to Frogger, which allowed them to port the video game to even more computer systems, arcade machines and home gaming consoles.
+In 1984, the first sequel named Frogger II - ThreeeDeep! was released. Although many other ports and clones were developed over the years, the next official Frogger sequel was not produced until 1997. This remake is also named Frogger, but multiple changes were made. The next Frogger sequel to emerge was Frogger 2 - Swampy's Revenge. Next was Frogger - the Great Quest in 2001, with Frogger's Adventures – Temple of the Frog coming out in the same year. The latest sequel in the Frogger series is Frogger - Hyper Arcade Edition.
+
+
+

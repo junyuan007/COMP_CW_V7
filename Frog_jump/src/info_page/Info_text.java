@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import files_IO.BuffRead;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Font;
 
@@ -41,12 +42,13 @@ public class Info_text {
 	public void design() {
 		
 		Font type = Font.font ("Consolas", 20);
-		double xxx = txting.getScrollTop();
-	    txting.setScrollTop(xxx);
 	    txting.setFont(type);
 	    txting.setWrapText(true);
 	    txting.setEditable(false);
 	    txting.setTranslateY(75);
+	    txting.getScrollTop();
+	    //double xxx = txting.getScrollTop();
+	    //txting.setScrollTop(xxx);
 
 	}
 	

@@ -344,7 +344,6 @@ public class Frog_player extends Actor {
 		}
 		
 		
-		
 		else if (getY() < 413){
 			water_die = true;
 		}
