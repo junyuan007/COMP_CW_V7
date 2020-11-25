@@ -143,7 +143,7 @@ class test_2 {
 		    		  int display = current_points - (temp * 10);			// k is number setter
 		    		  current_points = temp;
 		    		  int x_coordinate = 565 - shift;
-		    		  background.add(new Digit(display, size_digit, x_coordinate, 35));		//overlap initial digit
+		    		  background.add(new Digit(display, x_coordinate));		//overlap initial digit
 		    		  shift += 30;
 		    		}
 		    }

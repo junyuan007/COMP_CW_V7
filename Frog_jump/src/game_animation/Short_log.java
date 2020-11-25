@@ -1,10 +1,10 @@
-package p4_group_8_repo;
+package game_animation;
 
 import javafx.scene.image.Image;
 import p4_group_8_repo.Actor;
 
 /**
- * Class of log (animation)
+ * Class of Short_log (animation)
  * @author Jun Yuan
  *
  */

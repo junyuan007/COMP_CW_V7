@@ -4,6 +4,11 @@ import files_IO.CreateFile;
 import files_IO.ReadFile;
 import files_IO.WriteFile;
 
+/**
+ * Class of High Score List
+ * @author Jun Yuan
+ *
+ */
 public class HighScore_list {
 	
 	String path = "../Frog_Jump/Src/Files/highest_1.txt";
@@ -23,7 +28,7 @@ public class HighScore_list {
 	}
 	
 	/**
-	 * Write NEW high score in txt file
+	 * Write NEW high score in text file
 	 * @param number is the new high score
 	 */
 	public void setScore(int index, int value) {
@@ -34,7 +39,7 @@ public class HighScore_list {
 	}
 	
 	/**
-	 * Get CURRENT high score in txt file
+	 * Get CURRENT high score in text file
 	 * @return the value of high score in String
 	 */
 	public int getScore(int number) {

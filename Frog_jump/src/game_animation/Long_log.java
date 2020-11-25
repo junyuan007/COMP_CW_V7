@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import p4_group_8_repo.Actor;
 
 /**
- * Class of log (animation)
+ * Class of Long_log (animation)
  * @author Jun Yuan
  *
  */
@@ -29,7 +29,6 @@ public class Long_log extends Actor {
 	
 	/**
 	 * Construct an instance of Long Log
-	 * @param image_link source of image
 	 * @param size is the size of image
 	 * @param x_position is the X-coordinate of log
 	 * @param y_position is the Y-coordinate of log

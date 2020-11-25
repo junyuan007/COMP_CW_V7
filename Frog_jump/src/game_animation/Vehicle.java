@@ -5,7 +5,7 @@ import p4_group_8_repo.Actor;
 
 /**
  * Class of Vehicle (animation)
- * @author tigus
+ * @author Jun Yuan
  *
  */
 public class Vehicle extends Actor {
@@ -21,13 +21,13 @@ public class Vehicle extends Actor {
 	
 	
 	/**
-	 * Construct an instance of vehicle
+	 * Construct an instance of Vehicle with image link, coordinates, size and soeed
 	 * @param imageLink is the source path of image
-	 * @param x_position is the X-coordinate of vehicle
-	 * @param y_position is the Y-coordinate of vehicle
-	 * @param speed_movement is the speed of vehicle
-	 * @param width of vehicle
-	 * @param height of vehicle
+	 * @param x_position is the X-coordinate of Vehicle
+	 * @param y_position is the Y-coordinate of Vehicle
+	 * @param speed_movement is the speed of Vehicle
+	 * @param width of Vehicle
+	 * @param height of Vehicle
 	 */
 	public Vehicle(String imageLink, int x_position, int y_position, double speed_movement, int width, int height) {
 		setImage(new Image(imageLink, width, height, true, true));
@@ -36,6 +36,9 @@ public class Vehicle extends Actor {
 		speed = speed_movement;
 	}
 	
+	/**
+	 * Construct an instance of empty Vehicle
+	 */
 	public Vehicle() {
 		
 	}

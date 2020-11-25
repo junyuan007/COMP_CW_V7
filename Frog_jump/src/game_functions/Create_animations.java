@@ -16,8 +16,9 @@ import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import p4_group_8_repo.MyStage;
-import p4_group_8_repo.Short_log;
-import p4_group_8_repo.Snake;
+import p4_group_8_repo.Save_high_butt;
+import game_animation.Short_log;
+import game_animation.Snake;
 
 /**
  * Class to create animations in game scene
@@ -25,6 +26,9 @@ import p4_group_8_repo.Snake;
  * 
  */
 public class Create_animations {
+	
+	int current_high;
+	Save_high_butt save_butt;
 
 	/**
 	 * Construct an instance of Create_animations
@@ -117,16 +121,25 @@ public class Create_animations {
 		//background.add(new HighScore_title(60, 400, 12));			//high score button
 
 		//Score
-		background.add(new Score_title(60, 520, 9));				// 34 score button
-		background.add(new Digit(0, size_digit, 565, 35));			// 35 initial score_board
+		background.add(new Score_title(60, 520, 19));				// 34 score button
+		background.add(new Digit(0, 565));			// 35 initial score_board
 
 		//Resume and Pause button
 		Resume_butt resume_butt = new Resume_butt(background);
 	    Pause_butt pause_butt = new Pause_butt(background);
 	    HighScore_list_butt highscore_butt = new HighScore_list_butt(background);
+	    save_butt = new Save_high_butt(background);
 	    ObservableList game_list = background.getChildren();
-	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton());
-		//33
+	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton(), save_butt.getButton());
+	    //game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton());
+	    
 		//System.out.println("ALL animations created");
 	}
+	
+	public void set_curr_high(int number) {
+		this.current_high = number;
+		save_butt.setScore(this.current_high);
+	}
+	
+	
 }
