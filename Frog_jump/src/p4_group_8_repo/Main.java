@@ -37,7 +37,7 @@ public class Main extends Application{
 		try {
 		launch(args);
 		System.out.println("Launch ");
-		// CHIN JUN YUAN
+		// CHIN JUN YUAN 123
 		}
 		catch (Exception e) {
 			e.printStackTrace();
