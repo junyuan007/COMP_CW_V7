@@ -43,7 +43,7 @@ public class Main extends Application{
 		try {
 		launch(args);
 		System.out.println("Launch ");
-		// CHIN JUN YUAN 123
+		// CHIN JUN YUAN 123456
 		}
 		catch (Exception e) {
 			e.printStackTrace();

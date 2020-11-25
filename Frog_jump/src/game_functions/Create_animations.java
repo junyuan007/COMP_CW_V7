@@ -122,7 +122,7 @@ public class Create_animations {
 
 		//Score
 
-		background.add(new Score_title(60, 520, 19));				// 34 score button
+		background.add(new Score_title(60));				// 34 score button
 		background.add(new Digit(0, 565));			// 35 initial score_board
 
 
