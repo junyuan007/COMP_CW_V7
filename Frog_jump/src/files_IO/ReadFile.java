@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * Class of Read Files
- * @author tigus
+ * @author Jun Yuan
  *
  */
 public class ReadFile {

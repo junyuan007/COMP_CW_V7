@@ -1,18 +1,25 @@
 package game_levels;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
-
 import game_animation.End;
 import game_animation.Vehicle;
 import javafx.collections.ObservableList;
 import p4_group_8_repo.MyStage;
 
+/**
+ * Class of Level 6
+ * @author Jun Yuan
+ * 
+ */
 public class Level_6 {
 	
 	String car_left = "/graphic_animation/car1"+"Left.png";
 	int car_size = 50;
 	
+	/**
+	 * Set cars faster
+	 * @param background is the container for the scene
+	 */
 	public Level_6(MyStage background) {
 
 		ObservableList animation_list = background.getChildren();
@@ -35,7 +42,6 @@ public class Level_6 {
 		animation_list.set(20, new End(523,95));
 		//System.out.println("End Goal is RESET");
 		
-		//maybe add alert to say proceed
 		}
 		catch(InterruptedException e) {
             System.err.format("IOException: %s%n", e);

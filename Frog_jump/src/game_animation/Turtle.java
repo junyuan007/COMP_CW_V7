@@ -9,13 +9,12 @@ import p4_group_8_repo.Actor;
  *
  */
 public class Turtle extends Actor{
+	
 	Image turtle_1;
 	Image turtle_2;
 	Image turtle_3;
-	private int speed;
-	
-	//int i = 1;
-	//boolean bool = true;
+	int speed;
+	//private int speed;
 	
 	/**
 	 * Method act to make Turtle animation move

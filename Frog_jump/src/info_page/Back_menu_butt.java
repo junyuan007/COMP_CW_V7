@@ -9,14 +9,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import p4_group_8_repo.Actor;
+
 
 /**
  * Class of Button (Info Page -> Menu Page)
  * @author Jun Yuan
  *
  */
-public class Back_menu_butt extends Actor{
+public class Back_menu_butt{
 	String image_link = "/graphic_animation/backButton.png";
 	Button button;
 	
@@ -70,12 +70,4 @@ public class Back_menu_butt extends Actor{
 		return button;
 	}
 
-	/**
-	 * Empty body
-	 */
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}
 }

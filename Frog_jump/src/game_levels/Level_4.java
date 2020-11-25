@@ -2,12 +2,20 @@ package game_levels;
 
 import game_animation.Turtle;
 import game_animation.WetTurtle;
-import game_functions.Create_animations;
 import javafx.collections.ObservableList;
 import p4_group_8_repo.MyStage;
 
+/**
+ * Class of Level 4
+ * @author Jun Yuan
+ *
+ */
 public class Level_4 {
 
+	/**
+	 * Replace Turtles with WetTurtles
+	 * @param background is the container for the scene
+	 */
 	public Level_4(MyStage background) {
 
 		ObservableList animation_list = background.getChildren();

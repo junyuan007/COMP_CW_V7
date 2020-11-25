@@ -7,6 +7,7 @@ import game_highscore.Top_HighScore;
 import game_highscore.HighScore_list;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -32,6 +33,11 @@ public class Main extends Application{
 	Top_HighScore top_score;
 	Update_HighScore_animation popo;
 	Level_control level_control;
+	
+	HighScore_list bobo;
+	int flag = 0;
+	
+	Create_animations animation;
 
 	public static void main(String[] args) {
 		try {
@@ -55,24 +61,29 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
+		
 		top_score = new Top_HighScore();
 		top_score.setScore(0);
+		HighScore_list bobo = new HighScore_list();
+		bobo.setScore(1, 300);
+		bobo.setScore(2, 200);
+		bobo.setScore(3, 100);
 		
 		//Game Scene
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
-	    Create_animations animation = new Create_animations(background);		// all animations created
+	    animation = new Create_animations(background);		// all animations created
 	    level_control = new Level_control(background);
 	    
 	    popo = new Update_HighScore_animation(top_score.getScore(), top_score, background);
 	    create_frogger();
 	    background.start();	
 	    start(); 												//create timer
+	    
+	    Menu_info_page menu_info_page = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game);
 
-	    Menu_info_page well = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game);
-
-	    primaryStage.setScene(well.get_start_scene());
+	    primaryStage.setScene(menu_info_page.get_start_scene());
 		primaryStage.show();
 		System.out.println("Game Start");
 		
@@ -93,14 +104,15 @@ public class Main extends Application{
 	 * Method to create animation timer
 	 */
 	public void createTimer() {
-		HighScore_list bobo = new HighScore_list();
-		//bobo.setScore(1, 0);
-		//bobo.setScore(2, 0);
-		//bobo.setScore(3, 0);
+		
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
             	if (animal.changeScore()) {
+            		
+            		//////////////////////////////////
+            		animation.set_curr_high(animal.getPoints());
+            		/////////////////////////////////
             		if(animal.getPoints() > top_score.getScore()) {
             			top_score.setScore(animal.getPoints());
             			popo.update_highest(animal.getPoints());
@@ -108,6 +120,9 @@ public class Main extends Application{
             		
             		set_number(animal.getPoints());
             		
+            		
+            		
+            		/*
             		if(animal.getPoints() > bobo.getScore(3)) {
             			if(animal.getPoints() > bobo.getScore(2)) {
             				if(animal.getPoints() > bobo.getScore(1)) {
@@ -117,7 +132,7 @@ public class Main extends Application{
             			}			// end 2
             			bobo.setScore(3, animal.getPoints());
             		}				//end 3
-
+					*/
             	}
             	
             	if (animal.change_level()) {
@@ -168,8 +183,10 @@ public class Main extends Application{
     		  int display = current_points - (temp * 10);			// k is number setter
     		  current_points = temp;
     		  int x_coordinate = 565 - shift;
-    		  background.add(new Digit(display, x_coordinate, y_coordinate));		//overlap initial digit
-    		  shift += 25;
+
+    		  background.add(new Digit(display, x_coordinate));		//overlap initial digit
+    		  shift += 23;
+
     		}
     }
     

@@ -35,7 +35,8 @@ public class WetTurtle extends Actor{
 				else if (now / divide % 4 == 2) {
 					setImage(turtle_3);
 					sunk = false;
-				} else if (now / divide % 4 == 3) {
+				} 
+				else if (now / divide % 4 == 3) {
 					setImage(turtle_4);
 					sunk = true;			//main_frogger die
 				}
@@ -47,7 +48,7 @@ public class WetTurtle extends Actor{
 	}		//END act method
 	
 	/**
-	 * Construct an instance of WetTurtle
+	 * Construct an instance of WetTurtle with coordinates, speed and size
 	 * @param x_position is the X-coordinate of WetTurtle
 	 * @param y_position is the Y-coordinate of WetTurtle
 	 * @param speed_movement is the speed of WetTurtle
@@ -66,6 +67,9 @@ public class WetTurtle extends Actor{
 		setImage(turtle_2);
 	}
 	
+	/**
+	 * Construct an instance of empty WetTurtle
+	 */
 	public WetTurtle() {
 		
 	}

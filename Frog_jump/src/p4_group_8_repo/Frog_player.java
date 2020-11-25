@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import game_animation.End;
 import game_animation.Long_log;
+import game_animation.Short_log;
+import game_animation.Snake;
+import game_animation.Crocodile;
 import game_animation.Turtle;
 import game_animation.Vehicle;
 import game_animation.WetTurtle;
 import javafx.event.EventHandler;
-import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -244,36 +246,7 @@ public class Frog_player extends Actor {
 			}
 			
 		}
-		//	Snake die
-		if (snake_die) {
-			not_moving = true;
-			if ((now) % 11 == 0) {
-				carD++;
-			}
-			if (carD == 1) {
-				setImage(new Image("/graphic_animation/cardeath1.png", image_Size,image_Size , true, true));
-			}
-			if (carD == 2) {
-				setImage(new Image("/graphic_animation/cardeath2.png", image_Size,image_Size , true, true));
-			}
-			if (carD == 3) {
-				setImage(new Image("/graphic_animation/cardeath3.png", image_Size,image_Size , true, true));
-			}
-			if (carD == 4) {
-				setX(x_start);
-				setY(y_start + movement);
-				snake_die = false;
-				carD = 0;
-				setImage(new Image("/graphic_animation/froggerUp.png", image_Size, image_Size, true, true));
-				not_moving = false;
-				if (player_points > 50) {
-					player_points -= 50;
-					changeScore = true;
-					System.out.println("Snake Die");
-				}
-			}
-			
-		}
+
 		// Crocodile die 
 		if (croc_die) {
 			not_moving = true;
@@ -311,13 +284,10 @@ public class Frog_player extends Actor {
 		if (getX() > 600) {
 			move(-movement * 2, 0);
 		}
-		if (getIntersectingObjects(Vehicle.class).size() >= 1) {
-			car_die = true;															// car accident
-			System.out.println("66666666");
+		if (getIntersectingObjects(Vehicle.class).size() >= 1 || getIntersectingObjects(Snake.class).size() >= 1) {
+			car_die = true;															// car die or snake die
 		}
-		if (getIntersectingObjects(Snake.class).size() >= 1) {						// snake accident	
-			snake_die = true;											
-		}
+
 		if (getX() == 240 && getY() == 82) {
 			stop = true;
 		}
@@ -355,13 +325,11 @@ public class Frog_player extends Actor {
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			//inter = (ArrayList<End>) getIntersectingObjects(End.class);
-			//inter.addAll(getIntersectingObjects(End.class));
-			//System.out.println(inter.size());
-			System.out.println("++++++++++");
+			//System.out.println("++++++++++");
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
-				end --;	
-				player_points -= 50;	
-				System.out.println("GOAL FAIL");
+				//end --;	
+				//player_points -= 50;	
+				//System.out.println("GOAL FAIL");
 			}
 
 			getIntersectingObjects(End.class).get(0).setEnd();
@@ -370,12 +338,9 @@ public class Frog_player extends Actor {
 			end++;
 			scene_width = 800;
 			changeScore = true;
-			System.out.println("GOAL SUCCESS");
+			//System.out.println("GOAL SUCCESS");
 			setX(x_start);
 			setY(y_start + movement);
-			
-			int yyy = (int) getY();
-			System.out.println(yyy);
 		}
 		
 		

@@ -9,7 +9,7 @@ import p4_group_8_repo.Actor;
  *
  */
 public class End extends Actor{
-	boolean activated;
+	boolean activated = false;
 	
 	/**
 	 * Empty body
@@ -28,7 +28,7 @@ public class End extends Actor{
 		setX(x_position);
 		setY(y_position);
 		setImage(new Image("/graphic_animation/End.png", 60, 60, true, true));
-		this.activated = false;
+		//this.activated = false;
 	}
 	
 	/**
@@ -37,13 +37,12 @@ public class End extends Actor{
 	public void setEnd() {
 		setImage(new Image("/graphic_animation/FrogEnd.png", 68, 63, true, true));
 		activated = true;
-		System.out.println("Here");
 	}
 	
 	
 	/**
-	 * Method to activate
-	 * @return activated as in true
+	 * Method if the End is occupied
+	 * @return activated if occupied
 	 */
 	public boolean isActivated() {
 		return activated;

@@ -17,9 +17,10 @@ import p4_group_8_repo.Actor;
  * @author Jun Yuan
  *
  */
-public class Info_butt extends Actor{
+public class Info_butt{
 	
-	String image_link = "/graphic_animation/infoButton.png";
+	//String image_link = "/graphic_animation/infoButton.png";
+	String image_link = "/graphic_animation/info_pixel.png";
 	Button button;
 	
 	/**
@@ -39,12 +40,14 @@ public class Info_butt extends Actor{
 	 * Design and settings of button
 	 */
 	public void design_button() {
-		Image image = new Image(image_link, 38, 38, true, true);
+		Image image = new Image(image_link, 80, 80, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
-		button.setTranslateY(150);
-		button.setTranslateX(125);
+		//button.setTranslateY(150);
+		//button.setTranslateX(105);
+		button.setTranslateY(-5);
+		button.setTranslateX(520);
 		
 		//Button Shadow Effect 
 		DropShadow shadow = new DropShadow();
@@ -70,15 +73,6 @@ public class Info_butt extends Actor{
 	 */
 	public Button getButton() {
 		return button;
-	}
-
-	/**
-	 * Empty body
-	 */
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

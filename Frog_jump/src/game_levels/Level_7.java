@@ -1,13 +1,20 @@
 package game_levels;
 
-import game_animation.End;
-import game_animation.Vehicle;
+import game_animation.Snake;
 import javafx.collections.ObservableList;
 import p4_group_8_repo.MyStage;
-import p4_group_8_repo.Snake;
 
+/**
+ * Class of Level 7
+ * @author Jun Yuan
+ *
+ */
 public class Level_7 {
 	
+	/**
+	 * Add new Snake
+	 * @param background is the container for the scene
+	 */
 	public Level_7(MyStage background) {
 		
 		ObservableList animation_list = background.getChildren();

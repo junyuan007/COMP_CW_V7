@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import p4_group_8_repo.Actor;
 
+
 /**
  * Class of Background of Menu Page (start page)
  * @author Jun Yuan
@@ -29,10 +30,7 @@ public class Info_background extends Actor{
 		ImageView start_image = new ImageView(image);
 		return start_image;
 	}
-	
 
-	
-	
 	/**
 	 * Empty Class
 	 */

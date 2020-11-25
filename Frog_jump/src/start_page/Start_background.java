@@ -18,6 +18,7 @@ public class Start_background extends Actor{
 	 */
 	public Start_background() {
 		this.image_link = "/graphic_animation/version_1.png";
+		//this.image_link = "/graphic_animation/version_2.png";
 	}
 	
 	public Start_background(String path) {
