@@ -37,6 +37,7 @@ public class Main extends Application{
 		try {
 		launch(args);
 		System.out.println("Launch ");
+		// CHIN JUN YUAN
 		}
 		catch (Exception e) {
 			e.printStackTrace();
