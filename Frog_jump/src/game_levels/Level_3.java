@@ -1,10 +1,14 @@
 package game_levels;
 
-import game_animation.Turtle;
 import game_animation.Vehicle;
 import javafx.collections.ObservableList;
 import p4_group_8_repo.MyStage;
 
+/**
+ * Class of Level 3
+ * @author Jun Yuan
+ *
+ */
 public class Level_3 {
 	
 	String truck_short_right = "/graphic_animation/truck1"+"Right.png";
@@ -12,6 +16,10 @@ public class Level_3 {
 	int short_truck_size = 120;
 	int long_truck_size = 200;
 
+	/**
+	 * Add short and long trucks
+	 * @param background is the container for the scene
+	 */
 	public Level_3(MyStage background) {
 		
 		ObservableList animation_list = background.getChildren();

@@ -14,7 +14,6 @@ public class WriteFile {
 		String path;
 		String message;
 		
-	
 		/**
 		 * Construct an instance of WriteFile
 		 * @param path of the file
@@ -38,7 +37,6 @@ public class WriteFile {
 	  public void write_file(){
 	    try {
 	      FileWriter myWriter = new FileWriter(path);
-	      //myWriter.write("Frogger Game by CHIN JUN YUAN");
 	      myWriter.write(message);
 	      myWriter.close();
 	      //System.out.println("Successfully wrote to the file---------- Message = " + message);

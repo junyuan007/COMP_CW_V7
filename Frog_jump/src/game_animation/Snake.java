@@ -1,8 +1,13 @@
-package p4_group_8_repo;
+package game_animation;
 
 import javafx.scene.image.Image;
+import p4_group_8_repo.Actor;
 
-
+/**
+ * Class of Snake (animation)
+ * @author Jun Yuan
+ *
+ */
 public class Snake extends Actor{
 	
 	private double speed;
@@ -15,6 +20,10 @@ public class Snake extends Actor{
 	int snake_size = 80;
 	double speed_movement = -3.3;
 
+	/**
+	 * Method act to make Snake animation move
+	 * @param now is the current run time
+	 */
 	@Override
 	public void act(long now) {
 		
@@ -39,6 +48,11 @@ public class Snake extends Actor{
 			setX(600);
 	}
 	
+	/**
+	 * Construct an instance of Snake with coordinates
+	 * @param x_position is the X-coordinate of Snake
+	 * @param y_position is the Y-coordinate of Snake
+	 */
 	public Snake(int x_position, int y_position) {
 		//Image xxx = new Image(snake1, width, height, true, true);
 		snake1 = new Image("/graphic_animation/pop1.png", snake_size, snake_size, true, true);
@@ -52,6 +66,9 @@ public class Snake extends Actor{
 		System.out.println("Snake created");
 	}
 	
+	/**
+	 * Construct an instance of empty Snake
+	 */
 	public Snake() {
 		
 	}

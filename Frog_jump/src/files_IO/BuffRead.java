@@ -1,17 +1,14 @@
 package files_IO;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
  * Class to read files using BufferedReader 
- * @author tigus
+ * @author Jun Yuan
  *
  */
 public class BuffRead {

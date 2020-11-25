@@ -38,11 +38,13 @@ public class Enter_game_butt extends Actor{
 	 * Design and settings of button
 	 */
 	public void design_button() {
-		Image image = new Image(image_link, 130, 130, true, true);
+		Image image = new Image(image_link, 175, 175, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
-		button.setTranslateY(150);
+		//button.setTranslateY(150);
+		button.setTranslateY(490);
+		button.setTranslateX(215);
 		
 		DropShadow shadow = new DropShadow();
 		//Adding the shadow when the mouse cursor is on

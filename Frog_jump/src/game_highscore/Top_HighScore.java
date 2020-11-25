@@ -5,8 +5,8 @@ import files_IO.ReadFile;
 import files_IO.WriteFile;
 
 /**
- * Class to Edit High Score in txt Files
- * @author tigus
+ * Class of High Score
+ * @author Jun Yuan
  *
  */
 public class Top_HighScore {
@@ -23,7 +23,7 @@ public class Top_HighScore {
 	}
 	
 	/**
-	 * Write NEW high score in txt file
+	 * Write NEW high score in text file
 	 * @param number is the new high score
 	 */
 	public void setScore(int number) {
@@ -33,7 +33,7 @@ public class Top_HighScore {
 	}
 	
 	/**
-	 * Get CURRENT high score in txt file
+	 * Get CURRENT high score in text file
 	 * @return the value of high score in String
 	 */
 	public int getScore() {

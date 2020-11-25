@@ -1,14 +1,11 @@
 package game_button;
 
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import p4_group_8_repo.Actor;
 import p4_group_8_repo.MyStage;
 
 /**
@@ -16,7 +13,7 @@ import p4_group_8_repo.MyStage;
  * @author Jun Yuan
  *
  */
-public class Resume_butt extends Actor{
+public class Resume_butt{
 
 	String image_link = "/graphic_animation/play.png";
 	Button button;
@@ -72,15 +69,5 @@ public class Resume_butt extends Actor{
 		return button;
 	}
 	
-	/**
-	 * Empty body
-	 */
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	
-
 }

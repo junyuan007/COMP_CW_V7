@@ -1,10 +1,9 @@
 package p4_group_8_repo;
 
 import java.io.File;
-
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
+
 
 /**
  * Class of MyStage
@@ -36,6 +35,8 @@ public class MyStage extends World{
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+		//mediaPlayer.setVolume(0.09);
+		//mediaPlayer.setBalance(0);
 	    mediaPlayer.play();
 	}
 	
@@ -45,6 +46,8 @@ public class MyStage extends World{
 	public void stopMusic() {
 		mediaPlayer.stop();
 	}
+	
+	
 
 }
 

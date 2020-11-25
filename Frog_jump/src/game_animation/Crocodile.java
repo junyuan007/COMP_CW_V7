@@ -1,8 +1,13 @@
-package p4_group_8_repo;
+package game_animation;
 
 import javafx.scene.image.Image;
+import p4_group_8_repo.Actor;
 
-
+/**
+ * Class of Crocodile (animation)
+ * @author Jun Yuan
+ *
+ */
 public class Crocodile extends Actor{
 	
 	private double speed;
@@ -10,12 +15,13 @@ public class Crocodile extends Actor{
 	Image croc_hungry;
 	boolean sunk = false;
 	
-	//String image_open =  "/graphic_animation/croc_right_open1.png";
-	//String image_close =  "/graphic_animation/croc_right_close.png";
-	
 	String image_open =  "/graphic_animation/crocodile3_open_right.png";
 	String image_close =  "/graphic_animation/crocodile4_close_right.png";
 
+	/**
+	 * Method act to make Corcodile animation move
+	 * @param now is the current run time
+	 */
 	@Override
 	public void act(long now) {
 	
@@ -44,6 +50,14 @@ public class Crocodile extends Actor{
 			setX(600);
 	}
 	
+	/**
+	 * Construct an instance of Crocodile with coordinates, size and speed
+	 * @param x_position is the X-coordinate of Crocodile
+	 * @param y_position is the Y-coordinate of Crocodile
+	 * @param speed_movement is the speed of Crocodile
+	 * @param width of Crocodile
+	 * @param height of Corcodile
+	 */
 	public Crocodile(int x_position, int y_position, double speed_movement, int width, int height) {
 		croc_rest = new Image(image_close, width, height, true, true);
 		croc_hungry = new Image(image_open, width, height, true, true);
@@ -52,13 +66,20 @@ public class Crocodile extends Actor{
 		setY(y_position);
 		speed = speed_movement;
 		setImage(croc_rest);
-		System.out.println("Crocodile created");
+		//System.out.println("Crocodile created");
 	}
 	
+	/**
+	 * Construct an instance of empty Snake
+	 */
 	public Crocodile() {
 		
 	}
 	
+	/**
+	 * Method to check if Crocodile is resting or hungry
+	 * @return if sunk 
+	 */
 	public boolean isSunk() {
 		return sunk;
 	}
