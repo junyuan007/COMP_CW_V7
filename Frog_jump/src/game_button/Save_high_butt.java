@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package game_button;
 
 import game_highscore.HighScore_list;
 import javafx.event.ActionEvent;
@@ -14,7 +14,7 @@ import p4_group_8_repo.Actor;
 import p4_group_8_repo.MyStage;
 
 /**
- * Class of Button (START animation timer)
+ * Class of Button (Save high score)
  * @author Jun Yuan
  *
  */
@@ -25,11 +25,11 @@ public class Save_high_butt extends Actor{
 	Button button;
 	Alert alert = new Alert(AlertType.INFORMATION);
 	
-	int current_high = 888;
+	int current_high;
 	HighScore_list bobo = new HighScore_list();
 	
 	/**
-	 * Construct an instance of Resume_butt
+	 * Construct an instance of Save_high_butt
 	 * @param background is the container for the scene
 	 */
 	public Save_high_butt(MyStage background) {
@@ -41,6 +41,10 @@ public class Save_high_butt extends Actor{
 
 	}
 	
+	/**
+	 * Method to update current high score within class
+	 * @param num is the current high score
+	 */
 	public void setScore (int num) {
 		this.current_high = num;
 	}
@@ -49,29 +53,33 @@ public class Save_high_butt extends Actor{
 		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
 		@Override
 		public void handle(ActionEvent e) {
-		alert.setTitle("Save High Score");
+		
 		
 		if(current_high > bobo.getScore(1)) {
 			bobo.setScore(3, bobo.getScore(2));			// 2 -> 3
 			bobo.setScore(2, bobo.getScore(1));			// 1 -> 2
 			bobo.setScore(1, current_high);				// current score -> 1
+			alert.setTitle("High Score Saved (＊◕ᴗ◕＊)");
 			alert.setHeaderText("Your current rank is 1st");
 		}
 		else if (current_high > bobo.getScore(2)) {
 			bobo.setScore(3, bobo.getScore(2));
 			bobo.setScore(2, current_high);	
+			alert.setTitle("High Score Saved (๑^ں^๑)");
 			alert.setHeaderText("Your current rank is 2nd");
 		}
 		else if (current_high > bobo.getScore(3)) {
 			bobo.setScore(3, current_high);	
+			alert.setTitle("High Score Saved (๑>ᴗ<๑)");
 			alert.setHeaderText("Your current rank is 3rd");
 		}
 		else {
-			alert.setHeaderText("You are currently out of rank :( TRY HARDER !!!");
+			alert.setTitle("High Score NOT Saved");
+			alert.setHeaderText("You are out of rank. Please try again ಠ╭╮ಠ");
 		}
 		
-		alert.setContentText("Your current high score is " + current_high + "\n"
-							+"Press the high score button to see the updated rankings");
+		alert.setContentText("⭐ Your current high score is " + current_high + "\n\n"
+							+"⭐ Press the high score button to see the updated rankings");
 		alert.show();
 		}
 		};

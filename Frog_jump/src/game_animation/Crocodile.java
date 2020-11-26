@@ -14,6 +14,7 @@ public class Crocodile extends Actor{
 	Image croc_rest;
 	Image croc_hungry;
 	boolean sunk = false;
+
 	
 	String image_open =  "/graphic_animation/crocodile3_open_right.png";
 	String image_close =  "/graphic_animation/crocodile4_close_right.png";
@@ -82,6 +83,10 @@ public class Crocodile extends Actor{
 	 */
 	public boolean isSunk() {
 		return sunk;
+	}
+	
+	public Image get_Image(){
+		return croc_rest;
 	}
 
 

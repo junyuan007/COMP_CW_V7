@@ -9,16 +9,19 @@ import game_animation.Score_title;
 import game_animation.Turtle;
 import game_animation.Vehicle;
 import game_animation.WetTurtle;
+import game_animation.Short_log;
+import game_animation.Snake;
+
 import game_button.Pause_butt;
 import game_button.Resume_butt;
+import game_button.Save_high_butt;
 import game_highscore.HighScore_list_butt;
+
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import p4_group_8_repo.MyStage;
-import p4_group_8_repo.Save_high_butt;
-import game_animation.Short_log;
-import game_animation.Snake;
+
 
 /**
  * Class to create animations in game scene
@@ -35,9 +38,6 @@ public class Create_animations {
 	 * @param background is the container for the scene
 	 */
 	public Create_animations(MyStage background) {
-		
-		//Animal animal;
-		int size_digit = 30;
 		
 		//Background
 	    //Shifted image link to BackgroundImage constructor

@@ -30,7 +30,7 @@ public class Main extends Application{
 	Scene scene_start;
 	Scene scene_game;
 	Scene scene_info;
-	Top_HighScore top_score;
+	Top_HighScore your_highscore;
 	Update_HighScore_animation popo;
 	Level_control level_control;
 	
@@ -42,7 +42,8 @@ public class Main extends Application{
 	public static void main(String[] args) {
 		try {
 		launch(args);
-		System.out.println("Launch ");
+		System.out.println("Game closed ");
+		
 		// CHIN JUN YUAN 123456
 		}
 		catch (Exception e) {
@@ -62,9 +63,9 @@ public class Main extends Application{
 	public void start(Stage primaryStage) throws IllegalStateException{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
-		
-		top_score = new Top_HighScore();
-		top_score.setScore(0);
+		// Set up for high score board and high score list 
+		your_highscore = new Top_HighScore();
+		your_highscore.setScore(0);
 		HighScore_list bobo = new HighScore_list();
 		bobo.setScore(1, 300);
 		bobo.setScore(2, 200);
@@ -74,10 +75,12 @@ public class Main extends Application{
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
+	    
+	    
 	    animation = new Create_animations(background);		// all animations created
 	    level_control = new Level_control(background);
 	    
-	    popo = new Update_HighScore_animation(top_score.getScore(), top_score, background);
+	    popo = new Update_HighScore_animation(your_highscore.getScore(), your_highscore, background);
 	    create_frogger();
 	    background.start();	
 	    start(); 												//create timer
@@ -87,9 +90,7 @@ public class Main extends Application{
 	    primaryStage.setScene(menu_info_page.get_start_scene());
 		primaryStage.show();
 		System.out.println("Game Start");
-		
 		HelloWorld qiqi = new HelloWorld();
-
 }
 	
 	/**
@@ -111,36 +112,23 @@ public class Main extends Application{
             public void handle(long now) {
             	if (animal.changeScore()) {
             		
-            		//////////////////////////////////
-            		animation.set_curr_high(animal.getPoints());
-            		/////////////////////////////////
-            		if(animal.getPoints() > top_score.getScore()) {
-            			top_score.setScore(animal.getPoints());
+            		// Update High Score Board
+            		if(animal.getPoints() > your_highscore.getScore()) {
+            			your_highscore.setScore(animal.getPoints());
             			popo.update_highest(animal.getPoints());
             		}
-            		
+            		animation.set_curr_high(your_highscore.getScore());
             		set_number(animal.getPoints());
             		
-            		
-            		
-            		/*
-            		if(animal.getPoints() > bobo.getScore(3)) {
-            			if(animal.getPoints() > bobo.getScore(2)) {
-            				if(animal.getPoints() > bobo.getScore(1)) {
-            					bobo.setScore(1, animal.getPoints());
-            				}		//end 1
-            				bobo.setScore(2, animal.getPoints());
-            			}			// end 2
-            			bobo.setScore(3, animal.getPoints());
-            		}				//end 3
-					*/
             	}
             	
+            	// Change Level
             	if (animal.change_level()) {
             		level_control.set_level((animal.getGoal() + 1));
             	}
             	
-            	if (animal.getStop()) {											//Complete GAME
+            	// Finish Game
+            	if (animal.getStop()) {										
             		System.out.println("*** STOP ***");
             		background.stopMusic();
             		stop();
@@ -197,3 +185,15 @@ public class Main extends Application{
 
 //////////////////////////////////////THE END/////////////////////////////////////////////////////////////
 
+
+/*
+if(animal.getPoints() > bobo.getScore(3)) {
+	if(animal.getPoints() > bobo.getScore(2)) {
+		if(animal.getPoints() > bobo.getScore(1)) {
+			bobo.setScore(1, animal.getPoints());
+		}		//end 1
+		bobo.setScore(2, animal.getPoints());
+	}			// end 2
+	bobo.setScore(3, animal.getPoints());
+}				//end 3
+*/

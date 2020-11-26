@@ -15,8 +15,8 @@ public class Score_title extends Actor{
 
 	Image image_1;
 	String image_link = "/graphic_animation/score.png";
-	int x_position = 520;
-	int y_position = 12;
+	int x_position = 522;
+	int y_position = 18;
 
 	/**
 	 * Empty Class
