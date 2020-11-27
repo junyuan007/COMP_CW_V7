@@ -11,13 +11,12 @@ import p4_group_8_repo.MyStage;
  */
 public class Update_HighScore_animation {
 	
-
-	int size_digit = 23;
-
-	int points;
+	private int points;
+	private int size_digit = 23;
+	private int y_coordinate = 48;
+	
 	Top_HighScore top_score;
 	MyStage background;
-	int y_coordinate = 42;
 	
 	/**
 	 * Construct an instance of Update_HighScore
@@ -32,21 +31,16 @@ public class Update_HighScore_animation {
 		int shift = 0;
 
 		if (points == 0) {							//condition if reset high score
-
-			background.add(new Digit(0, 450));
-
+			background.add(new Digit(0, 450, y_coordinate, size_digit));
 		}
 		
 		while (points > 0) {
-			
 			int temp = points / 10;
 			int display = points - (temp * 10);			
 			points = temp;
 			int x_coordinate = 450 - shift;
-
-			background.add(new Digit(display, x_coordinate));
+			background.add(new Digit(display, x_coordinate, y_coordinate, size_digit));
 			shift += size_digit;
-
 		}
 		
 	}
@@ -65,7 +59,7 @@ public class Update_HighScore_animation {
 	      		  	current_points = temp;
 	      		  	int x_coordinate = 450 - shift;
 
-	      		  	background.add(new Digit(display, x_coordinate));
+	      		  	background.add(new Digit(display, x_coordinate, y_coordinate, size_digit));
 	      		  	shift += size_digit;
 
 	    		}

@@ -12,13 +12,12 @@ import p4_group_8_repo.Actor;
  */
 public class Info_background extends Actor{
 	
-	String image_link;
+	private String image_link ="/graphic_animation/info_wallpaper.jpg";
 
 	/**
 	 * Empty Class
 	 */
 	public Info_background() {
-		this.image_link = "/graphic_animation/info_wallpaper.jpg";
 	}
 	
 	/**

@@ -11,20 +11,14 @@ import p4_group_8_repo.Actor;
  */
 public class Start_background extends Actor{
 	
-	String image_link;
+	private String image_link = "/graphic_animation/version_1.png";
 
 	/**
 	 * Empty Class
 	 */
 	public Start_background() {
-		this.image_link = "/graphic_animation/version_1.png";
-		//this.image_link = "/graphic_animation/version_2.png";
 	}
-	
-	public Start_background(String path) {
-		this.image_link = path;
-	}
-	
+
 	/**
 	 * Create Menu Page
 	 * @return Image_view which is the background of menu page
@@ -34,9 +28,6 @@ public class Start_background extends Actor{
 		ImageView start_image = new ImageView(image);
 		return start_image;
 	}
-	
-
-	
 	
 	/**
 	 * Empty Class

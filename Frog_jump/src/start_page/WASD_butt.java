@@ -1,5 +1,6 @@
 package start_page;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -16,22 +17,26 @@ import javafx.scene.input.MouseEvent;
  */
 public class WASD_butt{
 
-	String image_link = "/graphic_animation/WASD.png";
-	Button button;
+	private String image_link = "/graphic_animation/WASD.png";
+	private Button button;
 	Alert alert = new Alert(AlertType.INFORMATION);
 
-	
 	/**
 	 * Construct an instance of instruction button
 	 */
 	public WASD_butt() {
 		 button = new Button();
 		 alert_design();
-		 button.setStyle("-fx-background-color: transparent;");
-		 button.setOnAction(e -> alert.show()); 
+		 
 		 design_button();
-		 System.out.println("Here");
-
+		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+				@Override
+				public void handle(ActionEvent e) {
+					System.out.println("\nWASD instruction button is pressed\n");
+					alert.show();
+				}
+				};
+		 button.setOnAction(event); 
 	}
 	
 	/**
@@ -44,7 +49,6 @@ public class WASD_butt{
 							+"S - to move down\n"
 							+"A - to move left\n"
 							+"D - to move down");
-
 	}
 	
 	/**
@@ -54,9 +58,8 @@ public class WASD_butt{
 		
 		Image image = new Image(image_link, 155, 155, true, true);
 		ImageView start_image = new ImageView(image);
+		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
-		//button.setTranslateY(-80);
-		//button.setTranslateX(-162);
 		button.setTranslateY(266);
 		button.setTranslateX(45);
 		

@@ -15,15 +15,16 @@ import p4_group_8_repo.MyStage;
  */
 public class Pause_butt{
 
-	String image_link = "/graphic_animation/pause.png";
-	Button button;
+	private String image_link = "/graphic_animation/pause.png";
+	private Button button;
+	private int button_size;
 	
 	/**
 	 * Construct an instance of Pause_butt
 	 * @param background is the container for the scene
 	 */
-	public Pause_butt(MyStage background) {
-		
+	public Pause_butt(MyStage background, int button_size) {
+		 this.button_size = button_size;
 		 button = new Button();
 		 design_button();
 		 button.setStyle("-fx-background-color: transparent;");
@@ -35,7 +36,7 @@ public class Pause_butt{
 	 * Design and settings of button
 	 */
 	public void design_button() {
-		Image image = new Image(image_link, 60, 60, true, true);
+		Image image = new Image(image_link, button_size, button_size, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setGraphic(start_image);
 		button.setTranslateY(18);

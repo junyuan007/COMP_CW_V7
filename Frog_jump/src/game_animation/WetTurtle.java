@@ -9,12 +9,12 @@ import p4_group_8_repo.Actor;
  *
  */
 public class WetTurtle extends Actor{
-	Image turtle_1;
-	Image turtle_2;
-	Image turtle_3;
-	Image turtle_4;
-	private int speed;
-	boolean sunk = false;
+	private Image turtle_1;
+	private Image turtle_2;
+	private Image turtle_3;
+	private Image turtle_4;
+	private double speed;
+	private boolean sunk = false;
 	
 	/**
 	 * Method act to make WetTurtle animation move
@@ -55,8 +55,7 @@ public class WetTurtle extends Actor{
 	 * @param width of WetTurtle
 	 * @param height of WetTurtle
 	 */
-	public WetTurtle(int x_position, int y_position, int speed_movement, int width, int height) {
-
+	public WetTurtle(int x_position, int y_position, double speed_movement, int width, int height) {
 		turtle_1 = new Image("/graphic_animation/TurtleAnimation1.png", width, height, true, true);
 		turtle_2 = new Image("/graphic_animation/TurtleAnimation2Wet.png", width, height, true, true);
 		turtle_3 = new Image("/graphic_animation/TurtleAnimation3Wet.png", width, height, true, true);

@@ -15,15 +15,16 @@ import p4_group_8_repo.MyStage;
  */
 public class Resume_butt{
 
-	String image_link = "/graphic_animation/play.png";
-	Button button;
+	private String image_link = "/graphic_animation/play.png";
+	private Button button;
+	private int button_size;
 	
 	/**
 	 * Construct an instance of Resume_butt
 	 * @param background is the container for the scene
 	 */
-	public Resume_butt(MyStage background) {
-		
+	public Resume_butt(MyStage background, int button_size) {
+		 this.button_size = button_size;
 		 button = new Button();
 		 design_button();
 		 button.setStyle("-fx-background-color: transparent;");
@@ -37,7 +38,7 @@ public class Resume_butt{
 	 */
 	public void design_button() {
 		
-		Image image = new Image(image_link, 50, 50, true, true);
+		Image image = new Image(image_link, button_size, button_size, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setGraphic(start_image);
 		button.setTranslateY(43);

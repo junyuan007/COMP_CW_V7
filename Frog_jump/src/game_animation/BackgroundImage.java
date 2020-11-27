@@ -10,10 +10,7 @@ import p4_group_8_repo.Actor;
  */
 public class BackgroundImage extends Actor{
 	
-	//String image_link = "/graphic_animation/game_back_image.png";
-	//String image_link = "/graphic_animation/xxx.png";
-	String image_link = "/graphic_animation/zzz.png";
-	
+	private String image_link = "/graphic_animation/game_background.png";
 
 	/**
 	 * Empty class because BackgroundImage is not moving
@@ -25,9 +22,11 @@ public class BackgroundImage extends Actor{
 
 	/**
 	 * Construct an instance of BackgroundImage
+	 * @param width of the background image
+	 * @param height of the background image
 	 */
-	public BackgroundImage() {
-		setImage(new Image(image_link, 600, 910, true, true));
+	public BackgroundImage(int width, int height) {
+		setImage(new Image(image_link, width, height, true, true));
 		
 	}
 

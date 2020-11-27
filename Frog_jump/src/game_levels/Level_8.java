@@ -21,14 +21,12 @@ public class Level_8 {
 		
 		ObservableList animation_list = background.getChildren();
 		String short_log = "/graphic_animation/log3.png";
-		int croc_height = 135;
-		int croc_width = 155;
 		
 		animation_list.set(2, new Short_log(150, 220, 166, 0.75));
-		animation_list.set(3, new Crocodile(0, 166, 0.75, croc_width, croc_height));
+		animation_list.set(3, new Crocodile(0, 166, 0.75, 155, 135));
 		animation_list.set(4, new Short_log(150, 440, 166, 0.75));
 		
-		//System.out.println("1 short log changed to crocodile");
+		System.out.println("1 short log changed to crocodile\n");
 	}
 
 }

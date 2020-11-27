@@ -9,7 +9,8 @@ import p4_group_8_repo.Actor;
  *
  */
 public class End extends Actor{
-	boolean activated = false;
+	
+	private boolean activated = false;
 	
 	/**
 	 * Empty body
@@ -23,11 +24,12 @@ public class End extends Actor{
 	 * Construct an instance of End goal
 	 * @param x_position is the X-coordinate of END goal
 	 * @param y_position is the Y-coordinate of END goal
+	 * @param size of the END goal
 	 */
-	public End(int x_position, int y_position) {
+	public End(int x_position, int y_position, int size) {
 		setX(x_position);
 		setY(y_position);
-		setImage(new Image("/graphic_animation/End.png", 60, 60, true, true));
+		setImage(new Image("/graphic_animation/End.png", size, size, true, true));
 		//this.activated = false;
 	}
 	

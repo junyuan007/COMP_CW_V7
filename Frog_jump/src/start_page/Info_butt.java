@@ -1,6 +1,7 @@
 package start_page;
 
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import p4_group_8_repo.Actor;
 
 
 /**
@@ -19,9 +19,8 @@ import p4_group_8_repo.Actor;
  */
 public class Info_butt{
 	
-	//String image_link = "/graphic_animation/infoButton.png";
-	String image_link = "/graphic_animation/info_pixel.png";
-	Button button;
+	private String image_link = "/graphic_animation/info_pixel.png";
+	private Button button;
 	
 	/**
 	 * Construct an instance of Info_butt
@@ -32,8 +31,14 @@ public class Info_butt{
 		 button = new Button();
 		 design_button();
 		 
-		 button.setOnAction(e -> primaryStage.setScene(scene)); 
-		 //System.out.println("Info Button Activated");
+		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+				@Override
+				public void handle(ActionEvent e) {
+					System.out.println("\nInfo button is pressed\n");
+					primaryStage.setScene(scene);
+				}
+				};
+		button.setOnAction(event); 
 	}
 	
 	/**

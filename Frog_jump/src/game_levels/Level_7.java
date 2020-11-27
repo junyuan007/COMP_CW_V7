@@ -17,12 +17,12 @@ public class Level_7 {
 	 */
 	public Level_7(MyStage background) {
 		
-		ObservableList animation_list = background.getChildren();
 		int size = 80;
+		ObservableList animation_list = background.getChildren();
 		
-		animation_list.set(33, new Snake(20, 429));
+		animation_list.set(33, new Snake(20, 429, 80, -3.3));
 		
-		//System.out.println("1 Snake added");
+		System.out.println("1 Snake added\n");
 	}
 
 }

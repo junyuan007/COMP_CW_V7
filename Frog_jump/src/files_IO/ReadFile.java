@@ -11,16 +11,15 @@ import java.util.Scanner;
  */
 public class ReadFile {
 	
-	String data;
-	String path;
-	String final_output;
+	private String data;
+	private String file_path;
 	
 	/**
 	 * Construct an instance of ReadFile
 	 * @param path of the file
 	 */
 	public ReadFile(String path) {
-		this.path = path;
+		this.file_path = path;
 	}
 	
 	/**
@@ -28,7 +27,7 @@ public class ReadFile {
 	 */
 	public void read_file() {
 		try {
-			File myObj = new File(path);
+			File myObj = new File(file_path);
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
 

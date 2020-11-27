@@ -11,15 +11,15 @@ import java.io.IOException;
  */
 public class WriteFile {
 	
-		String path;
-		String message;
+		private String file_path;
+		private String output_message;
 		
 		/**
 		 * Construct an instance of WriteFile
 		 * @param path of the file
 		 */
 	  public WriteFile(String path) {
-		  this.path = path;
+		  this.file_path = path;
 	  }
 	  
 	  /**
@@ -27,7 +27,7 @@ public class WriteFile {
 	   * @param number
 	   */
 	  public void sending(int number) {
-		  this.message = String.valueOf(number);  //convert integer to string
+		  this.output_message = String.valueOf(number);  //convert integer to string
 	  }
 	  
 
@@ -36,8 +36,8 @@ public class WriteFile {
 	   */
 	  public void write_file(){
 	    try {
-	      FileWriter myWriter = new FileWriter(path);
-	      myWriter.write(message);
+	      FileWriter myWriter = new FileWriter(file_path);
+	      myWriter.write(output_message);
 	      myWriter.close();
 	      //System.out.println("Successfully wrote to the file---------- Message = " + message);
 	      

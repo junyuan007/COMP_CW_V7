@@ -32,6 +32,9 @@ public class Level_10 {
 		ObservableList animation_list = background.getChildren();
 		
 		
+		// NOT DONE 
+		
+		
 		/*
 		// Long Truck
 		animation_list.set(21, new Vehicle(truck_long_left, 0, 540, truck_speed, long_truck_size, long_truck_size));
@@ -53,7 +56,7 @@ public class Level_10 {
 		*/
 		
 		
-		//System.out.println("Final Level");
+		System.out.println("Final Level\n");
 	}
 
 }

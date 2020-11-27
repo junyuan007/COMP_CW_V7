@@ -1,6 +1,7 @@
 package info_page;
 
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,8 +18,9 @@ import javafx.stage.Stage;
  *
  */
 public class Back_menu_butt{
-	String image_link = "/graphic_animation/backButton.png";
-	Button button;
+	
+	private String image_link = "/graphic_animation/backButton.png";
+	private Button button;
 	
 	/**
 	 * Construct an instance of Back_menu_butt
@@ -28,9 +30,15 @@ public class Back_menu_butt{
 	public Back_menu_butt(Stage primaryStage, Scene scene) {
 		 button = new Button();
 		 design_button();
-		 
-		 button.setOnAction(e -> primaryStage.setScene(scene)); 
-		 //System.out.println("Back Start Button Activated");
+		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+				@Override
+				public void handle(ActionEvent e) {
+					System.out.println("\nBack Menu Page button is pressed\n");
+					primaryStage.setScene(scene);
+				}
+				};
+		 button.setOnAction(event); 
+
 	}
 	
 	/**

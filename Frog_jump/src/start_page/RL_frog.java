@@ -10,11 +10,10 @@ import p4_group_8_repo.Actor;
  */
 public class RL_frog extends Actor{
 	
-	String image_link = "/graphic_animation/frog1.png";
-	Image frog1;
-	Image frog2;
-	Image frog3;
-	Image frog4;
+	private Image frog1;
+	private Image frog2;
+	private Image frog3;
+	private Image frog4;
 	private double speed;
 	
 	/**

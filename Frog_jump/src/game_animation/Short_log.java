@@ -11,7 +11,7 @@ import p4_group_8_repo.Actor;
 public class Short_log extends Actor {
 	
 	private double speed;
-	String image_link = "/graphic_animation/log3.png";
+	private String image_link = "/graphic_animation/log3.png";
 	
 	/**
 	 * Method act to make Log animation move
@@ -19,7 +19,6 @@ public class Short_log extends Actor {
 	 */
 	@Override
 	public void act(long now) {
-		
 		move(speed , 0);
 		if (getX() > 600 && speed > 0)
 			setX(-200);
@@ -29,7 +28,6 @@ public class Short_log extends Actor {
 	
 	/**
 	 * Construct an instance of Log
-	 * @param image_link source of image
 	 * @param size is the size of image
 	 * @param x_position is the X-coordinate of log
 	 * @param y_position is the Y-coordinate of log

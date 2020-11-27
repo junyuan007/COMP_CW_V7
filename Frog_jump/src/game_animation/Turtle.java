@@ -10,11 +10,10 @@ import p4_group_8_repo.Actor;
  */
 public class Turtle extends Actor{
 	
-	Image turtle_1;
-	Image turtle_2;
-	Image turtle_3;
-	int speed;
-	//private int speed;
+	private Image turtle_1;
+	private Image turtle_2;
+	private Image turtle_3;
+	private double speed;
 	
 	/**
 	 * Method act to make Turtle animation move
@@ -53,10 +52,7 @@ public class Turtle extends Actor{
 	 * @param height of image
 	 * 
 	 */
-	public Turtle(int x_position, int y_position, int speed_movement, int width, int height) {
-		//turtle_1 = new Image("file:src/p4_group_8_repo/TurtleAnimation1.png", width, height, true, true);
-		//turtle_2 = new Image("file:src/p4_group_8_repo/TurtleAnimation2.png", width, height, true, true);
-		//turtle_3 = new Image("file:src/p4_group_8_repo/TurtleAnimation3.png", width, height, true, true);
+	public Turtle(int x_position, int y_position, double speed_movement, int width, int height) {
 		turtle_1 = new Image("/graphic_animation/TurtleAnimation1.png", width, height, true, true);
 		turtle_2 = new Image("/graphic_animation/TurtleAnimation2.png", width, height, true, true);
 		turtle_3 = new Image("/graphic_animation/TurtleAnimation3.png", width, height, true, true);

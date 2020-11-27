@@ -11,9 +11,6 @@ import files_IO.WriteFile;
  */
 public class HighScore_list {
 	
-	String path = "../Frog_Jump/Src/Files/highest_1.txt";
-	int number;
-	
 	/**
 	 * Construct an Instance of Edit_topScore
 	 */
@@ -29,10 +26,10 @@ public class HighScore_list {
 	
 	/**
 	 * Write NEW high score in text file
-	 * @param number is the new high score
+	 * @param index is the ranking of high score
+	 * @param value is the new high score
 	 */
 	public void setScore(int index, int value) {
-		//this.number= index;
 		WriteFile file = new WriteFile("../Frog_Jump/Src/Files/highest_"+index+".txt");
 		file.sending(value);
 		file.write_file();
@@ -40,11 +37,11 @@ public class HighScore_list {
 	
 	/**
 	 * Get CURRENT high score in text file
+	 * @param index is the ranking of high score
 	 * @return the value of high score in String
 	 */
-	public int getScore(int number) {
-		this.number = number;
-		ReadFile file = new ReadFile("../Frog_Jump/Src/Files/highest_"+this.number+".txt");
+	public int getScore(int index) {
+		ReadFile file = new ReadFile("../Frog_Jump/Src/Files/highest_"+index+".txt");
 		file.read_file();
 		return file.number_content();
 	}

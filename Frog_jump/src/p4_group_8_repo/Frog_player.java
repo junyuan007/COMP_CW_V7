@@ -320,12 +320,11 @@ public class Frog_player extends Actor {
 				croc_die = true;													// Crocodile accident
 			} 
 			else {
-				move(1, 0);
+				move(0.75, 0);
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			//inter = (ArrayList<End>) getIntersectingObjects(End.class);
-			//System.out.println("++++++++++");
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
 				//end --;	
 				//player_points -= 50;	

@@ -20,19 +20,19 @@ import p4_group_8_repo.MyStage;
  */
 public class Save_high_butt extends Actor{
 
-	//String image_link = "/graphic_animation/save_butt.png";
-	String image_link = "/graphic_animation/save_me.png";
-	Button button;
+	private String image_link = "/graphic_animation/save_me.png";
+	private Button button;
+	private int current_high;
+	private int button_size;
 	Alert alert = new Alert(AlertType.INFORMATION);
-	
-	int current_high;
 	HighScore_list bobo = new HighScore_list();
 	
 	/**
 	 * Construct an instance of Save_high_butt
 	 * @param background is the container for the scene
 	 */
-	public Save_high_butt(MyStage background) {
+	public Save_high_butt(MyStage background, int button_size) {
+		 this.button_size = button_size;
 		 button = new Button();
 		 design_button();
 		 button.setStyle("-fx-background-color: transparent;");
@@ -89,8 +89,7 @@ public class Save_high_butt extends Actor{
 	 */
 	public void design_button() {
 		
-		int image_size = 25;
-		Image image = new Image(image_link, image_size, image_size, true, true);
+		Image image = new Image(image_link, button_size, button_size, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setGraphic(start_image);
 		button.setTranslateY(8);

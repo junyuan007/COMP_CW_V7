@@ -10,17 +10,17 @@ import p4_group_8_repo.MyStage;
  *
  */
 public class Level_3 {
-	
-	String truck_short_right = "/graphic_animation/truck1"+"Right.png";
-	String truck_long_right = "/graphic_animation/truck2"+"Right.png";
-	int short_truck_size = 120;
-	int long_truck_size = 200;
 
 	/**
 	 * Add short and long trucks
 	 * @param background is the container for the scene
 	 */
 	public Level_3(MyStage background) {
+		
+		String truck_short_right = "/graphic_animation/truck1"+"Right.png";
+		String truck_long_right = "/graphic_animation/truck2"+"Right.png";
+		int short_truck_size = 120;
+		int long_truck_size = 200;
 		
 		ObservableList animation_list = background.getChildren();
 		
@@ -31,6 +31,6 @@ public class Level_3 {
 		animation_list.set(24, new Vehicle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));
 		animation_list.set(25, new Vehicle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
 		
-		//System.out.println("1 short 1 long trucks added");
+		System.out.println("1 short 1 long trucks added\n");
 	}
 }

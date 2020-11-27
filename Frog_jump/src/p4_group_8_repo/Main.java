@@ -7,7 +7,6 @@ import game_highscore.Top_HighScore;
 import game_highscore.HighScore_list;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -85,7 +84,7 @@ public class Main extends Application{
 	    background.start();	
 	    start(); 												//create timer
 	    
-	    Menu_info_page menu_info_page = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game);
+	    Menu_info_page menu_info_page = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game, background);
 
 	    primaryStage.setScene(menu_info_page.get_start_scene());
 		primaryStage.show();
@@ -165,35 +164,18 @@ public class Main extends Application{
      */
     public void set_number(int current_points) {
     	int shift = 0;
-    	int y_coordinate = 42;
+    	int y_coordinate = 48;
 
     	while (current_points > 0) {
     		  int temp = current_points / 10;
-    		  int display = current_points - (temp * 10);			// k is number setter
+    		  int display = current_points - (temp * 10);
     		  current_points = temp;
     		  int x_coordinate = 565 - shift;
-
-    		  background.add(new Digit(display, x_coordinate));		//overlap initial digit
+    		  background.add(new Digit(display, x_coordinate, y_coordinate, 23));		//overlap initial digit
     		  shift += 23;
-
     		}
     }
-    
-    
     
 }
 
 //////////////////////////////////////THE END/////////////////////////////////////////////////////////////
-
-
-/*
-if(animal.getPoints() > bobo.getScore(3)) {
-	if(animal.getPoints() > bobo.getScore(2)) {
-		if(animal.getPoints() > bobo.getScore(1)) {
-			bobo.setScore(1, animal.getPoints());
-		}		//end 1
-		bobo.setScore(2, animal.getPoints());
-	}			// end 2
-	bobo.setScore(3, animal.getPoints());
-}				//end 3
-*/

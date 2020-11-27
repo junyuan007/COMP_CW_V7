@@ -1,6 +1,6 @@
 package start_page;
 
-
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,20 +18,26 @@ import p4_group_8_repo.Actor;
  */
 public class Enter_game_butt extends Actor{
 	
-	String image_link = "/graphic_animation/startButton.png";
-	Button button;
-	
+	private String image_link = "/graphic_animation/startButton.png";
+	private Button button;
+
 	/**
 	 * Construct an instance of Enter_game_butt
 	 * @param primaryStage is a type of stage is where all the visual parts of the JavaFX application are displayed
 	 * @param scene to be set when button is pressed
 	 */
 	public Enter_game_butt(Stage primaryStage, Scene scene) {
-		 button = new Button();
-		 design_button();
+		button = new Button();
+		design_button();
 		 
-		 button.setOnAction(e -> primaryStage.setScene(scene)); 
-		 //System.out.println("Start Button Activated");
+		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+			@Override
+			public void handle(ActionEvent e) {
+				System.out.println("\nEnter Game button is pressed\n");
+				primaryStage.setScene(scene);
+			}
+			};
+		button.setOnAction(event); 
 	}
 	
 	/**

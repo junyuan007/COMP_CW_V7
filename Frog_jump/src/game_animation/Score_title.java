@@ -1,9 +1,7 @@
 package game_animation;
 
-import javafx.event.EventHandler;
-import javafx.scene.effect.DropShadow;
+
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import p4_group_8_repo.Actor;
 
 /**
@@ -13,10 +11,8 @@ import p4_group_8_repo.Actor;
  */
 public class Score_title extends Actor{
 
-	Image image_1;
-	String image_link = "/graphic_animation/score.png";
-	int x_position = 522;
-	int y_position = 18;
+	private Image image_1;
+	private String image_link = "/graphic_animation/score.png";
 
 	/**
 	 * Empty Class
@@ -33,7 +29,7 @@ public class Score_title extends Actor{
 	 * @param x_position is the X-coordinate of the score board
 	 * @param y_position is the Y-coordinate of the score board
 	 */
-	public Score_title(int score_size) {
+	public Score_title(int x_position, int y_position, int score_size) {
 		image_1 = new Image(image_link, score_size, score_size, true, true);
 		setImage(image_1);
 		setX(x_position);

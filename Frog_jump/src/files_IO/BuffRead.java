@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  */
 public class BuffRead {
 	
-	String path;
+	private String file_path;
 	ArrayList<String>list =new ArrayList<String> ();
 	
 	/**
@@ -21,7 +21,7 @@ public class BuffRead {
 	 * @param path of the file
 	 */
 	public BuffRead(String path) {
-		this.path = path;
+		this.file_path = path;
 	}
 	
 	/**
@@ -30,7 +30,7 @@ public class BuffRead {
 	 */
 	public ArrayList<String> buffer_reader() {
 		try {
-		    BufferedReader br = new BufferedReader(new FileReader(path));
+		    BufferedReader br = new BufferedReader(new FileReader(file_path));
 		    list = (ArrayList<String>) br.lines().collect(Collectors.toList());
 		    //list.forEach(System.out::println);
 		    br.close(); 
