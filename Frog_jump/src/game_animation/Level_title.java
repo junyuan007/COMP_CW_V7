@@ -1,59 +1,50 @@
-package game_button;
+package game_animation;
 
-import game_animation.Vehicle;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import p4_group_8_repo.Actor;
-import p4_group_8_repo.MyStage;
 
 /**
- * Class of Button (STOP animation timer)
+ * Class of Level Title (animation)
  * @author Jun Yuan
  *
  */
-public class Pause_butt extends Actor{
-
-	private String image_link = "/graphic_animation/pause.png";
+public class Level_title{
+	
+	private String image_link = "/graphic_animation/level_butt.png";
 	private Button button;
+	private int x_coordinate;
+	private int y_coordinate;
 	private int button_size;
 	
 	/**
-	 * Construct an instance of Pause_butt
-	 * @param background is the container for the scene
+	 * Construct an instance of level title
+	 * @param x_position is the X-coordinate of the score board
+	 * @param y_position is the Y-coordinate of the score board
+	 * @param button_size of the level title
 	 */
-	public Pause_butt(MyStage background, int button_size) {
-		 this.button_size = button_size;
-		 button = new Button();
-		 design_button();
-		 button.setStyle("-fx-background-color: transparent;");
-		 ObservableList animation_list = background.getChildren();
-		
-		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
-				@Override
-				public void handle(ActionEvent e) {
-					background.stop();
-					//animation_list.set(36, new Resume_butt(background, 60));
-				}};
-				
-		 button.setOnAction(event); 
+	public Level_title(int x_coordinate, int y_coordinate, int button_size) {
+		this.button_size = button_size;
+		this.x_coordinate = x_coordinate;
+		this.y_coordinate = y_coordinate;
+		button = new Button();
+		design_button();
 	}
 	
 	/**
 	 * Design and settings of button
 	 */
 	public void design_button() {
+		
 		Image image = new Image(image_link, button_size, button_size, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setGraphic(start_image);
-		button.setTranslateX(30);
-		button.setTranslateY(45);
-		
+		button.setStyle("-fx-background-color: transparent;");
+		button.setTranslateY(y_coordinate);
+		button.setTranslateX(x_coordinate);
 		
 		//Button Shadow Effect 
 		DropShadow shadow = new DropShadow();
@@ -71,21 +62,16 @@ public class Pause_butt extends Actor{
 		        	button.setEffect(null);
 		        }
 		});
-		
+
 	}
 	
 	/**
 	 * Method to get Button
-	 * @return button (Pause the animation timer)
+	 * @return button (Start the animation timer)
 	 */
 	public Button getButton() {
 		return button;
 	}
 
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}	
 
 }

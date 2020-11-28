@@ -3,6 +3,7 @@ package game_functions;
 import game_animation.BackgroundImage;
 import game_animation.Digit;
 import game_animation.End;
+import game_animation.Level_title;
 import game_animation.Long_log;
 import game_animation.Score_title;
 import game_animation.Turtle;
@@ -107,18 +108,21 @@ public class Create_animations {
 		background.add(new Snake());		//33
 
 		//Score
-		background.add(new Score_title(522, 18, 60));				// 34 score button
+		background.add(new Score_title(522, 18, 60));		// 34 score button
 		background.add(new Digit(0, 565, 48, 23));			// 35 initial score_board
-
+				
+		background.add(new Digit(1, 295, 52, 25));	
+		//background.add(new Digit(0, 319, 52, 25));	
 
 		//Button
-		Resume_butt resume_butt = new Resume_butt(background, 50);
-	    Pause_butt pause_butt = new Pause_butt(background, 60);
+		Resume_butt resume_butt = new Resume_butt(background, 70);
+	    Pause_butt pause_butt = new Pause_butt(background, 90);
 	    HighScore_list_butt highscore_butt = new HighScore_list_butt(background, 65);
+	    Level_title level = new Level_title(190, 30, 110);
 	    save_butt = new Save_high_butt(background, 25);
 	    ObservableList game_list = background.getChildren();
-	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton(), save_butt.getButton());
-	    
+	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton(), save_butt.getButton(), level.getButton());
+
 		//System.out.println("ALL animations created");
 	}
 	

@@ -2,6 +2,8 @@ package p4_group_8_repo;
 
 import game_animation.Digit;
 import game_functions.Create_animations;
+import game_functions.Level_control;
+import game_functions.Refresh_game_page;
 import game_functions.Update_HighScore_animation;
 import game_highscore.Top_HighScore;
 import game_highscore.HighScore_list;
@@ -32,6 +34,7 @@ public class Main extends Application{
 	Top_HighScore your_highscore;
 	Update_HighScore_animation popo;
 	Level_control level_control;
+	Refresh_game_page refresh = new Refresh_game_page();
 	
 	HighScore_list bobo;
 	int flag = 0;
@@ -75,7 +78,6 @@ public class Main extends Application{
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
 	    
-	    
 	    animation = new Create_animations(background);		// all animations created
 	    level_control = new Level_control(background);
 	    
@@ -117,13 +119,15 @@ public class Main extends Application{
             			popo.update_highest(animal.getPoints());
             		}
             		animation.set_curr_high(your_highscore.getScore());
-            		set_number(animal.getPoints());
+            		refresh.set_number(background, animal.getPoints());
+            		//set_number(animal.getPoints());
             		
             	}
             	
             	// Change Level
             	if (animal.change_level()) {
             		level_control.set_level((animal.getGoal() + 1));
+            		refresh.update_level(background, animal.getGoal() + 1);
             	}
             	
             	// Finish Game
@@ -135,7 +139,7 @@ public class Main extends Application{
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("*-*-* YOU WIN *-*-*");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 1200");
+            		alert.setContentText("Highest Possible Score: 1700");
             		alert.show();
             	}
             }

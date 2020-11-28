@@ -2,7 +2,7 @@ Frogger Game by Jun Yuan
 
 ### Game Controls ###
 
-WASD keys are used to control the frogger character in this game. W & S key are used to control forward and backward respectively, while A & D keys are used to move left and right respectively. When either one of the WASD is pressed, the Frogger will move to that direction by one step, so do not long press the key as points will not be counted and it is DANGEROUS! 
+WASD keys are used to control the frogger character in this game. W & S key are used to control forward and backward movement respectively, while A & D keys are used to move left and right movement respectively. When either one of the WASD is pressed, the Frogger will move to that direction by one step, so do not long press the key as points will not be counted and it is DANGEROUS! 
 TQ :)
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -19,7 +19,7 @@ Logs --- Frogger uses logs of varying lengths to make it across the river to the
 
 Snakes --- Snakes are extremely dangerous, and its movement speed is extremely fast. One slightest contact with the snake will cause Frogger to be poisoned and cause death.
 
-Crocodiles --- Crocodiles might look scary but when their mouth are shut Frogger can still step on them to cross the river to the bank, else when crocodiles open their mouth Frogger will be eaten instantly by them.
+Crocodiles --- Crocodiles might look scary but when their mouth are shut, Frogger can still step on them to cross the river to the bank, else when crocodiles open their mouth Frogger will be eaten instantly.
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
