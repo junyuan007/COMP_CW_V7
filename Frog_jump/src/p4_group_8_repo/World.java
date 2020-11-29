@@ -129,8 +129,8 @@ public abstract class World extends Pane {
 
     /**
      * Method to get the animations
-     * @param <A>
-     * @param cls is the array list of class which is type of A
+     * @param <A> is the array list
+     * @param cls is the class
      * @return animation list 
      */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
@@ -146,6 +146,7 @@ public abstract class World extends Pane {
 
     /**
      * Method act (empty class)
+     * @param now is the current run time
      */
     public abstract void act(long now);
 }

@@ -48,8 +48,8 @@ public abstract class Actor extends ImageView{
 
     /**
      * Method to get objects which are intersect
-     * @param <A>
-     * @param cls is the array list of class
+     * @param <A> is the array list
+     * @param cls is the class
      * @return array list of animation
      */
     public <A extends Actor> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
@@ -72,8 +72,8 @@ public abstract class Actor extends ImageView{
 
     /**
      * Method to get one intersecting object
-     * @param <A>
-     * @param cls
+     * @param <A> is the array list
+     * @param cls is the class
      * @return animation (one element of that index)
      */
     public <A extends Actor> A getOneIntersectingObject(java.lang.Class<A> cls) {
@@ -90,7 +90,7 @@ public abstract class Actor extends ImageView{
     
     /**
      * Abstract method (empty body)
-     * @param now
+     * @param now is the current run time
      */
     public abstract void act(long now);
 

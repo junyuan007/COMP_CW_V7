@@ -18,7 +18,7 @@ import start_page.RL_frog;
 import start_page.WASD_butt;
 
 /**
- * Class to create menu scene & info scene
+ * Class to create menu scene and info scene
  * @author Jun Yuan
  *
  */
@@ -39,7 +39,7 @@ public class Menu_info_page extends Actor{
 	 * @param scene_start is the start scene
 	 * @param scene_game is the game scene
 	 */
-	public Menu_info_page(Stage primaryStage, Scene scene_info, Scene scene_start, Scene scene_game, MyStage background) {
+	public Menu_info_page(Stage primaryStage, Scene scene_info, Scene scene_start, Scene scene_game) {
 		
 		MyStage start_stage = new MyStage();
 	    StackPane info_stage = new StackPane();   

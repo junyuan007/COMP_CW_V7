@@ -22,8 +22,8 @@ public class Level_title{
 	
 	/**
 	 * Construct an instance of level title
-	 * @param x_position is the X-coordinate of the score board
-	 * @param y_position is the Y-coordinate of the score board
+	 * @param x_coordinate is the X-coordinate of the score board
+	 * @param y_coordinate is the Y-coordinate of the score board
 	 * @param button_size of the level title
 	 */
 	public Level_title(int x_coordinate, int y_coordinate, int button_size) {

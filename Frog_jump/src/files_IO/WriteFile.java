@@ -24,10 +24,10 @@ public class WriteFile {
 	  
 	  /**
 	   * Method to set String to Integer
-	   * @param number
+	   * @param value to be set in files (Converted to string)
 	   */
-	  public void sending(int number) {
-		  this.output_message = String.valueOf(number);  //convert integer to string
+	  public void sending(int value) {
+		  this.output_message = String.valueOf(value);  //convert integer to string
 	  }
 	  
 

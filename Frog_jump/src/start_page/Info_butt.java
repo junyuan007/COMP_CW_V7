@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 
 /**
- * Class of Button (Menu Page -> Info Page)
+ * Class of Button (Menu Page to Info Page)
  * @author Jun Yuan
  *
  */
@@ -74,7 +74,7 @@ public class Info_butt{
 	
 	/**
 	 * Method to get Button
-	 * @return button (Menu Page -> Info Page) 
+	 * @return button (Menu Page to Info Page) 
 	 */
 	public Button getButton() {
 		return button;

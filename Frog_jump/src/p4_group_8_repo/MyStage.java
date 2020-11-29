@@ -35,8 +35,6 @@ public class MyStage extends World{
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-		//mediaPlayer.setVolume(0.09);
-		//mediaPlayer.setBalance(0);
 	    mediaPlayer.play();
 	}
 	

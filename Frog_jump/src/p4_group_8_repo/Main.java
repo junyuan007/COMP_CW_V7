@@ -45,8 +45,6 @@ public class Main extends Application{
 		try {
 		launch(args);
 		System.out.println("Game closed ");
-		
-		// CHIN JUN YUAN 123456
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -86,7 +84,7 @@ public class Main extends Application{
 	    background.start();	
 	    start(); 												//create timer
 	    
-	    Menu_info_page menu_info_page = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game, background);
+	    Menu_info_page menu_info_page = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game);
 
 	    primaryStage.setScene(menu_info_page.get_start_scene());
 		primaryStage.show();
@@ -164,7 +162,7 @@ public class Main extends Application{
     
     /**
      * Method to update score board
-     * @param current_points
+     * @param current_points of the player
      */
     public void set_number(int current_points) {
     	int shift = 0;

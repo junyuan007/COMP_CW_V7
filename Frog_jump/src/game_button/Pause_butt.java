@@ -26,6 +26,7 @@ public class Pause_butt extends Actor{
 	/**
 	 * Construct an instance of Pause_butt
 	 * @param background is the container for the scene
+	 * @param button_size of the pause button
 	 */
 	public Pause_butt(MyStage background, int button_size) {
 		 this.button_size = button_size;

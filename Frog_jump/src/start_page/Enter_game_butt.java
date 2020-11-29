@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import p4_group_8_repo.Actor;
 
 /**
- * Class of Button (Menu Page -> Game Page)
+ * Class of Button (Menu Page to Game Page)
  * @author Jun Yuan
  *
  */
@@ -71,7 +71,7 @@ public class Enter_game_butt extends Actor{
 	
 	/**
 	 * Method to get Button
-	 * @return button (Menu Page -> game Page) 
+	 * @return button (Menu Page to game Page) 
 	 */
 	public Button getButton() {
 		return button;

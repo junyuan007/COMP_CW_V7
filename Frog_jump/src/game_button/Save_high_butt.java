@@ -30,6 +30,7 @@ public class Save_high_butt extends Actor{
 	/**
 	 * Construct an instance of Save_high_butt
 	 * @param background is the container for the scene
+	 * @param button_size of the save high score button
 	 */
 	public Save_high_butt(MyStage background, int button_size) {
 		 this.button_size = button_size;
@@ -78,8 +79,8 @@ public class Save_high_butt extends Actor{
 			alert.setHeaderText("You are out of rank. Please try again ಠ╭╮ಠ");
 		}
 		
-		alert.setContentText("⭐ Your current high score is " + current_high + "\n\n"
-							+"⭐ Press the high score button to see the updated rankings");
+		alert.setContentText("# Your current high score is " + current_high + "\n\n"
+							+"# Press the high score button to see the updated rankings");
 		alert.show();
 		}
 		};

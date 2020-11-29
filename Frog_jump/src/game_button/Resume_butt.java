@@ -25,6 +25,7 @@ public class Resume_butt extends Actor{
 	/**
 	 * Construct an instance of Resume_butt
 	 * @param background is the container for the scene
+	 * @param button_size of the resume button
 	 */
 	public Resume_butt(MyStage background, int button_size) {
 		 this.button_size = button_size;
