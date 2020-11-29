@@ -1,7 +1,10 @@
-All_animation
-All_button
 application
-Files_IO
-Game_functions
+files_IO
+game_animation
+game_button
+game_functions
+game_highscore
+game_levels
+info_page
 p4_group_8_repo
-random
+start_page

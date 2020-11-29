@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All_animation"},{"l":"All_button"},{"l":"All Packages","url":"allpackages-index.html"},{"l":"application"},{"l":"Files_IO"},{"l":"Game_functions"},{"l":"p4_group_8_repo"},{"l":"random"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"application"},{"l":"files_IO"},{"l":"game_animation"},{"l":"game_button"},{"l":"game_functions"},{"l":"game_highscore"},{"l":"game_levels"},{"l":"info_page"},{"l":"p4_group_8_repo"},{"l":"start_page"}]
