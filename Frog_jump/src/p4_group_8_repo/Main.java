@@ -1,6 +1,6 @@
 package p4_group_8_repo;
 
-import game_animation.Digit;
+//import game_animation.Digit;
 import game_functions.Create_animations;
 import game_functions.Level_control;
 import game_functions.Refresh_game_page;
@@ -22,7 +22,7 @@ import random.HelloWorld;
  * @author CHIN JUN YUAN
  */
 public class Main extends Application{
-//public class Main extends Application implements EventHandler<ActionEvent>{
+
 	AnimationTimer timer;
 	MyStage background;
 	Frog_player animal; 							//main_frog
@@ -76,20 +76,21 @@ public class Main extends Application{
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
 	    
-	    animation = new Create_animations(background);		// all animations created
+	    animation = new Create_animations(background);			// all animations created
 	    level_control = new Level_control(background);
 	    
 	    popo = new Update_HighScore_animation(your_highscore.getScore(), your_highscore, background);
 	    create_frogger();
 	    background.start();	
-	    start(); 												//create timer
+	    start();
 	    
 	    Menu_info_page menu_info_page = new Menu_info_page(primaryStage, scene_info, scene_start, scene_game);
 
 	    primaryStage.setScene(menu_info_page.get_start_scene());
 		primaryStage.show();
 		System.out.println("Game Start");
-		HelloWorld qiqi = new HelloWorld();
+		HelloWorld qiqi = new HelloWorld();				// use to test end of code
+		
 }
 	
 	/**
@@ -160,10 +161,11 @@ public class Main extends Application{
         timer.stop();
     }
     
-    /**
+    /*
+    
      * Method to update score board
      * @param current_points of the player
-     */
+     
     public void set_number(int current_points) {
     	int shift = 0;
     	int y_coordinate = 48;
@@ -176,7 +178,7 @@ public class Main extends Application{
     		  background.add(new Digit(display, x_coordinate, y_coordinate, 23));		//overlap initial digit
     		  shift += 23;
     		}
-    }
+    }*/
     
 }
 

@@ -22,15 +22,9 @@ import start_page.WASD_butt;
  * @author Jun Yuan
  *
  */
-public class Menu_info_page extends Actor{
+public class Menu_info_page{
 
 	Scene temp_scene;
-	
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	/**
 	 * construct an instance of Menu_info_page

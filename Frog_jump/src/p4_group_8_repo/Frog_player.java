@@ -396,7 +396,5 @@ public class Frog_player extends Actor {
 		}
 		return false;
 	}
-	
-	
 
 }

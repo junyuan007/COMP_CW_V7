@@ -15,7 +15,7 @@ public class Crocodile extends Actor{
 	private Image croc_hungry;
 	private String image_open =  "/graphic_animation/crocodile3_open_right.png";
 	private String image_close =  "/graphic_animation/crocodile4_close_right.png";
-	private boolean sunk = false;
+	private boolean sunk;
 
 
 	/**
@@ -65,6 +65,7 @@ public class Crocodile extends Actor{
 		setY(y_position);
 		speed = speed_movement;
 		setImage(croc_rest);
+		this.sunk = false;
 
 	}
 	
