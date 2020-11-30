@@ -78,12 +78,13 @@ public class Create_animations {
 		//top
 		background.add(new Vehicle(truck_long_right, 0, 540, 1, long_truck_size, long_truck_size));	// 21
 		background.add(new Vehicle());		// 22
-		//background.add(new Vehicle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
 		
 		//bottom
 		background.add(new Vehicle(truck_short_right, 0, 649, 1, short_truck_size, short_truck_size));		// 23
 		background.add(new Vehicle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));	// 24
 		background.add(new Vehicle()); 	// 25
+		
+		//background.add(new Vehicle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
 		//background.add(new Vehicle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
 		
 	

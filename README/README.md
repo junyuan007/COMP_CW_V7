@@ -1,32 +1,57 @@
 # COMP2042_CW_JunYuan
 ## Maintainance made to Frogger game
 
+# Version 2
+## Maintainance 
+### 1. Refactor of naming
+    - Class name are rename
+        - Example: Obstcale.java -> Vehicle.java, Animal.java -> Frog_player.java
+    - Variable & method name are changed to make it maeningful
+    - Snake case is used as case style
+![variable_method_name](./image/maintain_1.png)
 
-### Maintainance
+### 2. Comments 
+    - Javadoc auto documentation (Developers can read the documentation to understand the code better)
+![javadoc](./image/maintain_2.png)
 
-1. Name of variables are changed 
-    - Parameters of methods and part of defining variables
-    - To make variable's name more meaningful and easier to understand
+    - Comment added at end of complex code
+![comments](./image/maintain_3.png) 
 
-2. Comments are added for Javadoc auto documentation (/**...*/)
-    - Added to beggining of class, method and constructor
-    - To create a maintainable code including in built testing help
+### 3. Image
+    - Image source name is changed (Make it meaningful)
+        * Example: iKogsKW.png -> game_back_image.png
+    - Correct wrongly image links which are wrongly defined
+    - Image links are factorise into string variables (Easier modification to image link)
+![image_links](./image/maintain_4.png) 
 
-3. Add comments to end of line of specific code (//...)
-    - To understand what the line of code does.
-    - To identify end of statements of code (if...else, for loop)
-    - Code will be easy for new programmer to understand.
+### 4. Remove unused code commented by previous programmer
+    - To make code tidier and less disruption while coding
 
-4. Image link
-    - Create a string variable with the image link before the creating an object 
-        - Example in Create_animations.java 
-        - Easier to make modification to image link instead of tediously changing one by one
-    - Some of the image links are wrongly defines 
-        - Background image of game and car / water death image
-    - Image source name is change
-        - To make image name more meaningful 
-        - Easier to trace back image
-        - Example: iKogsKW.png -> game_back_image.png
+### 5. Refactor of method
+    - Remove the the part where animations are created in the main.java file into another class called Create_animations
+        - Reduce length of code in main.java
+![image_links](./image/maintain_5.png) 
+
+#### 6. Animation
+    - Size of animation are adjusted to make GUI better
+![image_links](./image/maintain_6.png)    
+
+    - Background image is edited
+![image_links](./image/maintain_7.png)        
+
+
+
+## Extension
+* start screen
+* info screen
+* High Score pop up 
+* permanent high score list 
+* Add levels
+* junit
+* maven implement 
+
+
+///////////////////////////////////////////////////////////////////
 
 5. Remove unnecessary expression as parameters
     - Remove meaningless expression when creating an instance of "End" object and replace it with answer(int) after evaluating.
@@ -35,22 +60,6 @@
 6. Throws IllegalStateException
     - Added to start method in main.java .
     - To prevent method has been invoked at an illegal or inappropriate time.
-
-7. Remove codes commented by the previous programmer and unused ones
-    - Remove unused variables as well as codes
-        - To make code tidier and less unwanted code while programming.
-
-8. Some of the existing image is edited using Paint 3D 
-
-9. Refactor
-    - Class name are rename to be more meaningful
-        - Example: Obstcale.java -> Vehicle.java, Animal.java -> Frog_player.java
-    - Remove the the part where animations are created in the main.java file into another class called Create_animations
-        - So that main.java would not be too long and easier to trace for error 
-
-10. Animations are adjusted size accordingly
-    - Changes made while creating the object as well as in constructor
-    - To make visual game effect better
 
 11. Files are categorize into different package
     - Java files moved to newly created package accordingly 
@@ -97,5 +106,8 @@
         - Alert is produce when high score button is press
             - Alert list of previous high score list (top 3)
 
+
+# Image
+![End product](./image/version_301120.png)
 
             

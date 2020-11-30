@@ -292,19 +292,19 @@ public class Frog_player extends Actor {
 			stop = true;
 		}
 		if (getIntersectingObjects(Short_log.class).size() >= 1 && !not_moving) {
-			if(getIntersectingObjects(Short_log.class).get(0).getLeft())			//intersect with short log no problem!
+			if(getIntersectingObjects(Short_log.class).get(0).getLeft())			//intersect with short log frog moves
 				move(-2, 0);
 			else
 				move (0.75, 0);
 		}
 		else if (getIntersectingObjects(Long_log.class).size() >= 1 && !not_moving) {
-			if(getIntersectingObjects(Long_log.class).get(0).getLeft())				//intersect with long log no problem!
+			if(getIntersectingObjects(Long_log.class).get(0).getLeft())				//intersect with long log frog moves
 				move(-2, 0);
 			else
 				move (0.75, 0);
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !not_moving) {
-			move(-1, 0);															//intersect with normal turtle no problem!
+			move(-1, 0);															//intersect with normal turtle frog moves
 		}
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {

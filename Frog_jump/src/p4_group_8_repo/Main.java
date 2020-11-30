@@ -31,10 +31,10 @@ public class Main extends Application{
 	Scene scene_start;
 	Scene scene_game;
 	Scene scene_info;
-	Top_HighScore your_highscore;
-	Update_HighScore_animation popo;
+	Top_HighScore player_highscore;
+	Update_HighScore_animation update_highscore_board;
 	Level_control level_control;
-	Refresh_game_page refresh = new Refresh_game_page();
+	Refresh_game_page refactor_game = new Refresh_game_page();
 	
 	HighScore_list bobo;
 	int flag = 0;
@@ -64,8 +64,8 @@ public class Main extends Application{
 		primaryStage.setTitle("Frogger by Jun Yuan");
 		
 		// Set up for high score board and high score list 
-		your_highscore = new Top_HighScore();
-		your_highscore.setScore(0);
+		player_highscore = new Top_HighScore();
+		player_highscore.setScore(0);
 		HighScore_list bobo = new HighScore_list();
 		bobo.setScore(1, 300);
 		bobo.setScore(2, 200);
@@ -79,7 +79,7 @@ public class Main extends Application{
 	    animation = new Create_animations(background);			// all animations created
 	    level_control = new Level_control(background);
 	    
-	    popo = new Update_HighScore_animation(your_highscore.getScore(), your_highscore, background);
+	    update_highscore_board = new Update_HighScore_animation(player_highscore.getScore(), player_highscore, background);
 	    create_frogger();
 	    background.start();	
 	    start();
@@ -113,12 +113,12 @@ public class Main extends Application{
             	if (animal.changeScore()) {
             		
             		// Update High Score Board
-            		if(animal.getPoints() > your_highscore.getScore()) {
-            			your_highscore.setScore(animal.getPoints());
-            			popo.update_highest(animal.getPoints());
+            		if(animal.getPoints() > player_highscore.getScore()) {
+            			player_highscore.setScore(animal.getPoints());
+            			update_highscore_board.update_highest(animal.getPoints());
             		}
-            		animation.set_curr_high(your_highscore.getScore());
-            		refresh.set_number(background, animal.getPoints());
+            		animation.set_curr_high(player_highscore.getScore());
+            		refactor_game.set_number(background, animal.getPoints());
             		//set_number(animal.getPoints());
             		
             	}
@@ -126,7 +126,7 @@ public class Main extends Application{
             	// Change Level
             	if (animal.change_level()) {
             		level_control.set_level((animal.getGoal() + 1));
-            		refresh.update_level(background, animal.getGoal() + 1);
+            		refactor_game.update_level(background, animal.getGoal() + 1);
             	}
             	
             	// Finish Game
