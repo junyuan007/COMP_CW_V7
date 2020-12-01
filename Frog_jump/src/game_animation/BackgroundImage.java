@@ -10,8 +10,7 @@ import p4_group_8_repo.Actor;
  */
 public class BackgroundImage extends Actor{
 	
-	//private String image_link = "/graphic_animation/game_background.png";
-	private String image_link = "/graphic_animation/game_back_3.png";
+	private String image_link = "/graphic_animation/game_background.png";
 
 	/**
 	 * Empty class because BackgroundImage is not moving

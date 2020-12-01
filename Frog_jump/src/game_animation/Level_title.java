@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
  */
 public class Level_title{
 	
-	private String image_link = "/graphic_animation/level_butt.png";
+	private String image_link = "/graphic_animation/level_button.png";
 	private Button button;
 	private int x_coordinate;
 	private int y_coordinate;

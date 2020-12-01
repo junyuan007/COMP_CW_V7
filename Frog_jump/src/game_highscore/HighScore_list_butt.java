@@ -19,7 +19,7 @@ import p4_group_8_repo.MyStage;
  */
 public class HighScore_list_butt extends Actor{
 
-	private String image_link = "/graphic_animation/high_score.png";
+	private String image_link = "/graphic_animation/highscore_button.png";
 	private Button button;
 	private int button_size;
 	Alert alert = new Alert(AlertType.INFORMATION);

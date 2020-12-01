@@ -47,10 +47,10 @@ public class Snake extends Actor{
 	 * @param speed_movement of the snake
 	 */
 	public Snake(int x_position, int y_position, int size, double speed_movement) {
-		//Image xxx = new Image(snake1, width, height, true, true);
-		snake1 = new Image("/graphic_animation/pop1.png", size, size, true, true);
-		snake2 = new Image("/graphic_animation/pop2.png", size, size, true, true);
-		snake3 = new Image("/graphic_animation/pop3.png", size, size, true, true);
+
+		snake1 = new Image("/graphic_animation/snake_1.png", size, size, true, true);
+		snake2 = new Image("/graphic_animation/snake_2.png", size, size, true, true);
+		snake3 = new Image("/graphic_animation/snake_3.png", size, size, true, true);
 		setX(x_position);
 		setY(y_position);
 		setImage(snake1);

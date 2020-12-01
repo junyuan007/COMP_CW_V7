@@ -12,7 +12,7 @@ import p4_group_8_repo.Actor;
 public class Score_title extends Actor{
 
 	private Image image_1;
-	private String image_link = "/graphic_animation/score.png";
+	private String image_link = "/graphic_animation/score_button.png";
 
 	/**
 	 * Empty Class

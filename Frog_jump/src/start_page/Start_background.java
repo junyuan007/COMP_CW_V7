@@ -11,7 +11,7 @@ import p4_group_8_repo.Actor;
  */
 public class Start_background extends Actor{
 	
-	private String image_link = "/graphic_animation/version_1.png";
+	private String image_link = "/graphic_animation/start_version_1.png";
 
 	/**
 	 * Empty Class

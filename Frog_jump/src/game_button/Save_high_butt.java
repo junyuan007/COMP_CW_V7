@@ -20,7 +20,7 @@ import p4_group_8_repo.MyStage;
  */
 public class Save_high_butt extends Actor{
 
-	private String image_link = "/graphic_animation/save_me.png";
+	private String image_link = "/graphic_animation/save_button.png";
 	private Button button;
 	private int current_high;
 	private int button_size;
@@ -61,18 +61,18 @@ public class Save_high_butt extends Actor{
 			bobo.setScore(2, bobo.getScore(1));			// 1 -> 2
 			bobo.setScore(1, current_high);				// current score -> 1
 			alert.setTitle("High Score Saved (＊◕ᴗ◕＊)");
-			alert.setHeaderText("Your current rank is 1st");
+			alert.setHeaderText("Your are ranked is 1st");
 		}
 		else if (current_high > bobo.getScore(2)) {
 			bobo.setScore(3, bobo.getScore(2));
 			bobo.setScore(2, current_high);	
 			alert.setTitle("High Score Saved (๑^ں^๑)");
-			alert.setHeaderText("Your current rank is 2nd");
+			alert.setHeaderText("Your are ranked is 2nd");
 		}
 		else if (current_high > bobo.getScore(3)) {
 			bobo.setScore(3, current_high);	
 			alert.setTitle("High Score Saved (๑>ᴗ<๑)");
-			alert.setHeaderText("Your current rank is 3rd");
+			alert.setHeaderText("Your are ranked is 3rd");
 		}
 		else {
 			alert.setTitle("High Score NOT Saved");

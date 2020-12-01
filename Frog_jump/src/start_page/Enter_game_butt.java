@@ -18,7 +18,7 @@ import p4_group_8_repo.Actor;
  */
 public class Enter_game_butt extends Actor{
 	
-	private String image_link = "/graphic_animation/startButton.png";
+	private String image_link = "/graphic_animation/start_button.png";
 	private Button button;
 
 	/**

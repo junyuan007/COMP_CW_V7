@@ -19,7 +19,7 @@ import p4_group_8_repo.MyStage;
  */
 public class Pause_butt extends Actor{
 
-	private String image_link = "/graphic_animation/pause.png";
+	private String image_link = "/graphic_animation/pause_button.png";
 	private Button button;
 	private int button_size;
 	

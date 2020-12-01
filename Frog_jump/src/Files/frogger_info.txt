@@ -47,6 +47,30 @@ There are 3 varieties of vehicle in Frogger; long truck, short truck, and cars. 
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
+### Level Description ###
+
+Level (1) --- Default level.
+
+Level (2) --- Add new rows of cars.
+
+Level (3) --- Add short & long trucks.
+
+Level (4) --- Replace normal turtles with wet turtles.
+
+Level (5) --- Replace more normal turtles with wet turtles.
+
+Level (6) --- Top & bottom cars are faster
+
+Level (7) --- Add snakes.
+
+Level (8) --- Replace short logs with crocodile.
+
+Level (9) --- Replace more short logs with crocodile.
+
+Level (10) --- All vehicles are very fast.
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
 ### History ###
 
 Although the objective of Frogger is very simplistic, this arcade game has gained an enormous following over the last 30 years. Robert Papas was just a teenager when he authored the iconic game. Konami then developed the game before transferring publishing rights to Sega. A partnership was formed between Sega and Gremlin Industries to mass produce thousands of Frogger arcade machines.

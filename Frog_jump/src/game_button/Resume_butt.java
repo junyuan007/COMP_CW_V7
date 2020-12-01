@@ -18,7 +18,7 @@ import p4_group_8_repo.MyStage;
  */
 public class Resume_butt extends Actor{
 
-	private String image_link = "/graphic_animation/play.png";
+	private String image_link = "/graphic_animation/play_button.png";
 	private Button button;
 	private int button_size;
 	

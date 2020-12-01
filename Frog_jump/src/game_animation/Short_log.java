@@ -11,7 +11,7 @@ import p4_group_8_repo.Actor;
 public class Short_log extends Actor {
 	
 	private double speed;
-	private String image_link = "/graphic_animation/log3.png";
+	private String image_link = "/graphic_animation/short_log.png";
 	
 	/**
 	 * Method act to make Log animation move

@@ -52,7 +52,7 @@ public class Menu_info_page{
 	    RL_frog frog_RL = new RL_frog(70, 230, 422, 0);
 	    LR_frog frog_LR = new LR_frog(70, 325, 422, 0);
 	    double speed = 2.1;
-	    String truck_short_right = "/graphic_animation/try_truck.png";
+	    String truck_short_right = "/graphic_animation/red_truck.png";
 	    RL_frog frog_temp = new RL_frog(45, 500, 625, speed);
 	    Crocodile crocodile = new Crocodile(170, 630, speed, 155, 135);
 	    Vehicle truck = new Vehicle(truck_short_right, 350, 625, speed, 120, 120);

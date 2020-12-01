@@ -75,10 +75,9 @@ public class Main extends Application{
 	    background = new MyStage();
 	    scene_game  = new Scene(background, 600, 800);  
 	    create_frogger();										// main_frog created
-	    
 	    animation = new Create_animations(background);			// all animations created
-	    level_control = new Level_control(background);
 	    
+	    level_control = new Level_control(background);
 	    update_highscore_board = new Update_HighScore_animation(player_highscore.getScore(), player_highscore, background);
 	    create_frogger();
 	    background.start();	

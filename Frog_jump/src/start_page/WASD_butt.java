@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
  */
 public class WASD_butt{
 
-	private String image_link = "/graphic_animation/WASD.png";
+	private String image_link = "/graphic_animation/WASD_button.png";
 	private Button button;
 	Alert alert = new Alert(AlertType.INFORMATION);
 

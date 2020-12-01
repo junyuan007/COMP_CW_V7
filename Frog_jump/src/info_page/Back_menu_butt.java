@@ -19,7 +19,7 @@ import javafx.stage.Stage;
  */
 public class Back_menu_butt{
 	
-	private String image_link = "/graphic_animation/backButton.png";
+	private String image_link = "/graphic_animation/back_button.png";
 	private Button button;
 	
 	/**
