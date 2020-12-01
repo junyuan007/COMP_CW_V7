@@ -1,28 +1,28 @@
 # COMP2042_CW_JunYuan
 ## Maintainance made to Frogger game
 
-# Version 2
+
 ## Maintainance 
 ### 1. Refactor of naming
     - Class name are rename
         - Example: Obstcale.java -> Vehicle.java, Animal.java -> Frog_player.java
     - Variable & method name are changed to make it maeningful
     - Snake case is used as case style
-![variable_method_name](./image/maintain_1.png)
+![variable_method_name](./image/maintain_1.png)<br><br><br>
 
 ### 2. Comments 
     - Javadoc auto documentation (Developers can read the documentation to understand the code better)
-![javadoc](./image/maintain_2.png)
+![javadoc](./image/maintain_2.png)<br>
 
     - Comment added at end of complex code
-![comments](./image/maintain_3.png) 
+![comments](./image/maintain_3.png)<br><br><br>
 
 ### 3. Image
     - Image source name is changed (Make it meaningful)
         * Example: iKogsKW.png -> game_back_image.png
-    - Correct wrongly image links which are wrongly defined
+    - Correct image links which are wrongly defined
     - Image links are factorise into string variables (Easier modification to image link)
-![image_links](./image/maintain_4.png) 
+![image_links](./image/maintain_4.png)<br><br><br>
 
 ### 4. Remove unused code commented by previous programmer
     - To make code tidier and less disruption while coding
@@ -30,16 +30,16 @@
 ### 5. Refactor of method
     - Remove the the part where animations are created in the main.java file into another class called Create_animations
         - Reduce length of code in main.java
-![image_links](./image/maintain_5.png) 
+![image_links](./image/maintain_5.png)<br><br><br>
 
 #### 6. Animation
     - Size of animation are adjusted to make GUI better
-![image_links](./image/maintain_6.png)    
+![image_links](./image/maintain_6.png)<br><br> 
 
     - Background image is edited
-![image_links](./image/maintain_7.png)        
+![image_links](./image/maintain_7.png)<br><br><br>       
 
-
+///////////////////////////////////////////////////////
 
 ## Extension
 * start screen
@@ -49,6 +49,87 @@
 * Add levels
 * junit
 * maven implement 
+
+#### 1. Start Screen
+        - Start Page Overall
+![start_page](./image/start_page.png)<br><br> 
+
+        - Enter Game Button 
+![start_button](./image/start_button.png)<br><br>    
+
+        - Info Page Button 
+![info_button](./image/info_button.png)<br><br>   
+
+        - Instruction Button 
+            - Alert will pop up
+![instruction_button](./image/instruction_button.png)<br><br>   
+
+        - Animations
+            - Moveable
+![start_animation](./image/start_animation.png)<br><br>   
+
+#### 2. Information Screen
+        - Info Page Overall
+            - Text are stored in text file called frogger_info.txt
+            - Details about game operation
+![info_page](./image/info_page.png)<br><br>
+
+        - Back button 
+            - Back to start screen
+![back_button](./image/info_back_button.png)<br><br>
+
+#### 3. Game Screen
+        - Game Page Overall
+![game_page](./image/game_page.png)<br><br>
+
+        - Play & Pause Button
+            - Will stop and resume game timer
+![play_pause_button](./image/play_pause_button.png)<br><br>
+
+        - Current Level Display
+            - Will update according to player's current level
+![level_display](./image/level_display.png)<br><br>
+
+        - High Score
+            - Everytime game start it will be reset to zero
+            - Will update live according to player current high score
+![high_score](./image/highscore.png)<br><br>
+
+            - High Score is pressable button
+                - Alert will pop up
+                - To view current high score list
+                - Will be updated when save button is press
+![high_score_list](./image/highscore_list.png)<br><br>
+
+        - Save button
+            - Alert will pop up
+            - It will update the high score list according to the rank if the current high score is greater than scores in high score list else it will reject the update of high score list 
+![save_button](./image/save_button.png)<br><br>
+
+**Save condition**<br>
+![save_condition](./image/highscore_list_saved.png)<br><br>
+
+**Unsave condition**<br>
+![unsave_condition](./image/highscore_list_unsaved.png)<br><br>
+
+        - Game Levels Implemented
+            - Total 10 levels as each time frog lands on the goal the level will increase by one.
+            - As level get higher, the animation becomes faster & more complex.
+            - New animation added: crocodiles and snakes
+            - Details of game level can be read in information screen.
+
+**Crocodiles**<br>
+![animation_crocodiles](./image/animation_croc.png)<br>
+
+**Snakes**<br>
+![animation_snakes](./image/animation_snake.png)<br><br>
+
+
+#### 4. Maven Implementation
+        - Converted initial project to Maven project
+        - Added dependencies for Javafx (Does not need to import library from Javafx)
+![Maven_dependencies](./image/maven_dependencies.png)
+
 
 
 ///////////////////////////////////////////////////////////////////
@@ -67,47 +148,4 @@
     - Images and music source are moved to another folder
         - Files created: Files, graphic_animation, frogger_music
     - Part of refactor process to manage all files better instead of clumping everything in one package
-
-12. Added animations
-    - One more row of cars is added to make a total of 5 lanes of vehicle
-    - To make game more complicated as well as to make use of empty space of the scene
-
-### Extension
-
-1. Menu page created (Start scene)
-    - To make game more completed 
-        - Class created: Menu_info_page.java, Menu_page
-        - Scene is set to start scene before player will be able to play game
-        - Simple WASD control instruction is added
-        - Buttons added: Start game button, info button
-            - Start button will set the scene to game scene
-            - Info button will set scene to info scene
-
-2. Info Page created (Info scene)
-    - To understand more about the game 
-        - Class created: Menu_info_page.java, Info_page, Info_text
-        - Buttons added: Back button
-            - Back button will set scene to start scene
-        - Textarea was used to display the game operations and instructions
-            - All text from textarea are stored in a text file
-
-3. Button
-    - Button for all scene was created in a seperate class
-        - Button are formed from images
-        - Buttons have transparent background
-        - Button will form shadow when cursor is on button
-            - Better visual effect 
-
-4. HighScore
-    - High score system added to game 
-        - Score stored in text file (read write method)
-        - Updated with timer
-    - High score animation in game is a button
-        - Alert is produce when high score button is press
-            - Alert list of previous high score list (top 3)
-
-
-# Image
-![End product](./image/version_301120.png)
-
             
