@@ -1,7 +1,6 @@
 package game_button;
 
 import game_highscore.HighScore_list;
-import game_scene.Actor;
 import game_scene.MyStage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

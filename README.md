@@ -7,7 +7,7 @@
     - Class name are rename
         - Example: Obstcale.java -> Vehicle.java, Animal.java -> Frog_player.java
     - Variable & method name are changed to make it maeningful
-    - Snake case is used as case style
+    - Snake case is used as case style for method and variable name
 ![variable_method_name](./image/maintain_1.png)<br><br><br>
 
 ### 2. Comments 
@@ -28,7 +28,7 @@
     - To make code tidier and less disruption while coding
 
 ### 5. Refactor of method
-    - Remove the the part where animations are created in the main.java file into another class called Create_animations
+    - Example: Remove the the part where animations are created in the main.java file into another class called Create_animations
         - Reduce length of code in main.java
 ![image_links](./image/maintain_5.png)<br><br><br>
 
@@ -39,7 +39,7 @@
     - Background image is edited
 ![image_links](./image/maintain_7.png)<br><br><br>       
 
-///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## Extension
 
@@ -120,9 +120,10 @@
 #### 4. Maven Implementation
         - Converted initial project to Maven project
         - Added dependencies for Javafx (Does not need to import library from Javafx)
-![Maven_dependencies](./image/Maven_dependencies.png)
+![Maven_dependencies](./image/Maven_dependencies.png)<br><br>
 
 #### 5. JUnit Test
-        - Added tests to perform unit testing
-        - All test are pass
+        - Added tests to perform unit testing for game
+        - All test are successful without any error
 ![JUnit_test](./image/JUnit_test.png)
+            

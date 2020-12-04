@@ -12,7 +12,6 @@ import game_animation.Short_log;
 import game_animation.Snake;
 import game_button.Pause_butt;
 import game_button.Resume_butt;
-import game_button.Save_high_butt;
 import game_highscore.HighScore_list_butt;
 import game_scene.MyStage;
 import javafx.collections.ObservableList;
@@ -26,7 +25,6 @@ import javafx.collections.ObservableList;
 public class Create_animations {
 	
 	private int current_high;
-	Save_high_butt save_butt;
 	HighScore_list_butt highscore_butt;
 
 	/**
@@ -118,7 +116,6 @@ public class Create_animations {
 	    Pause_butt pause_butt = new Pause_butt(background, 90);
 	    highscore_butt = new HighScore_list_butt(background, 65);
 	    Level_title level = new Level_title(190, 30, 110);
-	    //save_butt = new Save_high_butt(background, 25);
 	    ObservableList game_list = background.getChildren();
 	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton(), level.getButton());
 

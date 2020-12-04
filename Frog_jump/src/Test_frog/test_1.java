@@ -10,8 +10,8 @@ import game_animation.Crocodile;
 import game_functions.Level_control;
 import game_highscore.HighScore_list;
 import game_highscore.Top_HighScore;
+import game_scene.MyStage;
 import javafx.scene.Scene;
-import p4_group_8_repo.MyStage;
 
 class Test_1 {
 
