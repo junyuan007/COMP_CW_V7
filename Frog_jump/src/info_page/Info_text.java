@@ -20,7 +20,7 @@ public class Info_text {
 	 */
 	public Info_text(){
 		
-		String path = "../Frog_Jump/Src/Files/frogger_info.txt";
+		String path = "./Src/Files/frogger_info.txt";
 	    BuffRead read = new BuffRead(path);
 	    ArrayList<String> instructions = new ArrayList<String> ();
 	    instructions = read.buffer_reader();

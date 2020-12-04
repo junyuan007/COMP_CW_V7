@@ -9,8 +9,8 @@ import game_levels.Level_6;
 import game_levels.Level_7;
 import game_levels.Level_8;
 import game_levels.Level_9;
+import game_scene.MyStage;
 import javafx.stage.Stage;
-import p4_group_8_repo.MyStage;
 
 public class Level_control {
 	
@@ -33,7 +33,7 @@ public class Level_control {
 		if(level == 2) {
 			Level_2 level_2 = new Level_2(background);
 		}
-		else if(level == 3) {
+		if(level == 3) {
 			Level_3 level_3 = new Level_3(background);
 		}
 		else if(level == 4) {

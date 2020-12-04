@@ -1,8 +1,8 @@
 package game_levels;
 
 import game_animation.Snake;
+import game_scene.MyStage;
 import javafx.collections.ObservableList;
-import p4_group_8_repo.MyStage;
 
 /**
  * Class of Level 7

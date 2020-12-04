@@ -1,6 +1,7 @@
-package p4_group_8_repo;
+package game_scene;
 
 import java.io.File;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -48,13 +49,3 @@ public class MyStage extends World{
 	
 
 }
-
-//mediaPlayer.play();
-//mediaPlayer.setOnEndOfMedia(new Runnable() {
-//
-//	@Override
-//	public void run() {
-//		mediaPlayer.seek(Duration.ZERO);	
-//	}
-//});
-//mediaPlayer.play();

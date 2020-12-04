@@ -1,8 +1,15 @@
-package p4_group_8_repo;
+package Start_control;
 
 
+import Start_model.Enter_game_butt;
+import Start_model.Info_butt;
+import Start_model.LR_frog;
+import Start_model.RL_frog;
+import Start_model.Start_background;
+import Start_model.WASD_butt;
 import game_animation.Crocodile;
 import game_animation.Vehicle;
+import game_scene.MyStage;
 import info_page.Back_menu_butt;
 import info_page.Info_background;
 import info_page.Info_text;
@@ -10,12 +17,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import start_page.Enter_game_butt;
-import start_page.Info_butt;
-import start_page.LR_frog;
-import start_page.Start_background;
-import start_page.RL_frog;
-import start_page.WASD_butt;
 
 /**
  * Class to create menu scene and info scene

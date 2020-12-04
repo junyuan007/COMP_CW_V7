@@ -1,14 +1,14 @@
-package start_page;
+package Start_model;
 
+import game_scene.Actor;
 import javafx.scene.image.Image;
-import p4_group_8_repo.Actor;
 
 /**
- * Class of Frog Left to Right (animation)
+ * Class of Frog Right to Left (animation)
  * @author Jun Yuan
  *
  */
-public class LR_frog extends Actor{
+public class RL_frog extends Actor{
 	
 	private Image frog1;
 	private Image frog2;
@@ -17,25 +17,25 @@ public class LR_frog extends Actor{
 	private double speed;
 	
 	/**
-	 * Construct instance of Left to Right Frog
+	 * Construct instance of Right to Left Frog
 	 * @param size of the Frog
 	 * @param x_position is the X-coordinate of frog
 	 * @param y_position is the Y-coordinate of frog
 	 * @param speed_movement of the Frog
 	 */
-	public LR_frog(int size, int x_position, int y_position, double speed_movement) {
+	public RL_frog(int size, int x_position, int y_position, double speed_movement) {
 		
-		frog1 = new Image("/graphic_animation/frog8.png", size,size, true, true);
-		frog2 = new Image("/graphic_animation/frog7.png", size,size, true, true);
-		frog3 = new Image("/graphic_animation/frog6.png", size,size, true, true);
-		frog4 = new Image("/graphic_animation/frog5.png", size,size, true, true);
+		frog1 = new Image("/graphic_animation/frog1.png", size,size, true, true);
+		frog2 = new Image("/graphic_animation/frog2.png", size,size, true, true);
+		frog3 = new Image("/graphic_animation/frog3.png", size,size, true, true);
+		frog4 = new Image("/graphic_animation/frog4.png", size,size, true, true);
 		setX(x_position);
 		setY(y_position);
 		speed = speed_movement;
 		setImage(frog4);
 		
 	}
-
+	
 	/**
 	 * Method act to make Frog animation move
 	 * @param now is the current run time

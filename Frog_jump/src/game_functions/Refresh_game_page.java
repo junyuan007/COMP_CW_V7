@@ -1,7 +1,11 @@
 package game_functions;
 
 import game_animation.Digit;
-import p4_group_8_repo.MyStage;
+import game_scene.MyStage;
+import javafx.animation.AnimationTimer;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import p4_group_8_repo.Main;
 
 
 /**
@@ -57,6 +61,50 @@ public class Refresh_game_page {
 		else {
 			System.out.println("Error in Refresh.java in update_level");
 		}
+	}
+
+	/**
+	 * Method to create animation timer
+	 * @param main TODO
+	 */
+	public void createTimer(final Main main) {
+		
+	    main.timer = new AnimationTimer() {
+	        @Override
+	        public void handle(long now) {
+	        	if (main.frogger.get_player().changeScore()) {
+	        		
+	        		// Update High Score Board
+	        		if(main.frogger.get_player().getPoints() > main.player_highscore.getScore()) {
+	        			main.player_highscore.setScore(main.frogger.get_player().getPoints());
+	        			main.update_highscore_board.update_highest(main.frogger.get_player().getPoints());
+	        		}
+	        		main.animation.set_curr_high(main.player_highscore.getScore());
+	        		set_number(main.background, main.frogger.get_player().getPoints());
+	        		//set_number(frogger.get_player().getPoints());
+	        		
+	        	}
+	        	
+	        	// Change Level
+	        	if (main.frogger.get_player().change_level()) {
+	        		main.level_control.set_level((main.frogger.get_player().getGoal() + 1));
+	        		update_level(main.background, main.frogger.get_player().getGoal() + 1);
+	        	}
+	        	
+	        	// Finish Game
+	        	if (main.frogger.get_player().getStop()) {										
+	        		System.out.println("*** STOP ***");
+	        		main.background.stopMusic();
+	        		main.stop();
+	        		main.background.stop();
+	        		Alert alert = new Alert(AlertType.INFORMATION);
+	        		alert.setTitle("*-*-* YOU WIN *-*-*");
+	        		alert.setHeaderText("Your High Score: "+main.frogger.get_player().getPoints()+"!");
+	        		alert.setContentText("Highest Possible Score: 1700");
+	        		alert.show();
+	        	}
+	        }
+	    };
 	}
 
 }

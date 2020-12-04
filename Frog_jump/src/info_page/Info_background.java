@@ -1,8 +1,8 @@
 package info_page;
 
+import game_scene.Actor;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import p4_group_8_repo.Actor;
 
 
 /**

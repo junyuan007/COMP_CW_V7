@@ -1,6 +1,6 @@
-package start_page;
+package Start_model;
 
-
+import game_scene.Actor;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -11,33 +11,32 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
 /**
- * Class of Button (Menu Page to Info Page)
+ * Class of Button (Menu Page to Game Page)
  * @author Jun Yuan
  *
  */
-public class Info_butt{
+public class Enter_game_butt{
 	
-	private String image_link = "/graphic_animation/info_button.png";
+	private String image_link = "/graphic_animation/start_button.png";
 	private Button button;
-	
+
 	/**
-	 * Construct an instance of Info_butt
+	 * Construct an instance of Enter_game_butt
 	 * @param primaryStage is a type of stage is where all the visual parts of the JavaFX application are displayed
 	 * @param scene to be set when button is pressed
 	 */
-	public Info_butt(Stage primaryStage, Scene scene) {
-		 button = new Button();
-		 design_button();
+	public Enter_game_butt(Stage primaryStage, Scene scene) {
+		button = new Button();
+		design_button();
 		 
-		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
-				@Override
-				public void handle(ActionEvent e) {
-					System.out.println("\nInfo button is pressed\n");
-					primaryStage.setScene(scene);
-				}
-				};
+		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+			@Override
+			public void handle(ActionEvent e) {
+				System.out.println("\nEnter Game button is pressed\n");
+				primaryStage.setScene(scene);
+			}
+			};
 		button.setOnAction(event); 
 	}
 	
@@ -45,16 +44,14 @@ public class Info_butt{
 	 * Design and settings of button
 	 */
 	public void design_button() {
-		Image image = new Image(image_link, 80, 80, true, true);
+		Image image = new Image(image_link, 175, 175, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
 		//button.setTranslateY(150);
-		//button.setTranslateX(105);
-		button.setTranslateY(-5);
-		button.setTranslateX(520);
+		button.setTranslateY(490);
+		button.setTranslateX(215);
 		
-		//Button Shadow Effect 
 		DropShadow shadow = new DropShadow();
 		//Adding the shadow when the mouse cursor is on
 		button.addEventHandler(MouseEvent.MOUSE_ENTERED, 
@@ -74,7 +71,7 @@ public class Info_butt{
 	
 	/**
 	 * Method to get Button
-	 * @return button (Menu Page to Info Page) 
+	 * @return button (Menu Page to game Page) 
 	 */
 	public Button getButton() {
 		return button;

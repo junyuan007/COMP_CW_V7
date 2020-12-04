@@ -1,5 +1,6 @@
 package game_highscore;
 
+import game_scene.MyStage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -9,22 +10,22 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import p4_group_8_repo.Actor;
-import p4_group_8_repo.MyStage;
 
 /**
  * Class of Button (START animation timer)
  * @author Jun Yuan
  *
  */
-public class HighScore_list_butt extends Actor{
+public class HighScore_list_butt{
 
 	private String image_link = "/graphic_animation/highscore_button.png";
 	private Button button;
 	private int button_size;
 	Alert alert = new Alert(AlertType.INFORMATION);
 	HighScore_list top = new HighScore_list();
-
+	
+	private int current_high;
+	HighScore_list bobo = new HighScore_list();
 	
 	/**
 	 * Construct an instance of Resume_butt
@@ -36,9 +37,38 @@ public class HighScore_list_butt extends Actor{
 		 button = new Button();
 		 design_button();
 		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+			 
 				@Override
 				public void handle(ActionEvent e) {
-				alert.setTitle("Frogger Rankings");
+
+					if(current_high > bobo.getScore(1)) {
+						bobo.setScore(3, bobo.getScore(2));			
+						bobo.setScore(2, bobo.getScore(1));			
+						bobo.setScore(1, current_high);			
+						alert.setContentText("Your high score is saved (＊◕ᴗ◕＊)\n"
+											+ "You are currently 1st");
+
+					}
+					else if (current_high > bobo.getScore(2) && current_high != bobo.getScore(1)) {
+						bobo.setScore(3, bobo.getScore(2));
+						bobo.setScore(2, current_high);	
+						alert.setContentText("Your high score is saved (๑^ں^๑)\n"
+											+ "You are currently 2nd");
+
+					}
+					else if (current_high > bobo.getScore(3) && current_high != bobo.getScore(2) && current_high != bobo.getScore(1)) {
+						bobo.setScore(3, current_high);	
+						alert.setContentText("Your high score is saved (๑>ᴗ<๑)\n"
+											+ "You are currently 3rd");
+					}
+					else
+					{
+						alert.setContentText("Your high score is NOT saved \n"
+											+ "You are out of rank. Try Harder...(ಠ╭╮ಠ)");
+					}
+
+					
+				alert.setTitle("Frogger High Score");
 				alert.setHeaderText("1st --- " +top.getScore(1)+ 
 									"\n2nd --- " +top.getScore(2)+ 
 									"\n3rd --- " +top.getScore(3));
@@ -47,6 +77,15 @@ public class HighScore_list_butt extends Actor{
 				};
 		 button.setOnAction(event); 
 
+	}
+	
+	
+	/**
+	 * Method to update current high score within class
+	 * @param num is the current high score
+	 */
+	public void setScore (int num) {
+		this.current_high = num;
 	}
 	
 	/**
@@ -87,15 +126,5 @@ public class HighScore_list_butt extends Actor{
 	public Button getButton() {
 		return button;
 	}
-	
-	/**
-	 * Empty body
-	 */
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-	}
-	
-	
 
 }

@@ -11,7 +11,7 @@ import files_IO.WriteFile;
  */
 public class Top_HighScore {
 	
-	private String path = "../Frog_Jump/Src/Files/highest_display.txt";
+	private String path = "./Src/Files/highest_display.txt";
 	
 	/**
 	 * Construct an Instance of Edit_topScore

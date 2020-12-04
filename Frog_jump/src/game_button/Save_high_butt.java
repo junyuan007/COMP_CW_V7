@@ -1,6 +1,8 @@
 package game_button;
 
 import game_highscore.HighScore_list;
+import game_scene.Actor;
+import game_scene.MyStage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -10,15 +12,13 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import p4_group_8_repo.Actor;
-import p4_group_8_repo.MyStage;
 
 /**
  * Class of Button (Save high score)
  * @author Jun Yuan
  *
  */
-public class Save_high_butt extends Actor{
+public class Save_high_butt{
 
 	private String image_link = "/graphic_animation/save_button.png";
 	private Button button;
@@ -122,15 +122,6 @@ public class Save_high_butt extends Actor{
 	public Button getButton() {
 		return button;
 	}
-	
-	/**
-	 * Empty body
-	 */
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-	}
-	
 	
 
 }

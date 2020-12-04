@@ -1,57 +1,69 @@
-package start_page;
+package Start_model;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import p4_group_8_repo.Actor;
 
 /**
- * Class of Button (Menu Page to Game Page)
+ * Class of Instruction Button
  * @author Jun Yuan
  *
  */
-public class Enter_game_butt extends Actor{
-	
-	private String image_link = "/graphic_animation/start_button.png";
+public class WASD_butt{
+
+	private String image_link = "/graphic_animation/WASD_button.png";
 	private Button button;
+	Alert alert = new Alert(AlertType.INFORMATION);
 
 	/**
-	 * Construct an instance of Enter_game_butt
-	 * @param primaryStage is a type of stage is where all the visual parts of the JavaFX application are displayed
-	 * @param scene to be set when button is pressed
+	 * Construct an instance of instruction button
 	 */
-	public Enter_game_butt(Stage primaryStage, Scene scene) {
-		button = new Button();
-		design_button();
+	public WASD_butt() {
+		 button = new Button();
+		 alert_design();
 		 
-		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
-			@Override
-			public void handle(ActionEvent e) {
-				System.out.println("\nEnter Game button is pressed\n");
-				primaryStage.setScene(scene);
-			}
-			};
-		button.setOnAction(event); 
+		 design_button();
+		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+				@Override
+				public void handle(ActionEvent e) {
+					System.out.println("\nWASD instruction button is pressed\n");
+					alert.show();
+				}
+				};
+		 button.setOnAction(event); 
+	}
+	
+	/**
+	 * Design for alert message
+	 */
+	public void alert_design() {
+		alert.setTitle("Instructions");
+		alert.setHeaderText("WASD keys to control Frogger character");
+		alert.setContentText("W - to move up\n"
+							+"S - to move down\n"
+							+"A - to move left\n"
+							+"D - to move down");
 	}
 	
 	/**
 	 * Design and settings of button
 	 */
 	public void design_button() {
-		Image image = new Image(image_link, 175, 175, true, true);
+		
+		Image image = new Image(image_link, 155, 155, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
-		//button.setTranslateY(150);
-		button.setTranslateY(490);
-		button.setTranslateX(215);
+		button.setTranslateY(266);
+		button.setTranslateX(45);
 		
+		//Button Shadow Effect 
 		DropShadow shadow = new DropShadow();
 		//Adding the shadow when the mouse cursor is on
 		button.addEventHandler(MouseEvent.MOUSE_ENTERED, 
@@ -67,23 +79,15 @@ public class Enter_game_butt extends Actor{
 		        	button.setEffect(null);
 		        }
 		});
+
 	}
 	
 	/**
 	 * Method to get Button
-	 * @return button (Menu Page to game Page) 
+	 * @return button (Display instruction button)
 	 */
 	public Button getButton() {
 		return button;
-	}
-
-	/**
-	 * Empty body
-	 */
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}
+	}	
 
 }

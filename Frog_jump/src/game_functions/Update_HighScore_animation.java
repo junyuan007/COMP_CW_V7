@@ -2,7 +2,7 @@ package game_functions;
 
 import game_animation.Digit;
 import game_highscore.Top_HighScore;
-import p4_group_8_repo.MyStage;
+import game_scene.MyStage;
 
 /**
  * Class to Update High Score in game scene
@@ -31,6 +31,8 @@ public class Update_HighScore_animation {
 		int shift = 0;
 
 		if (points == 0) {							//condition if reset high score
+			background.add(new Digit(0, 404, y_coordinate, size_digit));
+			background.add(new Digit(0, 427, y_coordinate, size_digit));
 			background.add(new Digit(0, 450, y_coordinate, size_digit));
 		}
 		

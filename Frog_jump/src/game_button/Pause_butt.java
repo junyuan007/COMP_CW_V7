@@ -1,6 +1,8 @@
 package game_button;
 
 import game_animation.Vehicle;
+import game_scene.Actor;
+import game_scene.MyStage;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,15 +11,13 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import p4_group_8_repo.Actor;
-import p4_group_8_repo.MyStage;
 
 /**
  * Class of Button (STOP animation timer)
  * @author Jun Yuan
  *
  */
-public class Pause_butt extends Actor{
+public class Pause_butt{
 
 	private String image_link = "/graphic_animation/pause_button.png";
 	private Button button;
@@ -82,11 +82,5 @@ public class Pause_butt extends Actor{
 	public Button getButton() {
 		return button;
 	}
-
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}	
 
 }

@@ -1,67 +1,58 @@
-package start_page;
+package Start_model;
+
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
 
 /**
- * Class of Instruction Button
+ * Class of Button (Menu Page to Info Page)
  * @author Jun Yuan
  *
  */
-public class WASD_butt{
-
-	private String image_link = "/graphic_animation/WASD_button.png";
+public class Info_butt{
+	
+	private String image_link = "/graphic_animation/info_button.png";
 	private Button button;
-	Alert alert = new Alert(AlertType.INFORMATION);
-
+	
 	/**
-	 * Construct an instance of instruction button
+	 * Construct an instance of Info_butt
+	 * @param primaryStage is a type of stage is where all the visual parts of the JavaFX application are displayed
+	 * @param scene to be set when button is pressed
 	 */
-	public WASD_butt() {
+	public Info_butt(Stage primaryStage, Scene scene) {
 		 button = new Button();
-		 alert_design();
-		 
 		 design_button();
+		 
 		 EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
 				@Override
 				public void handle(ActionEvent e) {
-					System.out.println("\nWASD instruction button is pressed\n");
-					alert.show();
+					System.out.println("\nInfo button is pressed\n");
+					primaryStage.setScene(scene);
 				}
 				};
-		 button.setOnAction(event); 
-	}
-	
-	/**
-	 * Design for alert message
-	 */
-	public void alert_design() {
-		alert.setTitle("Instructions");
-		alert.setHeaderText("WASD keys to control Frogger character");
-		alert.setContentText("W - to move up\n"
-							+"S - to move down\n"
-							+"A - to move left\n"
-							+"D - to move down");
+		button.setOnAction(event); 
 	}
 	
 	/**
 	 * Design and settings of button
 	 */
 	public void design_button() {
-		
-		Image image = new Image(image_link, 155, 155, true, true);
+		Image image = new Image(image_link, 80, 80, true, true);
 		ImageView start_image = new ImageView(image);
 		button.setStyle("-fx-background-color: transparent;");
 		button.setGraphic(start_image);
-		button.setTranslateY(266);
-		button.setTranslateX(45);
+		//button.setTranslateY(150);
+		//button.setTranslateX(105);
+		button.setTranslateY(-5);
+		button.setTranslateX(520);
 		
 		//Button Shadow Effect 
 		DropShadow shadow = new DropShadow();
@@ -79,15 +70,14 @@ public class WASD_butt{
 		        	button.setEffect(null);
 		        }
 		});
-
 	}
 	
 	/**
 	 * Method to get Button
-	 * @return button (Display instruction button)
+	 * @return button (Menu Page to Info Page) 
 	 */
 	public Button getButton() {
 		return button;
-	}	
+	}
 
 }

@@ -1,15 +1,8 @@
-package p4_group_8_repo;
+package game_animation;
 
 import java.util.ArrayList;
 
-import game_animation.End;
-import game_animation.Long_log;
-import game_animation.Short_log;
-import game_animation.Snake;
-import game_animation.Crocodile;
-import game_animation.Turtle;
-import game_animation.Vehicle;
-import game_animation.WetTurtle;
+import game_scene.Actor;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -33,7 +26,7 @@ public class Frog_player extends Actor {
 	Image D_move;
 	
 	int player_points = 0;
-	int end = 0;
+	//int end = 0;
 	private boolean second = false;
 	boolean not_moving = false;
 	double movement = 26.66;
@@ -53,7 +46,6 @@ public class Frog_player extends Actor {
 	
 	int goal = 0;
 	int flag = 0;
-	boolean snake_die = false;
 	boolean croc_die = false;
 	boolean end_die = false;
 	int temp = 0;
@@ -324,20 +316,19 @@ public class Frog_player extends Actor {
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
-			//inter = (ArrayList<End>) getIntersectingObjects(End.class);
+			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
+				//goal--;
 				//end --;	
 				//player_points -= 50;	
-				//System.out.println("GOAL FAIL");
 			}
 
 			getIntersectingObjects(End.class).get(0).setEnd();
 			player_points += 50;
 			goal ++;
-			end++;
+			//end++;
 			scene_width = 800;
 			changeScore = true;
-			//System.out.println("GOAL SUCCESS");
 			setX(x_start);
 			setY(y_start + movement);
 		}

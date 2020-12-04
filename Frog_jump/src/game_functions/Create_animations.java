@@ -1,6 +1,6 @@
 package game_functions;
 
-import game_animation.BackgroundImage;
+import game_animation.Background_Image;
 import game_animation.Digit;
 import game_animation.End;
 import game_animation.Level_title;
@@ -14,8 +14,8 @@ import game_button.Pause_butt;
 import game_button.Resume_butt;
 import game_button.Save_high_butt;
 import game_highscore.HighScore_list_butt;
+import game_scene.MyStage;
 import javafx.collections.ObservableList;
-import p4_group_8_repo.MyStage;
 
 
 /**
@@ -27,6 +27,7 @@ public class Create_animations {
 	
 	private int current_high;
 	Save_high_butt save_butt;
+	HighScore_list_butt highscore_butt;
 
 	/**
 	 * Construct an instance of Create_animations
@@ -35,7 +36,7 @@ public class Create_animations {
 	public Create_animations(MyStage background) {
 		
 		//Background
-	    BackgroundImage frogger_wallpaper = new BackgroundImage(600, 910);
+	    Background_Image frogger_wallpaper = new Background_Image(600, 910);
 	    background.add(frogger_wallpaper);	// 1
 	    
 	    //LOG
@@ -60,12 +61,11 @@ public class Create_animations {
 		background.add(new Turtle(500, 376, -1.0, 130, 130)); // 13
 		background.add(new Turtle(300, 376, -1.0, 130, 130)); // 14
 		background.add(new Turtle(700, 376, -1.0, 130, 130)); // 15
-		//background.add(new WetTurtle(700, 376, -1, 130, 130));
 
 		//END goals
 		background.add(new End(11, 95, 60));	// 16
 		background.add(new End(139, 95, 60));  	// 17
-		background.add(new End(267, 95, 60));	// 18			removed addition operator
+		background.add(new End(267, 95, 60));	// 18			
 		background.add(new End(394, 95, 60));	// 19
 		background.add(new End(523, 95, 60));	// 20
 		
@@ -83,10 +83,6 @@ public class Create_animations {
 		background.add(new Vehicle(truck_short_right, 0, 649, 1, short_truck_size, short_truck_size));		// 23
 		background.add(new Vehicle(truck_short_right, 300, 649, 1, short_truck_size, short_truck_size));	// 24
 		background.add(new Vehicle()); 	// 25
-		
-		//background.add(new Vehicle(truck_long_right, 500, 540, 1, long_truck_size, long_truck_size));
-		//background.add(new Vehicle(truck_short_right, 600, 649, 1, short_truck_size, short_truck_size));
-		
 	
 		//CAR
 		String car_left = "/graphic_animation/car1"+"Left.png";
@@ -110,7 +106,9 @@ public class Create_animations {
 
 		//Score
 		background.add(new Score_title(522, 18, 60));		// 34 score button
-		background.add(new Digit(0, 565, 48, 23));			// 35 initial score_board
+		background.add(new Digit(0, 519, 48, 23));			// 35
+		background.add(new Digit(0, 542, 48, 23));	
+		background.add(new Digit(0, 565, 48, 23));	
 				
 		background.add(new Digit(1, 295, 52, 25));	
 		//background.add(new Digit(0, 319, 52, 25));	
@@ -118,18 +116,23 @@ public class Create_animations {
 		//Button
 		Resume_butt resume_butt = new Resume_butt(background, 70);
 	    Pause_butt pause_butt = new Pause_butt(background, 90);
-	    HighScore_list_butt highscore_butt = new HighScore_list_butt(background, 65);
+	    highscore_butt = new HighScore_list_butt(background, 65);
 	    Level_title level = new Level_title(190, 30, 110);
-	    save_butt = new Save_high_butt(background, 25);
+	    //save_butt = new Save_high_butt(background, 25);
 	    ObservableList game_list = background.getChildren();
-	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton(), save_butt.getButton(), level.getButton());
+	    game_list.addAll(pause_butt.getButton(), resume_butt.getButton(), highscore_butt.getButton(), level.getButton());
 
-		//System.out.println("ALL animations created");
+		System.out.println("ALL animations created");
 	}
 	
+	
+	/**
+	 * Method to set current high score into high score list
+	 * @param number is the current high score of player
+	 */
 	public void set_curr_high(int number) {
 		this.current_high = number;
-		save_butt.setScore(this.current_high);
+		highscore_butt.setScore(this.current_high);
 	}
 	
 	

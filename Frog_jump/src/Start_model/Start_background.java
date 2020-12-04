@@ -1,8 +1,8 @@
-package start_page;
+package Start_model;
 
+import game_scene.Actor;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import p4_group_8_repo.Actor;
 
 /**
  * Class of Background of Menu Page (start page)
