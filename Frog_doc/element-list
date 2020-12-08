@@ -5,6 +5,11 @@ game_button
 game_functions
 game_highscore
 game_levels
+game_scene
 info_page
 p4_group_8_repo
-start_page
+Start_control
+Start_model
+Start_view
+Test_frog
+Unused
