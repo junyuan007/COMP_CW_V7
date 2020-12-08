@@ -20,7 +20,7 @@ public class Level_7 {
 		int size = 80;
 		ObservableList animation_list = background.getChildren();
 		
-		animation_list.set(33, new Snake(20, 429, 80, -3.3));
+		animation_list.set(32, new Snake(20, 429, 80, -3.3));
 		
 		System.out.println("1 Snake added\n");
 	}

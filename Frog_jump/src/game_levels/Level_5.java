@@ -18,10 +18,10 @@ public class Level_5 {
 	public Level_5(MyStage background) {
 
 		ObservableList animation_list = background.getChildren();
-
-		animation_list.set(10, new WetTurtle(600, 217, -1.0, 130, 130));
-		animation_list.set(11, new WetTurtle(400, 217, -1.0, 130, 130));
-		animation_list.set(12, new WetTurtle(200, 217, -1.0, 130, 130));
+		
+		animation_list.set(9, new WetTurtle(600, 217, -1.0, 130, 130));
+		animation_list.set(10, new WetTurtle(400, 217, -1.0, 130, 130));
+		animation_list.set(11, new WetTurtle(200, 217, -1.0, 130, 130));
 
 		System.out.println("3 Turtles changes to Wet Turtles\n");
 	}

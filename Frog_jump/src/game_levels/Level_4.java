@@ -20,9 +20,9 @@ public class Level_4 {
 
 		ObservableList animation_list = background.getChildren();
 		
-		animation_list.set(13, new Turtle(500, 376, -1.0, 130, 130));
-		animation_list.set(14, new Turtle(300, 376, -1.0, 130, 130));
-		animation_list.set(15, new WetTurtle(700, 376, -1.0, 130, 130));
+		animation_list.set(12, new Turtle(500, 376, -1.0, 130, 130));
+		animation_list.set(13, new Turtle(300, 376, -1.0, 130, 130));
+		animation_list.set(14, new WetTurtle(700, 376, -1.0, 130, 130));
 		
 		System.out.println("1 Turtle changed to Wet Turtles\n");
 	}

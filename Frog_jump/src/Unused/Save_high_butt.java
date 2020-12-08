@@ -1,5 +1,5 @@
-package game_button;
-
+package Unused;
+/*
 import game_highscore.HighScore_list;
 import game_scene.MyStage;
 import javafx.event.ActionEvent;
@@ -16,7 +16,7 @@ import javafx.scene.input.MouseEvent;
  * Class of Button (Save high score)
  * @author Jun Yuan
  *
- */
+ 
 public class Save_high_butt{
 
 	private String image_link = "/graphic_animation/save_button.png";
@@ -30,7 +30,7 @@ public class Save_high_butt{
 	 * Construct an instance of Save_high_butt
 	 * @param background is the container for the scene
 	 * @param button_size of the save high score button
-	 */
+	 
 	public Save_high_butt(MyStage background, int button_size) {
 		 this.button_size = button_size;
 		 button = new Button();
@@ -44,7 +44,7 @@ public class Save_high_butt{
 	/**
 	 * Method to update current high score within class
 	 * @param num is the current high score
-	 */
+	 
 	public void setScore (int num) {
 		this.current_high = num;
 	}
@@ -86,7 +86,7 @@ public class Save_high_butt{
 
 	/**
 	 * Design and settings of button
-	 */
+	 
 	public void design_button() {
 		
 		Image image = new Image(image_link, button_size, button_size, true, true);
@@ -117,10 +117,10 @@ public class Save_high_butt{
 	/**
 	 * Method to get Button
 	 * @return button to save high score in highscore list
-	 */
+	 
 	public Button getButton() {
 		return button;
 	}
 	
 
-}
+}*/

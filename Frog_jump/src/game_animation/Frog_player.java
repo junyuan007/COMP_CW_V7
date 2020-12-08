@@ -318,15 +318,13 @@ public class Frog_player extends Actor {
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
-				//goal--;
-				//end --;	
-				//player_points -= 50;	
+				goal--;
+				player_points -= 50;	
 			}
 
 			getIntersectingObjects(End.class).get(0).setEnd();
 			player_points += 50;
 			goal ++;
-			//end++;
 			scene_width = 800;
 			changeScore = true;
 			setX(x_start);
@@ -351,6 +349,10 @@ public class Frog_player extends Actor {
 		else return false;
 	}
 	
+	/**
+	 * Check if level is changed
+	 * @return the boolean value if level is changed
+	 */
 	public boolean change_level() {
 		if(goal > flag) {
 			flag = goal;
@@ -364,6 +366,10 @@ public class Frog_player extends Actor {
 			return false;
 	}
 	
+	/**
+	 * Method to get the goal value
+	 * @return the value of goal
+	 */
 	public int getGoal() {
 		return goal;
 	}

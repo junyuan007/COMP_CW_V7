@@ -21,8 +21,9 @@ public class Level_2 {
 		int car_size = 50;
 		
 		ObservableList animation_list = background.getChildren();
-		animation_list.set(31, new Vehicle(car_left, 175, 700, -0.60, car_size, car_size));
-		animation_list.set(32, new Vehicle(car_left, 475, 700, -0.60, car_size, car_size));
+		
+		animation_list.set(30, new Vehicle(car_left, 175, 700, -0.60, car_size, car_size));
+		animation_list.set(31, new Vehicle(car_left, 475, 700, -0.60, car_size, car_size));
 		
 		System.out.println("2 cars added\n");
 	}

@@ -29,7 +29,7 @@ public class Level_control {
 	}
 	
 	public void change_level() {
-		/*
+		
 		if(level == 2) {
 			Level_2 level_2 = new Level_2(background);
 		}
@@ -56,9 +56,9 @@ public class Level_control {
 		}
 		else if(level == 10) {
 			Level_10 level_10 = new Level_10(background);
-		}*/
+		}
 		
-		
+		/*
 		if(level == 2) {
 			Level_2 level_2 = new Level_2(background);
 		}
@@ -85,7 +85,7 @@ public class Level_control {
 		}
 		if(level == 2) {
 			Level_10 level_10 = new Level_10(background);
-		}
+		}*/
 		
 		
 	}

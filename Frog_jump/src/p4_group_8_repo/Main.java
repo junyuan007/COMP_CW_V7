@@ -66,7 +66,7 @@ public class Main extends Application{
 	    scene_game  = new Scene(background, 600, 800);  
 	    
 	    // Animation
-	    frogger = new Create_frogger(background);
+	    //frogger = new Create_frogger(background);
 	    animation = new Create_animations(background);
 	    frogger = new Create_frogger(background);
 	    

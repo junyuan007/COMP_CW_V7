@@ -69,9 +69,9 @@ public class HighScore_list_butt{
 
 					
 				alert.setTitle("Frogger High Score");
-				alert.setHeaderText("1st --- " +top.getScore(1)+ 
-									"\n2nd --- " +top.getScore(2)+ 
-									"\n3rd --- " +top.getScore(3));
+				alert.setHeaderText("1st	---   " + top.getScore(1) + "\n"+
+									"2nd	---   " + top.getScore(2) + "\n"+
+									"3rd	---   " + top.getScore(3));
 				alert.show();
 				}
 				};
