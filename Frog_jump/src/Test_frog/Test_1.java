@@ -6,12 +6,12 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
-import game_animation.Crocodile;
-import game_functions.Level_control;
-import game_highscore.HighScore_list;
-import game_highscore.Top_HighScore;
-import game_scene.MyStage;
 import javafx.scene.Scene;
+import p4_group_8_repo.Game_actor.Crocodile;
+import p4_group_8_repo.Game_functions.Level_control;
+import p4_group_8_repo.Game_highscore.HighScore_list;
+import p4_group_8_repo.Game_highscore.Top_HighScore;
+import p4_group_8_repo.Game_scene.MyStage;
 
 class Test_1 {
 
