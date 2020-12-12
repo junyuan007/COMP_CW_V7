@@ -30,14 +30,19 @@
 ### 5. Refactor of method
     - Example: Remove the the part where animations are created in the main.java file into another class called Create_animations
         - Reduce length of code in main.java
-![image_links](./README_image/maintain_5.png)<br><br><br>
+![refactor_method](./README_image/maintain_5.png)<br><br><br>
 
-#### 6. Animation
+### 6. Class categorization
+    - Categorize class into different package for code to be more maintainable 
+![refactor_class](./README_image/refactor_class.png)<br><br><br>
+
+
+#### 7. Animation
     - Size of animation are adjusted to make GUI better
-![image_links](./README_image/maintain_6.png)<br><br> 
+![animation_end](./README_image/maintain_6.png)<br><br> 
 
     - Background image is edited
-![image_links](./README_image/maintain_7.png)<br><br><br>       
+![animation_background](./README_image/maintain_7.png)<br><br><br>       
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
