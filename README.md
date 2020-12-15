@@ -120,7 +120,8 @@
 
 #### 4. Maven Implementation
         - Converted initial project to Maven project
-        - Added dependencies for Javafx (Does not need to import library from Javafx)
+        - Dependencies for Javafx (Does not need to import library from Javafx)
+        - Dependencies for JUnit 5
 ![Maven_dependencies](./README_image/Maven_dependencies.png)<br><br>
 
 #### 5. JUnit Test
