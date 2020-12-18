@@ -1,7 +1,6 @@
 package p4_group_8_repo.main_view;
 
 
-import Unused.HelloWorld;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -97,7 +96,6 @@ public class Main extends Application{
 		
 		// Check for Error
 		System.out.println("Game Start");
-		HelloWorld qiqi = new HelloWorld();				// use to test end of code
 }
 	
 	
